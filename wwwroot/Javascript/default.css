@@ -1,0 +1,158 @@
+@charset "utf-8";
+/* CSS Document */
+#myFish
+{
+	position:absolute;
+	left:800px;
+}
+#myFish img
+{
+	position:absolute;
+	top:50px;
+}
+#myFish input
+{
+	position:absolute;
+	left:93px;
+	top:300px;
+}
+h3
+{
+	position:absolute;
+	left:35px;
+	*top:19px;
+}
+
+#playBtn
+{
+	position:absolute;
+	top:265px;
+	left:565px;
+	
+	*width:127px;
+}
+.savedFish img
+{
+	float:right;
+}
+body
+{
+	background:url(Flash/images/background.jpg);
+	background-repeat:no-repeat;
+	background-position:left top;
+	margin:0;
+}
+#invalid
+{
+	font-size:10px;
+	position:absolute;
+	bottom:0;
+	left:10px;
+}
+#backDiv
+{
+	position:fixed;
+	width:5000px; 
+	height:5000px;
+	background-color:#333; 
+	filter:alpha(opacity=50);
+	-moz-opacity:.5;
+	opacity:.5;
+	left:0px;
+}
+#noticeSpan
+{
+	font-size:10px; 
+	font-family:Verdana; 
+	margin-left:20px;
+}
+#formDiv
+{
+	position:absolute;
+	width:280px;
+	height:200px;
+	top:100px;
+	margin-left:50%;
+	left:-140px;
+	background-color: #669999;
+	border:2px solid #339999;
+	color:#000000;
+	font-family:Verdana;
+}
+#leftDiv
+{
+	width:110px;
+	text-align:left;
+	float:left;
+	font-size:12px;
+	line-height:28px;
+	*line-height:32px;
+}
+#rightDiv
+{
+	width:160px;
+	text-align:left;
+	float:right;
+	
+}
+#rightDiv input
+{
+	margin:3px;
+}
+#formDiv input[type=submit]
+{
+	left:50px;
+	top:120px;
+	position:absolute;
+	*width:60px;
+	*top:136px;
+}
+#rightDiv input[type=submit]
+{
+	margin-top:0;
+	margin-left:80px;
+	*width:50px;
+	
+}
+#resetBtn
+{
+	position:absolute;
+	top:300px;
+	left:585px;
+	
+	*width:82px;
+}
+#descripSpan
+{
+	position:absolute;
+	top:200px;
+	left:300px;
+	font-family:Verdana;
+	font-size:12px;
+}
+#select1
+{
+	position:absolute;
+	top:125px;
+	left:80px;
+}
+#select2
+{
+	position:absolute;
+	top:310px;
+	left:110px;
+}
+#select3
+{
+	position:absolute;
+	top:448px;
+	left:200px;
+}
+.savedFish
+{
+	position:absolute;
+	left:200px;
+	top:40px;
+	width:610px;
+	*margin-left:200px;
+}

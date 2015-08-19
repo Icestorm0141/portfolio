@@ -1,0 +1,362 @@
+//ALL CODE PROPERTY OF ANNA J. STEGLINSKI. ALL RIGHTS RESERVED.
+
+//THE FOLLOWING CODE IS FROM THE MAIN "MANAGER" CLASS. IT HANDLES ALL EVENTS EXCEPT THE MOVEMENT OF THE HAMSTER
+//SEE ALSO THE COMMENTS IN THE CODE
+
+//WRITTEN IN ACTIONSCRIPT 3.0
+
+package hamsterCode{
+	import flash.display.*;
+	import flash.events.*;
+	import flash.ui.*;
+	import flash.text.*;
+	import flash.events.TimerEvent;
+	import flash.utils.Timer;
+
+
+	public class hamsterLot extends MovieClip {
+		//controls
+		private var goingLeft:Boolean;
+		private var goingRight:Boolean;
+		private var goingUp:Boolean;
+		private var goingDown:Boolean;
+
+		//Objects
+		private var myHammy: Hamster;
+		private var Pea: foodPea;
+		public var cage_mc:theCage;
+		//private var myTimerBox: TextField=new TextField();
+		var gameTimer:Timer = new Timer(1000, 120);
+
+		//scores & tests
+		private var score: Number;
+		private var scoreString: String;
+		private var inCage:Boolean;
+		private var timerNum=String;
+		private var incremented=Boolean;
+		private var foodScore:Number;
+		private var hammySpeed:Number;
+		private var hammyScaleX:Number;
+		private var hammyScaleY:Number;
+		private var hammyScaleInc:Number;
+		private var chosenHammy: Hamster;
+		private var ballHammy:Hamster;
+		private var stageHeight:Number;
+		private var stageWidth:Number;
+
+		//START CONSTRUCTOR
+		function hamsterLot() {
+			goingLeft=false;
+			goingRight=false;
+			goingUp=false;
+			goingDown=false;
+
+			//myHammy=hamsterBrown;
+			Pea=foodPea1;
+			cage_mc=myCage;
+			stageHeight = 400;
+			stageWidth = 550;
+
+			score=0;
+			inCage=false;
+			timerNum="0";
+			incremented=false;
+			foodScore=0;
+			hammySpeed=10;
+			hammyScaleX=0.22808837890625;
+			hammyScaleY=0.22808837890625;
+			hammyScaleInc=.01;
+			foodPlacement(Pea);
+
+			gameTimer.addEventListener(TimerEvent.TIMER, onTick);
+			gameTimer.addEventListener(TimerEvent.TIMER_COMPLETE, onTimerComplete);
+			leftArrow.addEventListener(MouseEvent.MOUSE_OVER,rollOverLeft);
+			leftArrow.addEventListener(MouseEvent.MOUSE_OUT,rollOutLeft);
+			rightArrow.addEventListener(MouseEvent.MOUSE_OVER,rollOverRight);
+			rightArrow.addEventListener(MouseEvent.MOUSE_OUT,rollOutRight);
+			upArrow.addEventListener(MouseEvent.MOUSE_OVER,rollOverUp);
+			upArrow.addEventListener(MouseEvent.MOUSE_OUT,rollOutUp);
+			downArrow.addEventListener(MouseEvent.MOUSE_OVER,rollOverDown);
+			downArrow.addEventListener(MouseEvent.MOUSE_OUT,rollOutDown);
+
+			this.intro_clip.hamsterWhite1.addEventListener(MouseEvent.MOUSE_UP,whiteHammyChose);
+			this.intro_clip.hamsterBrown1.addEventListener(MouseEvent.MOUSE_UP,brownHammyChose);
+
+		}
+//END CONSTRUCTOR
+
+//START OF THE FUNCTIONS FOR WHICH HAMSTER IS CHOSEN
+		public function whiteHammyChose(e:MouseEvent) {
+			this.intro_clip.visible=false;
+			chosenHammy=hamsterWhite;
+			myHammy=chosenHammy;
+			myHammy.alpha=1;
+			ballHammy=hammyInBall2;
+			gameTimer.start();
+			addEventListener(Event.ENTER_FRAME,frameLoop);
+		}
+
+		public function brownHammyChose(e:MouseEvent) {
+			this.intro_clip.visible=false;
+			chosenHammy=hamsterBrown;
+			myHammy=chosenHammy;
+			myHammy.alpha=1;
+			ballHammy=hammyInBall;
+			gameTimer.start();
+			addEventListener(Event.ENTER_FRAME,frameLoop);
+		}
+//END OF THE HAMSTER CHOOSING FUNCTIONS
+
+//FOOD INTERACTIONS
+		public function foodPlacement(food) {
+			food.x=randomX();
+			food.y=randomY();
+			if (food.x<=50 || food.x>=(stageWidth-50)) {
+				food.x=randomX();
+			}
+			if (food.y<=50 || food.y>=(stageHeight-50)) {
+				food.y=randomY();
+			}
+			food.alpha=2;
+
+		}
+//END FOOD INTERACTIONS
+
+//CHECKING FUNCTIONS: BALL, CAGE, FOOD
+		private function checkForSpeed(){
+			if(hammySpeed<=0){
+				nextFrame();
+				gameTimer.stop();
+			}
+		}
+		
+		private function checkForFood() {
+			if (Pea.hitTestPoint(myHammy.x, myHammy.y, true)) {
+				foodScore+=3;
+				foodPlacement(Pea);
+				hammySpeed--;
+				hammyScaleX+=hammyScaleInc;
+				hammyScaleY+=hammyScaleInc;
+				if (myHammy==hammyInBall) {
+					hammyInBall.hamsterWithBall.scaleX=hammyScaleX;
+					hammyInBall.hamsterWithBall.scaleY=hammyScaleY;
+				} else if (myHammy==hammyInBall2) {
+					hammyInBall2.hamsterWithBall.scaleX=hammyScaleX;
+					hammyInBall2.hamsterWithBall.scaleY=hammyScaleY;
+				} else {
+					myHammy.scaleX=hammyScaleX;
+					myHammy.scaleY=hammyScaleY;
+				}
+			}
+		}
+		private function checkForBall() {
+			if (ball.hitTestPoint(myHammy.x, myHammy.y, true)) {
+				chosenHammy.alpha=0;
+				ball.alpha=0;
+				if (chosenHammy==hamsterBrown) {
+					myHammy=hammyInBall;
+				} else if (chosenHammy==hamsterWhite) {
+					myHammy=hammyInBall2;
+				}
+				myHammy.goTo(ball.x,ball.y);
+				ball.x=800;
+				myHammy.rotation=chosenHammy.rotation;
+				myHammy.alpha=1;
+				if (chosenHammy==hamsterBrown) {
+					hammyInBall.hamsterWithBall.scaleX=hammyScaleX;
+					hammyInBall.hamsterWithBall.scaleY=hammyScaleY;
+					
+				} else if (chosenHammy==hamsterWhite) {
+					hammyInBall2.hamsterWithBall.scaleX=hammyScaleX;
+					hammyInBall2.hamsterWithBall.scaleY=hammyScaleY;
+				}
+			}
+		}
+		private function checkForCage() {
+			if (cage_mc.hitTestPoint(myHammy.x, myHammy.y, true)&& inCage==false && incremented==false) {
+				score+=foodScore;
+				foodScore=0;
+				inCage=true;
+				incremented=true;
+				hammyScaleX=.22808837890625;
+				hammyScaleY=.22808837890625;
+				hammySpeed=10;
+				myHammy.scaleX=hammyScaleX;
+				myHammy.scaleY=hammyScaleY;
+				if(myHammy==hammyInBall || myHammy==hammyInBall2){
+				myHammy=chosenHammy;
+				myHammy.scaleX=hammyScaleX;
+				myHammy.scaleY=hammyScaleY;
+				
+				if(myHammy==hamsterBrown){
+				hammyInBall.alpha=0;
+				}
+				else if(myHammy==hamsterWhite){
+					hammyInBall2.alpha=0;
+				}
+				ball.alpha=1;
+				myHammy.rotation=ballHammy.rotation;
+				trace(myHammy.rotation, ballHammy.rotation);
+				if(myHammy==hamsterBrown){
+				if(hammyInBall.x>hammyInBall.y+150){
+					ball.y=(hammyInBall.y-100);
+					ball.x=hammyInBall.x;
+				}
+				if(hammyInBall.y+150>hammyInBall.x){
+					ball.x=(hammyInBall.x-100);
+					ball.y=hammyInBall.y;
+				}
+				myHammy.x=hammyInBall.x;
+				myHammy.y=hammyInBall.y;
+				myHammy.alpha=1;
+				}
+				else if(myHammy==hamsterWhite){
+				if(hammyInBall2.x>hammyInBall2.y+150){
+					ball.y=(hammyInBall2.y-100);
+					ball.x=hammyInBall2.x;
+				}
+				if(hammyInBall2.y+150>hammyInBall2.x){
+					ball.x=(hammyInBall2.x-100);
+					ball.y=hammyInBall2.y;
+				}
+				myHammy.x=hammyInBall2.x;
+				myHammy.y=hammyInBall2.y;
+				myHammy.alpha=1;
+				}
+				}
+			}
+			if (!(cage_mc.hitTestPoint(myHammy.x, myHammy.y, false))&& inCage==true) {
+				inCage=false;
+				incremented=false;
+			}
+		}
+		//END CHECKING FUNCTIONS
+
+
+//TIMER FUNCTIONS: COMPLETE, ONTICK
+		public function onTick(event:TimerEvent):void {
+			timerNum=(String(event.target.currentCount));
+			if ((myHammy==hammyInBall || myHammy==hammyInBall2) && hammySpeed!=10) {
+				hammySpeed++;
+			}
+			if (myHammy==hammyInBall && hammyScaleX>=.22808837890625 && hammyScaleY>=.22808837890625) {
+				hammyScaleX-=hammyScaleInc;
+				hammyScaleY-=hammyScaleInc;
+				hammyInBall.hamsterWithBall.scaleX=hammyScaleX;
+				hammyInBall.hamsterWithBall.scaleY=hammyScaleY;
+			} else if (myHammy==hammyInBall2 && hammyScaleX>=.22808837890625 && hammyScaleY>=.22808837890625) {
+				hammyScaleX-=hammyScaleInc;
+				hammyScaleY-=hammyScaleInc;
+				hammyInBall2.hamsterWithBall.scaleX=hammyScaleX;
+				hammyInBall2.hamsterWithBall.scaleY=hammyScaleY;
+			}
+		}
+
+		public function onTimerComplete(event:TimerEvent):void {
+			//goToAndStop(2);
+			nextFrame();
+			trace("Time's Up!");
+		}
+//END TIMER FUNCTIONS
+
+
+//ONENTERFRAME FUNCTION
+		function frameLoop(e:Event) {
+			if (goingLeft==true) {
+				myHammy.left(hammySpeed);
+			}
+			if (goingRight==true) {
+				myHammy.right(hammySpeed,stageWidth);
+			}
+			if (goingUp==true) {
+				myHammy.up(hammySpeed);
+			}
+			if (goingDown==true) {
+				myHammy.down(hammySpeed,stageHeight);
+			}
+
+			myTimerBox.text="Time Spent: "+(timerNum);
+			addChild(myTimerBox);
+			theScore();
+			checkForCage();
+			checkForBall();
+			checkForFood();
+			checkForSpeed();
+
+		}
+//END ONENTERFRAME FUNCTION
+
+
+//SCOREBOARD FUNCTION
+		private function theScore() {
+			scoreString="Score: "+ (String(score));
+			myTextBox.text = (scoreString);
+		}
+//END SCOREBOARD FUNCTION
+
+
+//RANDOM X & Y FUNCTIONS
+		public function randomX():Number {
+			var ranX=Math.random()*(stageWidth-cage_mc.width);
+			return ranX;
+		}
+		public function randomY():Number {
+			var ranY=Math.random()*(stageHeight-cage_mc.height);
+			return ranY;
+		}
+//END RANDOM X & Y FUNCTIONS
+
+// START OF CONTROLLABLE EVENTS
+		function doKeyDown(e:KeyboardEvent) {
+			if (e.keyCode ==Keyboard.DOWN) {
+				myHammy.down(10,stageHeight);
+			} else if (e.keyCode ==Keyboard.UP) {
+				myHammy.up(10);
+			} else if (e.keyCode ==Keyboard.LEFT) {
+				myHammy.left(10);
+			} else if (e.keyCode ==Keyboard.RIGHT) {
+				myHammy.right(10,stageWidth);
+			}
+		}
+		function rollOverLeft(e:MouseEvent) {
+			goingLeft=true;
+
+		}
+		function rollOutLeft(e:MouseEvent) {
+			goingLeft=false;
+		}
+		function rollOverRight(e:MouseEvent) {
+			goingRight=true;
+
+		}
+		function rollOutRight(e:MouseEvent) {
+			goingRight=false;
+		}
+		function rollOverUp(e:MouseEvent) {
+			goingUp=true;
+
+		}
+		function rollOutUp(e:MouseEvent) {
+			goingUp=false;
+		}
+		function rollOverDown(e:MouseEvent) {
+			goingDown=true;
+
+		}
+		function rollOutDown(e:MouseEvent) {
+			goingDown=false;
+		}
+		function goUp(e:MouseEvent) {
+			myHammy.up(10);
+		}
+		function goLeft(e:MouseEvent) {
+			myHammy.left(10);
+		}
+		function goDown(e:MouseEvent) {
+			myHammy.down(10,stageHeight);
+		}
+		function goRight(e:MouseEvent) {
+			myHammy.right(10,stageWidth);
+		}
+	}
+}

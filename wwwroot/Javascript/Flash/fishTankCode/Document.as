@@ -1,0 +1,298 @@
+﻿package fishTankCode{
+	import flash.display.*;
+	import flash.events.*;
+	import flash.text.*;
+	import flash.geom.Point;
+	import flash.events.TimerEvent;
+	import flash.utils.Timer;
+	import flash.net.*;
+
+	public class Document extends MovieClip {
+		
+		private var tempBub:bubble; //temporary bubble
+		public var bubbleArray:Array; //Array of Bubbles, how fun :)
+		public var endGame:Boolean; //Boolean to see if the end of the game has happened
+		public var highScore:Number; //number version of the high score
+		public var highScoreString:String; //string version of the high score
+		public var score: Number;//score Number
+		public var scoreString: String;//score String
+		private var temp:fish;//temporary fishy to help the Array
+		private var boxMoved:Boolean;//Has my box moved?
+		private var foodOrigX;//original starting X value for the food
+		public var foodOrigY;//original starting Y for the food
+		public var fishArray:Array;//The array of fish
+		private var groundPebs:Array;//The array of pebbles
+		public var myFishy:fish;//The users controlled fish
+		public var foodPouring:Boolean;//Is my food pouring
+		private var aFood:foodNormal;//A piece of food
+		public var netMoving:Boolean;//Is my net moving?
+		private var tempPeb:pebbles;//Temporary pebble to help with the pebble array
+		public var myFishNet:fishNet;//The actual fish Net
+		public var foodArray:Array;//An array of food
+		public var foodPoint:Point;//I'm not sure what this is, its of Matt's doing.
+		public var netTimer:Timer;//The timer for the Net
+		public var fishXML:XML;
+		public var urlLoader:URLLoader;
+		public var whichFish:String;
+
+		public function Document() {
+			highScore=0; //if this is the first time the user has loaded the game, high score is 0
+			stage.addEventListener(MouseEvent.CLICK,goNext);
+		}
+		//goes to the next frame & starts the game
+		public function goNext(e:MouseEvent) {
+			nextFrame();
+		}
+		
+		//sends the user back to the start of the game so they can try for a new high score, 
+		//and listens for the click to start the game again
+		public function restart(e:MouseEvent) {
+			gotoAndPlay("start");
+			stage.addEventListener(MouseEvent.CLICK,goNext);
+		}
+		//the real constructor
+		public function init() {
+				stage.removeEventListener(MouseEvent.CLICK,goNext);
+				//Setting some variables
+				endGame=false;
+				foodOrigY=foodBox.y;
+				foodOrigX=foodBox.x;
+				score=0;
+				foodPouring=false;
+				boxMoved=false;
+				score=0;
+				foodArray=new Array();
+				restartText.setAlpha(0);
+				
+				var urlRequest:URLRequest=new URLRequest("fish.xml");
+				urlLoader=new URLLoader();
+				urlLoader.load(urlRequest);
+			
+				urlLoader.addEventListener(Event.COMPLETE,loadCompleted);
+
+				//Event Listeners & the Timer
+				var timerNum= ((Math.random()*20)+5);
+				netTimer = new Timer(1000, timerNum);
+				netTimer.addEventListener(TimerEvent.TIMER, onTick);
+				netTimer.addEventListener(TimerEvent.TIMER_COMPLETE, onTimerComplete);
+				this.addEventListener(Event.ENTER_FRAME,onEnter);
+				foodBox.addEventListener(MouseEvent.MOUSE_UP,pourFood);
+				netTimer.start();
+
+				//Creating Fishies
+				
+
+				//Adding Fish Net
+				netMoving=false;
+				myFishNet=new fishNet(500,400);
+				myFishNet.visible=false;
+				this.addChild(myFishNet);
+
+				//Placing Pebbles on ground
+				groundPebs=new Array();
+				for (var pebCount=0; pebCount<275; pebCount++) {
+					var itsAY=(Math.random()*15)+(fishTank.y+275 - 15);
+					var thisX=Math.random() *stage.stageWidth;
+					tempPeb=new pebbles(thisX,itsAY);
+					groundPebs.push(tempPeb);
+					this.addChild(tempPeb);
+				}
+		}
+		
+		public function loadCompleted(e:Event):void
+		{
+			fishXML = new XML(urlLoader.data);
+			
+			fishArray =new Array();
+				for (var counter:Number =0; counter < fishXML.children().length(); counter++) {
+					var myY = (Math.random() *(stage.stageHeight-330))+165;
+					var myX=Math.random() *(stage.stageWidth-243.6)+121.8;
+					//trace(fishXML.children()[counter]);
+					whichFish = fishXML.children()[counter];
+					temp = new fish(myX,myY,this,whichFish);
+					fishArray.push(temp);
+					temp.setSpeed(Math.random()*15 -8, Math.random()*15 -8);
+					this.addChild(temp);
+				}
+				myFishy=fishArray[0];
+		}
+		//Stops the net moving & restarts the timer
+		public function stopNetMoving() {
+			netMoving = false;
+			netTimer.reset();
+			var newRepeatCount = ((Math.random()*20)+5);
+			netTimer.repeatCount = newRepeatCount;
+			netTimer.start();
+		}
+		//Lets the User choose their fish
+		public function chooseFish(aFish:fish) {
+			myFishy=aFish;
+		}
+		//Moves the net & passes the x and y to help choose which side of the stage the net will appear
+		private function moveNet(e:MouseEvent) {
+			netMoving=true;
+			var netX=Math.random()*2;
+			var netY=Math.random()*2;
+			myFishNet.moveMyNet(netX,netY);
+		}
+		//On EnterFrame
+		private function onEnter(e:Event) {
+				//Creates a new bubble every second and randomly places it between a few pixels on either the 
+				//left of right of the screen
+				bubbleArray=new Array();
+				var bubY:Number;
+				var bubX:Number;
+				var sidePicker=Math.random()*2;
+				if(sidePicker<=1){
+					bubY=(Math.random()*30)+650;
+					bubX=(Math.random()*15)+50;
+				}
+				else if(sidePicker<=2){
+					bubY=(Math.random()*30)+650;
+					bubX=(Math.random()*15)+950;
+				}
+				tempBub=new bubble(bubX,bubY,this);
+				bubbleArray.push(tempBub);
+				this.addChild(tempBub);
+
+				//checks to see if the users fish has gone off the stage
+				if (stage.mouseX-myFishy.width<=0) {
+					myFishy.setX(myFishy.width+1);
+				}
+				
+				//Moving Fishies
+				for (var counter:Number= 0; counter< fishArray.length; counter++) {
+					fishArray[counter].moveFish();
+				}
+				
+				//If the foodbox is not moving anymore, you can now hunt for food with the fish
+				if (boxMoved==false) {
+					myFishy.setX(stage.mouseX);
+				}
+				//Foodbox conditional
+				if (boxMoved==true) {//Lets the user control the x of the foodBox if you have clicked the box
+					foodBox.x=stage.mouseX;
+					foodBox.y=75;
+					if (foodPouring==true) {//when the food box is tipped just right, food will pour
+						launchFood();
+						//the following lines referring to foodPoint were written by Matt to help me with this project, I do not fully understand how they work.
+						foodPoint = new Point(foodBox.mikesFood.boxOpening.x, foodBox.mikesFood.boxOpening.y);
+						foodPoint = foodBox.mikesFood.localToGlobal(foodPoint);
+						var foodX = foodPoint.x;
+						var pear = foodPoint.y;
+						foodArray[foodArray.length-1].x=foodX;
+						foodArray[foodArray.length-1].y=pear;
+					}
+				}
+				//Moving Net conditional
+				if (netMoving==true) {//if the net is moving, you can move the fish anywhere to avoid it
+					myFishNet.visible=true;
+					myFishy.y=stage.mouseY;
+					//Sets the limits of my fishy so you cannot move beyond the fish tank
+					if (stage.mouseY>=(stage.stageHeight-165)) {
+						myFishy.y=(stage.stageHeight-166);
+					} else if (stage.mouseY<=165) {
+						myFishy.y=166;
+					}
+					//hides all the rest of the fish except the users fish when the net is moving
+					for (var h=0; h<fishArray.length; h++) {
+						if (fishArray[h]!=myFishy) {
+							fishArray[h].visible=false;
+						}
+					}
+					testForCatch();//tests for a fishCatch
+				} else if (netMoving==false) {//returns the other fish to the stage if the net is done
+					myFishNet.visible=false;
+					for (var m=0; m<fishArray.length; m++) {
+						fishArray[m].visible=true;
+					}
+				}
+				theScore();//adds the score to the stage
+				if(endGame==true){ //if the users fish has been caught, the game is over & this function runs
+					gameOver();
+				}
+
+
+		}
+		//tests for an hit between the users fish and the net & if it the net catches the users fish
+		//end game is set to true so the gameOver() function can run
+		private function testForCatch() {
+			for (var k=0; k<fishArray.length; k++) {
+				if (myFishy.hitTestObject(myFishNet)) {
+						endGame=true;
+				}
+			}
+		}
+		
+		//the gameOver function that sets all the fish to invisible, sets the new high score if needed, sets the
+		//food box to invisible, stops the timer, removes the onEnterFrame event listener, and goes to the next frame
+		//with all this stuff
+		private function gameOver(){
+			restartText.addEventListener(MouseEvent.MOUSE_UP,restart);
+			
+						for(var theFish=0; theFish<fishArray.length; theFish++){
+							fishArray[theFish].visible=false;
+							//foodArray[theFish].visible=false;
+						}
+						restartText.setAlpha(1);
+						//removeChild(temp);
+						myFishNet.visible=false;
+						if (score>=highScore) {	//if the current score is greater than the highScore, the user got
+												//a new high score
+							highScore=score;
+						}
+						highScoreString="Your high score is: " +(String(highScore));
+						myFishy.visible=false;
+						foodBox.visible=false;
+						netTimer.stop();
+						this.nextFrame();
+						
+						this.removeEventListener(Event.ENTER_FRAME,onEnter);
+						
+		}
+		
+		//adds the food to the stage
+		public function launchFood() {
+			var tempFood:foodNormal;
+			//initialize off stage
+			tempFood=new foodNormal(-50,-50,this);
+			this.addChild(tempFood);
+			foodArray.push(tempFood);
+		}
+		
+		//accessed from the timeline to pour the food when the box is tipped
+		private function pourFood(e:MouseEvent) {
+			boxMoved=true;
+			foodBox.y=75;
+			foodBox.gotoAndPlay("Pouring");
+		}
+		
+		//accessed from the timeline to stop pouring the food & move the box to the original starting point
+		public function foodOff() {
+			foodPouring=false;
+			foodBox.y=foodOrigY;
+			foodBox.x=foodOrigX;
+			boxMoved=false;
+		}
+		//accessed from the timeline to start pouring food
+		public function foodOn() {
+			foodPouring=true;
+		}
+		//adds the score to the text box
+		private function theScore() {
+			scoreString="Score: "+ (String(score));
+			myTextBox.text = (scoreString);
+		}
+		//TIMER FUNCTIONS
+		public function onTimerComplete(event:TimerEvent):void {
+			netMoving=true;
+			//passes some values to the net to help it determine which side of the screen it appears on
+			var netX=Math.random()*2;
+			var netY=Math.random()*2;
+			myFishNet.moveMyNet(netX,netY);
+		}
+		public function onTick(event:TimerEvent):void {
+			//Game doesnt do anything when the timer is ticking
+		}
+	}
+}

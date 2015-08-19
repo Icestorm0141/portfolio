@@ -1,0 +1,167 @@
+@charset "utf-8";
+/* CSS Document */
+
+body
+{
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:18px;
+	margin:0;
+	background-color:#000;
+	margin-top: 100px;
+	margin-bottom:auto;
+}
+#disableDiv
+{
+	width:100%;
+	height:100%;
+	position:fixed;
+	background-color:#fff; 
+	filter:alpha(opacity=50);
+	-moz-opacity:.5;
+	opacity:.5;
+	left:0px;
+	top:0px;
+}
+#container
+{
+	width:950px;
+	position:absolute;
+	left:50%;
+	margin-left:-475px;
+	top:0;
+	min-height:600px;
+	margin-bottom:0;
+	height:100%;
+}
+#formDiv, #tagBox
+{
+	position:absolute;
+	width:400px;
+	top:0;
+	margin-left:50%;
+	left:-140px;
+	background-color: #b1cab1;
+	border:2px solid #014901;
+	color:#000000;
+	text-align:right;
+	padding:0px 25px 15px 5px;
+}
+#formDiv div
+{
+	padding-top:5px;
+}
+#formDiv label, #tagBox label
+{
+	text-align:left;
+	padding-left:5px;
+}
+#formDiv a, #tagBox a
+{
+	position:absolute;
+	top:15px;
+	right:10px;
+}
+#formDiv input
+{
+	width:147px;
+}
+#tagBox select
+{
+	min-width:149px;
+}
+#left
+{
+	float: left;
+	width: 650px;
+	height: 690px;
+	border-style: solid;
+	background:#9C3;
+}
+
+#right
+{
+	background:#9C3;
+	float: left;
+	width: 300px;
+	height: 690px;
+	border-style: solid;
+}
+
+#playerData
+{
+font-size: 24px;
+padding: 0px 5px;
+margin-top: -5px;
+}
+#role
+{
+font-size: 24px;
+padding: 0px 5px;
+}
+#chat
+{
+	height: 230px;
+	border: 1px solid #000;
+	overflow: auto;
+	background-color:#FFF
+}
+
+#playArea
+{
+	border-style: dashed;
+	height: 300px;
+	margin-top: 5px;
+}
+
+#resourceMonitor
+{
+	text-align: center; 
+	height: 30px; 
+	border-style: none;
+	padding-top: 10px;
+}
+
+#prodMonitor
+{
+	text-align: center; 
+	height: 30px; 
+	border-style: none;
+	padding-top: 15px;
+}
+
+#extMonitor
+{
+	text-align: center; 
+	height: 30px; 
+	border-style: none;
+	padding-top: 15px;
+}
+.prod
+{
+	margin:10px;
+	cursor:pointer;
+	width:109px;
+}
+.space
+{
+	margin:10px;
+}
+#txtProduction
+{
+	background-color:#9C0;
+	width: 45px;
+	text-align:right;
+	padding-bottom: 5px;
+}
+#production
+{
+padding-bottom: 0px;	
+margin-bottom: 5px;
+}
+#navBar
+{
+ border-style: solid;
+ height:230px;
+ margin-top: 215px;
+ 
+}

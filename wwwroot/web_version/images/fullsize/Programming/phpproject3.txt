@@ -1,0 +1,820 @@
+/***** BEGINNING OF ADMIN CODE LIBRARY ****/
+<?php
+include "tools.php";
+
+function triviaUpdate($action,$table)
+{
+	if($action == "modify" && $table == "trivia_topics")
+	{
+		if($_POST['status'] == "active")
+		{
+			$v_records = mySQLDoQuery("select * from trivia_topics");
+			foreach($v_records as $key => $value)
+			{
+				if($value['status'] == "active")
+				{
+					$updateStatus = "update trivia_topics set status='closed' where topicID='".$value['topicID']."';";
+					//echo $updateStatus;
+					writeSQL($updateStatus);
+				}
+			}
+		}
+		
+		$nextField = "', ";
+		$query = "update ".$table." set ";
+		if($_POST['topicName'] != "")
+		{ $query .= "topicName='".$_POST['topicName'];}
+		if($_POST['topicDescription'] != "" && $_POST['topicName'] != "")
+		{ $query .=$nextField;}
+		if($_POST['topicDescription'] != "")
+		{ $query .= "topicDescription='".$_POST['topicDescription'];}
+		if($_POST['status'] != "" && ($_POST['topicDescription'] != "" || $_POST['topicName'] != ""))
+		{ $query .=$nextField; }
+		if($_POST['status'] != "")
+		{ $query .= "status='".$_POST['status']."'"; }
+		 $query .= " where topicID=".$_POST['topicID'];
+		 
+	}
+	else if($action == "modify" && $table == "trivia_questions")
+	{
+		$nextField = "', ";
+		$query = "update ".$table." set ";
+		if($_POST['quizQuestion'] != "")
+		{ $query .= "quizQuestion='".$_POST['quizQuestion']; }
+		if($_POST['description'] != "" && $_POST['quizQuestion'] != "")
+		{ $query .=$nextField;}
+		if($_POST['description'] != "")
+		{ $query .= "description='".$_POST['description'];}
+		if($_POST['active'] != "" && ($_POST['description'] != "" || $_POST['quizQuestion'] != ""))
+		{ $query .=$nextField; }
+		if($_POST['active'] != "")
+		{ $query .= "active='".$_POST['active']."'"; }
+		 $query .= " where triviaQID=".$_POST['triviaQID'];
+	}
+	else if($action == "modify" && $table == "trivia_answers")
+	{
+		$nextField = "', ";
+		$query = "update ".$table." set ";
+		if($_POST['answerText'] != "")
+		{ $query .= "answerText='".$_POST['answerText']; }
+		if($_POST['numVotes'] != "" && $_POST['answerText'] != "")
+		{ $query .=$nextField; }
+		if($_POST['numVotes'] != "")
+		{ $query .= "numVotes='".$_POST['numVotes']; }
+		if($_POST['correct'] != "" && ($_POST['numVotes'] != "" || $_POST['answerText'] != ""))
+		{ $query .=$nextField;}
+		if($_POST['correct'] != "")
+		{ $query .= "correct='".$_POST['correct']."'";}
+		 $query .= " where answerID=".$_POST['answerID'];
+	}
+	else if($action == "add" && $table == "trivia_topics")
+	{
+		if($_POST['status'] == "active")
+		{
+			$v_records = mySQLDoQuery("select * from trivia_topics");
+			foreach($v_records as $key => $value)
+			{
+				if($value['status'] == "active")
+				{
+					$updateStatus = "update trivia_topics set status='closed' where topicID='".$value['topicID']."';";
+				//	echo $updateStatus;
+					writeSQL($updateStatus);
+				}
+			}
+		}
+		
+		$query = "insert into ".$table." values(NULL,'".$_POST['topicName']."','";
+		$query .= $_POST['topicDescription']."','".$_POST['status']."');";
+	
+	}
+	else if($action == "add" && $table == "trivia_questions")
+	{
+		$query = "insert into ".$table." values(NULL,'".$_POST['topicID']."','";
+		$query .= $_POST['description']."','".$_POST['active']."','".$_POST['quizQuestion']."');";
+	}
+	else if($action == "add" && $table == "trivia_answers")
+	{
+		$query = "insert into ".$table." values(NULL,'".$_POST['triviaQID']."','";
+		$query .= $_POST['answerText']."','".$_POST['correct']."','0');";
+	}
+	else if($action == "delete" && $table == "trivia_questions")
+	{
+		$query = "delete from ".$table." where triviaQID='".$_POST['triviaQID']."'";
+	}
+	else if($action == "delete" && $table == "trivia_topics")
+	{
+		$query = "delete from ".$table." where topicID='".$_POST['topicID']."';";
+		//$query .= "delete from trivia_questions where topicID='".$_POST['topicID']."'";
+		//$query = "delete * from ".$table." where topicID='".$_POST['topicID']."';";
+		//$query .= "delete * from trivia_questions where topicID='".$_POST['topicID']."'";
+	}
+	else if($action == "delete" && $table == "trivia_answers")
+	{
+		$query = "delete from ".$table." where answerID='".$_POST['answerID']."'";
+	}
+	//echo $query;
+	return $query;
+}
+
+function showUpdateForm($view,$subView,$v_records,$v_questions,$v_answers)
+{
+	//echo showObject($v_answers);
+	if($view == "add" && $subView ==NULL)
+	{
+		$form ="<div class=\"leftAdmin\">\n";
+		$form .= "<h2>Add a Topic</h2>\n";
+		$form .= "<p>WARNING: Please do not use any single quotes or apostrophes (ex: ')</p>";
+		$form .= "<form action=\"".$_SERVER['PHP_SELF'] ."\" method=\"post\" name=\"addtopic\">\n";
+		$form .="<input type=\"hidden\" name=\"subView\" value=\"status\" />\n";
+		$form .="<input type=\"hidden\" name=\"table\" value=\"trivia_topics\" />\n";
+		$form .="<input type=\"hidden\" name=\"view\" value=\"add\" />\n";
+		$form .= "<p>Topic name: <input type=\"text\" name=\"topicName\" maxlength=\"50\" /></p>\n";
+		$form .= "<p>Topic description: <input type=\"text\" name=\"topicDescription\" maxlength=\"100\" /></p>\n";
+		$form .= "<p>Topic Status: <select name=\"status\">";
+		$form .= "<option value=\"pending\">Pending</option>\n";
+		$form .= "<option value=\"active\">Active</option><br />\n";
+		$form .= "<option value=\"closed\">Closed</option></select></p>\n";
+		$form .= "<p><input type=\"submit\" value=\"Add Topic\" /></p></form></div>\n";
+		
+		$form .="<div class=\"rightAdmin\">\n";
+		$form .= "<h2>Add a Question</h2>\n";
+		$form .= "<p>WARNING: Please do not use any single quotes or apostrophes (ex: ')</p>";
+		$form .= "<form action=\"".$_SERVER['PHP_SELF'] ."\" method=\"post\" name=\"addquestion\">\n";
+		$form .="<input type=\"hidden\" name=\"subView\" value=\"status\" />\n";
+		$form .="<input type=\"hidden\" name=\"table\" value=\"trivia_questions\" />\n";
+		$form .="<input type=\"hidden\" name=\"view\" value=\"add\" />\n";
+		$form .= "<p>Quiz Question: <input type=\"text\" name=\"quizQuestion\" maxlength=\"255\" /></p>\n";
+		$form .= "<p>Short Quiz Description: <input type=\"text\" name=\"description\" maxlength=\"100\" /></p>\n";
+		$form .= "<p>Open status: <select name=\"active\">\n";
+		$form .= "<option value=\"0\">closed</option>\n";
+		$form .= "<option value=\"1\">open</option></select></p>\n";
+		$form .= "<p>Add to topic: <select name=\"topicID\">\n";
+		foreach($v_records as $key => $value)
+		{
+			$form .="<option value=\"".$value['topicID']."\">".$value['topicName']."</option>\n";
+		}
+		$form .="</select></p>\n";
+		$form .= "<p><input type=\"submit\" value=\"Add Question\" /></p></form></div>\n";
+		
+		$form .="<div class=\"bottomAdmin\">\n";
+		$form .= "<h2>Add an Answer</h2>\n";
+		$form .= "<p>WARNING: Please do not use any single quotes or apostrophes (ex: ')</p>";
+		$form .= "<form action=\"".$_SERVER['PHP_SELF'] ."\" method=\"post\" name=\"addanswer\">\n";
+		$form .="<input type=\"hidden\" name=\"subView\" value=\"status\" />\n";
+		$form .="<input type=\"hidden\" name=\"table\" value=\"trivia_answers\" />\n";
+		$form .="<input type=\"hidden\" name=\"view\" value=\"add\" />\n";
+		$form .= "<p>Answer Text: <input type=\"text\" name=\"answerText\" maxlength=\"255\" /></p>\n";
+		$form .= "<p>Is this the correct answer to the question? <select name=\"correct\">\n";
+		$form .= "<option value=\"true\">Yes</option>\n";
+		$form .= "<option value=\"false\">No</option></select></p>\n";
+		$form .= "<p>Add to Question: <select name=\"triviaQID\">\n";
+		foreach($v_questions as $key => $value)
+		{
+			$form .="<option value=\"".$value['triviaQID']."\">".$value['quizQuestion']."</option>\n";
+		}
+		$form .="</select></p>\n";
+		$form .= "<p><input type=\"submit\" value=\"Add Answer\" /></p></form></div>\n";
+		}
+		else if($view =="modify" && $subView == NULL)
+		{
+			$form ="<div class=\"leftAdmin\">\n";
+			$form .= "<h2>Modify a Topic</h2>\n";
+			$form .= "<form action=\"".$_SERVER['PHP_SELF'] ."\" method=\"post\" name=\"modifytopic\">\n";
+			$form .="<input type=\"hidden\" name=\"view\" value=\"modify\" />\n";
+			$form .="<input type=\"hidden\" name=\"subView\" value=\"trivia_topic\" />\n";
+			$form .= "<p>Modify topic: <select name=\"topicID\">\n";
+			foreach($v_records as $key => $value)
+			{
+				$form .="<option value=\"".$value['topicID']."\">".$value['topicName']."</option>\n";
+			}
+			$form .="</select></p>\n";
+			$form .= "<p><input type=\"submit\" value=\"Select Topic\" /></p></form></div>\n";
+			
+			$form .="<div class=\"bottomAdmin\" style=\"top:250px;\">\n";			
+			$form .= "<h2>Modify a Question</h2>\n";
+			$form .= "<form action=\"".$_SERVER['PHP_SELF'] ."\" method=\"post\" name=\"modifyquestion\">\n";
+			$form .="<input type=\"hidden\" name=\"view\" value=\"modify\" />\n";
+			$form .="<input type=\"hidden\" name=\"subView\" value=\"trivia_Question\" />\n";
+			$form .= "<p>Modify Question: <select name=\"triviaQID\">\n";
+			foreach($v_questions as $key => $value)
+			{
+				$form .="<option value=\"".$value['triviaQID']."\">".$value['quizQuestion']."</option>\n";
+			}
+			$form .="</select></p>\n";
+			$form .= "<p><input type=\"submit\" value=\"Select Question\" /></p></form></div>\n";
+			
+			$form .="<div class=\"bottomAdmin\" style=\"top:400px;\">\n";			
+			$form .= "<h2>Modify an Answer</h2>\n";
+			$form .= "<form action=\"".$_SERVER['PHP_SELF'] ."\" method=\"post\" name=\"modifyanswer\">\n";
+			$form .="<input type=\"hidden\" name=\"view\" value=\"modify\" />\n";
+			$form .="<input type=\"hidden\" name=\"subView\" value=\"trivia_answers\" />\n";
+			$form .= "<p>Modify answers to which question? <select name=\"triviaQID\">\n";
+			foreach($v_questions as $key => $value)
+			{
+				$form .="<option value=\"".$value['triviaQID']."\">".$value['quizQuestion']."</option>\n";
+			}
+			$form .="</select></p>\n";
+			$form .= "<p><input type=\"submit\" value=\"Select Question\" /></p></form></div>\n";
+			
+		}
+		else if($view == "modify" && $subView =="topic")
+		{
+			foreach($v_records as $key => $value)
+			{
+				if($value['topicID'] == $_POST['topicID'])
+				{
+					$topic = $value['topicName'];
+				}
+			}
+			$form ="<div class=\"leftAdmin\" style=\"width:700px;\">\n";
+			$form .= "<h2>Modify $subView: $topic</h2>\n";
+			$form .= "<p>WARNING: Please do not use any single quotes or apostrophes (ex: ')</p>";
+			$form .= "<form action=\"".$_SERVER['PHP_SELF'] ."\" method=\"post\" name=\"addtopic\">\n";
+			$form .="<input type=\"hidden\" name=\"topicID\" value=\"".$_POST['topicID']."\" />\n";
+			$form .="<input type=\"hidden\" name=\"table\" value=\"trivia_topics\" />\n";
+			$form .="<input type=\"hidden\" name=\"subView\" value=\"status\" />\n";
+			$form .="<input type=\"hidden\" name=\"view\" value=\"modify\" />\n";
+			$form .= "<p>New topic name: <input type=\"text\" name=\"topicName\" maxlength=\"50\" /></p>\n";
+			$form .= "<p>New topic description: <input type=\"text\" name=\"topicDescription\" maxlength=\"100\" /></p>\n";
+			$form .= "<p>Topic status: <select name=\"status\">\n";
+			$form .= "<option value=\"pending\">Pending</option>\n";
+			$form .= "<option value=\"active\">Active</option><br />\n";
+			$form .= "<option value=\"closed\">Closed</option></select></p>\n";
+			$form .= "<p><input type=\"submit\" value=\"Done\" /></p></form></div>\n";
+		}
+		else if($view == "modify" && $subView =="question")
+		{
+			foreach($v_questions as $key => $value)
+			{
+				if($value['triviaQID'] == $_POST['triviaQID'])
+				{
+					$question = $value['quizQuestion'];
+				}
+			}
+			$form ="<div class=\"leftAdmin\" style=\"width:700px;\">\n";
+			$form .= "<h2>Modify $subView: $question</h2>\n";
+			$form .= "<p>WARNING: Please do not use any single quotes or apostrophes (ex: ')</p>";
+			$form .= "<form action=\"".$_SERVER['PHP_SELF'] ."\" method=\"post\" name=\"addtopic\">\n";
+			$form .="<input type=\"hidden\" name=\"triviaQID\" value=\"".$_POST['triviaQID']."\" />\n";
+			$form .="<input type=\"hidden\" name=\"table\" value=\"trivia_questions\" />\n";
+			$form .="<input type=\"hidden\" name=\"subView\" value=\"status\" />\n";
+			$form .="<input type=\"hidden\" name=\"view\" value=\"modify\" />\n";
+			$form .= "<p>New question: <input type=\"text\" name=\"quizQuestion\" maxlength=\"255\" /></p>\n";
+			$form .= "<p>New short quiz description: <input type=\"text\" name=\"description\" maxlength=\"100\" /></p>\n";
+			$form .= "<p>Open status: <select name=\"active\">\n";
+			$form .= "<option value=\"0\">closed</option>\n";
+			$form .= "<option value=\"1\">open</option></select></p>\n";
+			$form .= "<p><input type=\"submit\" value=\"Done\" /></p></form></div>\n";
+		}
+		else if($view == "modify" && $subView =="answers")
+		{
+			foreach($v_questions as $key => $value)
+			{
+				if($value['triviaQID'] == $_POST['triviaQID'])
+				{
+					$question = $value['quizQuestion'];
+				}
+			}
+			$form ="<div class=\"leftAdmin\" style=\"width:700px;\">\n";
+			$form .= "<h2>Modify $subView to question: $question</h2>\n";
+			$form .= "<p>WARNING: Please do not use any single quotes or apostrophes (ex: ')</p>";
+			$form .= "<form action=\"".$_SERVER['PHP_SELF'] ."\" method=\"post\">\n";
+			$form .="<input type=\"hidden\" name=\"triviaQID\" value=\"".$_POST['triviaQID']."\" />\n";
+			$form .="<input type=\"hidden\" name=\"table\" value=\"trivia_answers\" />\n";
+			$form .="<input type=\"hidden\" name=\"subView\" value=\"status\" />\n";
+			$form .="<input type=\"hidden\" name=\"view\" value=\"modify\" />\n";
+			$form .="<p>Select answer to modify: <select name=\"answerID\">\n";
+			foreach($v_answers as $key => $value)
+			{
+				if($value['triviaQID'] == $_POST['triviaQID'])
+				{
+					$form .="<option value=\"".$value['answerID']."\">".$value['answerText']."</option>\n";
+				}
+			}
+			$form .="</select></p>\n";
+			$form .= "<p>New answer text: <input type=\"text\" name=\"answerText\" maxlength=\"255\" /></p>\n";
+			$form .= "<p>Is this the correct answer to the question? <select name=\"correct\">\n";
+			$form .= "<option value=\"true\">Yes</option>\n";
+			$form .= "<option value=\"false\">No</option></select></p>\n";
+			$form .= "<p>New number of votes: <input type=\"text\" name=\"numVotes\" maxlength=\"11\" size=\"5\"/></p>\n";
+			$form .= "<p><input type=\"submit\" value=\"Done\" /></p></form></div>\n";
+		}
+		else if($view =="delete" && $subView == NULL)
+		{
+			$form ="<div class=\"leftAdmin\">\n";
+			$form .= "<h2>Delete a Topic</h2>\n";
+			$form .= "<p>Warning: Clicking the Delete button WILL DELETE topic. There will be no further prompts to confirm.</p>\n";
+			$form .= "<form action=\"".$_SERVER['PHP_SELF'] ."\" method=\"post\" name=\"deletetopic\">\n";
+			$form .="<input type=\"hidden\" name=\"table\" value=\"trivia_topics\" />\n";
+			$form .="<input type=\"hidden\" name=\"view\" value=\"delete\" />\n";
+			$form .="<input type=\"hidden\" name=\"subView\" value=\"status\" />\n";
+			$form .= "<p>Delete topic: <select name=\"topicID\">\n";
+			foreach($v_records as $key => $value)
+			{
+				$form .="<option value=\"".$value['topicID']."\">".$value['topicName']."</option>\n";
+			}
+			$form .="</select></p>\n";
+			$form .= "<p><input type=\"submit\" value=\"Delete Topic\" /></p></form></div>\n";
+			
+			$form .="<div class=\"bottomAdmin\">\n";			
+			$form .= "<h2>Delete a Question</h2>\n";
+			$form .= "<p>Warning: Clicking the Delete button WILL DELETE topic. There will be no further prompts to confirm.</p>\n";
+			$form .= "<form action=\"".$_SERVER['PHP_SELF'] ."\" method=\"post\" name=\"deleteQuestion\">\n";
+			$form .="<input type=\"hidden\" name=\"table\" value=\"trivia_questions\" />\n";
+			$form .="<input type=\"hidden\" name=\"view\" value=\"delete\" />\n";
+			$form .="<input type=\"hidden\" name=\"subView\" value=\"status\" />\n";
+			$form .= "<p>Delete Question: <select name=\"triviaQID\">\n";
+			foreach($v_questions as $key => $value)
+			{
+				$form .="<option value=\"".$value['triviaQID']."\">".$value['quizQuestion']."</option>\n";
+			}
+			$form .="</select></p>\n";
+			$form .= "<p><input type=\"submit\" value=\"Delete Question\" /></p></form></div>\n";
+			
+				$form .="<div class=\"bottomAdmin\" style=\"top:500px;\">\n";			
+			$form .= "<h2>Delete an Answer</h2>\n";
+			$form .= "<form action=\"".$_SERVER['PHP_SELF'] ."\" method=\"post\">\n";
+			$form .="<input type=\"hidden\" name=\"view\" value=\"delete\" />\n";
+			$form .="<input type=\"hidden\" name=\"subView\" value=\"trivia_answers\" />\n";
+			$form .= "<p>Delete answers to which question? <select name=\"triviaQID\">\n";
+			foreach($v_questions as $key => $value)
+			{
+				$form .="<option value=\"".$value['triviaQID']."\">".$value['quizQuestion']."</option>\n";
+			}
+			$form .="</select></p>\n";
+			$form .= "<p><input type=\"submit\" value=\"Select Question\" /></p></form></div>\n";
+		}
+		else if($view == "delete" && $subView =="answers")
+		{
+			foreach($v_questions as $key => $value)
+			{
+				if($value['triviaQID'] == $_POST['triviaQID'])
+				{
+					$question = $value['quizQuestion'];
+				}
+			}
+			$form ="<div class=\"leftAdmin\" style=\"width:700px\">\n";
+			$form .= "<h2>Delete an Answer to the Question: $question</h2>\n";
+			$form .= "<p>Warning: Clicking the Delete button WILL DELETE topic. There will be no further prompts to confirm.</p>\n";
+			$form .= "<form action=\"".$_SERVER['PHP_SELF'] ."\" method=\"post\">\n";
+			$form .="<input type=\"hidden\" name=\"table\" value=\"trivia_answers\" />\n";
+			$form .="<input type=\"hidden\" name=\"view\" value=\"delete\" />\n";
+			$form .="<input type=\"hidden\" name=\"subView\" value=\"status\" />\n";
+			$form .= "<p>Delete answer: <select name=\"answerID\">\n";
+			foreach($v_answers as $key => $value)
+			{
+				if($value['triviaQID'] == $_POST['triviaQID'])
+				{
+					$form .="<option value=\"".$value['answerID']."\">".$value['answerText']."</option>\n";
+				}
+			}
+			$form .="</select></p>\n";
+			$form .= "<p><input type=\"submit\" value=\"Delete Answer\" /></p></form></div>\n";
+		}
+		else if($subView == "status")
+		{
+			$form ="<div class=\"leftAdmin\">\n";
+			$view = $_POST['view'];
+			$table = $_POST['table'];
+			if(updateSQL($view,$table) =="true")
+			{
+				$form .= "Request Completed Successfully.";
+			} 
+			else if (updateSQL($view,$table) == "false")
+			{
+				$form .= "Sorry there was a problem with your request.";
+			}
+		}
+		return $form;
+}
+?>
+/******END OF ADMIN CODE LIBRARY ****/
+
+
+/******BEGINNING OF INDEX CODE LIBRARY ****/
+<?php
+	include "tools.php";
+	function displayBlog()
+	{
+		$v_records = mySQLDoQuery("select * from blog order by entryID desc");
+		$v_comments = mySQLDoQuery("select * from comments");
+		$result = "<div style=\"margin-top:-10px;\">";
+		$count =0;
+		foreach($v_records as $key => $value)
+		{
+			if($count<3)
+			{
+				$result .="<h3>".$value['entryTitle']."<span style=\"font-size:12px; font-weight:normal;\"> by <em>".$value['username']."</em></span></h3>";
+				$result .="<p style=\"margin-top:-10px; font-size:12px;\">posted on ".$value['timeModified']."</p>";
+				$result .="<p>".$value['entry']."</p>";
+				foreach($v_comments as $cKey =>$cValue)
+				{
+					if($value['entryID'] == $cValue['entryID'])
+					{
+						$result .="<p><strong>Comment:</strong> ".$cValue['comment']." by <em>".$cValue['username']."</em>.</p>";
+					}
+				}
+				$result .= "<hr>";
+				$count++;
+			}
+		}
+		$result .="</div>";
+		return $result;
+	}
+	
+	function getFeed($user)
+	{
+		$feed = "http://vega.it.rit.edu/~ajs2189/pfw/project3/RSS/";
+		$v_users = mySQLDoQuery("select * from users");
+		foreach($v_users as $key => $value)
+		{
+			if($value['username'] == $user)
+			{
+				$feed .= $value['rssFeed']; 
+			}
+		}
+		return $feed;
+	}
+	
+	function isValid($user)
+	{
+		$v_users = mySQLDoQuery("select * from users");
+		$results = "false";
+		foreach($v_users as $key => $value)
+		{
+			if($value['username'] == $user)
+			{
+				$results = "true";
+			}
+		}
+		return $results;
+	}
+	
+	function getStyle($user)
+	{
+		$v_users = mySQLDoQuery("select * from users");
+		foreach($v_users as $key => $value)
+		{
+			if($value['username'] == $user)
+			{
+				$style .= $value['stylesheet']; 
+			}
+		}
+		return $style;
+	}
+	
+	function currentWeather($feed)
+	{
+		
+		$myRSS = simplexml_load_file($feed);
+		$htmlString = "<h2>".$myRSS ->channel->title."</h2>\n";
+		//echo $myRSS->channel->item[0]->link;
+		$htmlString .="<p style=\"position:relative; top:-200px;\"><a href=\"".$myRSS ->channel->item[0]->link."\">";
+		$htmlString .=$myRSS ->channel->item[0]->title."</a><br><br>".$myRSS ->channel->item[0]->description."</p>\n";
+		return $htmlString;
+	}
+	function displayWeather()
+	{
+		ini_set("soap.wsdl_cache_enabled", 0);
+		$sClient = new SoapClient("http://vega.it.rit.edu/~gig/soap/weather/weatherStation.wsdl");
+		$s_State = $_POST['state'];
+		if(isset($_POST['city']))
+		{
+			$output = "<h3> Your current weather: </h3>\n";
+			$response = $sClient->getStation($_POST['city']);
+			$rssFeed = "http://www.weather.gov/data/current_obs/".$response.".rss";
+			$output .= currentWeather($rssFeed);
+		}
+		else if(isset($s_State))
+		{			
+			$v_Cities = $sClient ->getCities($s_State);
+			
+			$output = "<h3> See your current weather</h3>";
+			$output .= "<p>Choose a city</p>";
+			$output .= "<form name=\"cityform\" action=\"".$_SERVER['PHP_SELF'] . "\" method=\"post\">\n";
+			$output .="<select name=\"city\" onchange=\"cityform.submit()\">\n";
+			foreach ($v_Cities as $key => $value)
+			{
+				$output .="<option value=\"$value\">".$value."</option>\n";
+			}
+			$output .="</select><br/><br/>\n";
+			$output .="</form>";
+		}
+		
+		else {
+			$v_States = $sClient->getStates();
+			$output = "<h3> See your current weather</h3>";
+			$output .= "<p>Choose a state</p>";
+			$output .= "<form name=\"stateform\" action=\"".$_SERVER['PHP_SELF'] . "\" method=\"post\">\n";
+			$output .="<select name=\"state\" onchange=\"stateform.submit()\">\n";
+			foreach ($v_States as $key => $value)
+			{
+				$output .="<option value=\"$value\">".$value."</option>\n";
+			}
+			$output .="</select><br/><br/>\n";
+			$output .="</form>";
+		}
+		
+		return $output;
+	}
+	
+	function registerForm() {
+		$registerForm = "<h2>New User Registration: </h2>";
+		$registerForm .= "<form action=\"" . $_SERVER['PHP_SELF'] . "\" method=\"post\">\n";
+		$registerForm .= "<table border=\"0\">\n";
+		$registerForm .= "<tr><td><b>Choose a username:</b> <input type=\"text\" name=\"r_UserName\"><br><br></td></tr>\n";
+		$registerForm .= "<tr><td><b>Choose a password:</b> <input type=\"password\" name=\"r_Password\"><br><br></td></tr>\n";
+		$registerForm .= "<tr><td><b>Your email address:</b> <input type=\"text\" name=\"r_Email\"><br><br></td></tr>\n";
+		$registerForm .= "<tr><td align=\"right\"><input type=\"Submit\" Value=\"Register\"></td></tr>\n";
+		$registerForm .= "</table></form>";
+		
+		return $registerForm;		
+	}
+	
+	function displayForm($title,$page) {
+		$logInForm = "<h2>$title Log In: </h2>";
+		$logInForm .= "<form action=\"index.php?page=$page\" method=\"post\">\n";
+		$logInForm .= "<table border=\"0\">\n";
+		$logInForm .= "<tr><td><b>Username:</b> <input type=\"text\" name=\"s_UserName\"><br><br></td></tr>\n";
+		$logInForm .= "<tr><td><b>Password:</b> <input type=\"password\" name=\"t_Password\"><br><br></td></tr>\n";
+		$logInForm .= "<tr><td align=\"right\"><input type=\"Submit\" Value=\"Login\"></td></tr>\n";
+		$logInForm .= "</table></form>";
+		return $logInForm;
+		}	
+	
+	function callAuthentication($title,$bad,$goTo) {
+		$result = "";
+		$salt = "GodRocks";	
+		$v_expire = time()*3600;
+		$v_path = "/~ajs2189/";
+		$v_domain = "vega.it.rit.edu";
+		$username = $_REQUEST['s_UserName'];
+		$password = $_REQUEST['t_Password'];
+		$v_secure=false;
+		/*if(authenticate($_SESSION['s_UserName'],crypt($_SESSION['s_Password'],$salt))== "true")
+		{
+				$result = "<script type=\"text/javascript\">\n";
+				$result .= "window.location = \"$goTo.php\"\n";
+				$result .="</script>\n";
+		}
+		if($result == "")
+		{
+			$result = "<p>Sorry that username and password do not match our records. Please try logging in again.</p>";
+			$result .= displayForm($title,$bad);
+		}*/
+		if(isset($_REQUEST['loginNum']))
+		{
+			if(authenticateByCookie($username, $_REQUEST['loginNum']) != "false")
+			{
+				$result = "<script type=\"text/javascript\">\n";
+				$result .= "window.location = \"$goTo.php\"\n";
+				$result .="</script>\n";
+				//echo $goTo.".php";
+			}
+		}
+		else if(authenticate($username,crypt($password,$salt)) == "true")
+		{
+			$ranNum = rand(1,100);
+			setcookie("loginNum",$ranNum, $v_expire,$v_path,$v_domain,$v_secure);
+			setcookie("s_UserName",$username, $v_expire,$v_path,$v_domain,$v_secure);
+			writeSQL("update users set cookieNum='$ranNum' where username='$username'");
+			$result = "<script type=\"text/javascript\">\n";
+			$result .= "window.location = \"$goTo.php\"\n";
+			$result .="</script>\n";
+		}
+		else if(!isset($username))
+		{
+			$result .= displayForm($title,$bad);
+		}
+		else if(authenticate($username,crypt($password,$salt)) != "true")
+		{
+			$result = "<p>Sorry that username and password do not match our records. Please try logging in again.</p>";
+			$result .= displayForm($title,$bad);
+		}
+		return $result;
+	}
+	
+	function callQuestionFunc() {
+
+	$indexNum = $_GET['index'];				//INDEX OF THE QUESTION THEY WISH TO SEE
+	settype($indexNum, "int");				//SETS THE INDEX NUMBER TO AN INTEGER
+	settype($categoryIndex, "int");			//SETS THE INDEX NUMBER TO AN INTEGER
+	if(isset($categoryIndex))
+	{	
+		$result = displayQuestion($indexNum);				//DISPLAYS THE TRIVIA QUESTION THAT THE USER PICKED
+	}
+	return $result;
+}
+
+function callResultsFunct() {
+	$answerChoice = $_REQUEST['choices'];		//GETS THE VALUE OF THE CHOICE THAT USER PICKED
+	$indexNum = $_REQUEST['index'];				//INDEX OF THE QUESTION THAT THE USER SELECTED
+	$referrer = $_REQUEST['referred'];			//PAGE THAT REFERRED THE USER TO RESULTS. USED FOR ACTIVE/INACTIVE QUESTIONS
+	settype($indexNum, "int");					//NEXT 2 LINES SET INDEX NUMBERS FROM THE URL TO INTEGERS
+	settype($answerChoice, "int");		
+	writeSQL("UPDATE trivia_answers SET numVotes = numVotes +1 WHERE answerID =$answerChoice");
+	$totalVotes = readVotes($indexNum);
+	$results = displayResults($answerChoice,$indexNum,$referrer);			//DISPLAYS THE RESULTS
+	$results .= "<p>Total votes: ".readVotes($indexNum)."</p>";	
+	
+	return $results;
+}
+
+function displayBackLinks() 
+{	
+	$results ="<p style=\"position:absolute; top:25px; left:190px;\"><a href=\"index.php?page=admin\">Admin Login</a></p>";
+	$results .="<div id='backLink'><p><a href='javascript:history.go(-1)'>Return to Previous Page</a></p>";
+	$results .="<p><a href='index.php'>Return to Quiz Home</a></p>";
+	$results .="</div>";
+	return $results;
+}
+?>
+/******END OF INDEX CODE LIBRARY*****/
+
+
+/********BEGINNING OF INDEX.PHP *******/
+
+<?php
+	session_name('ajs2189'); 
+	session_start();
+	include "indexLibrary.php";
+	include "triviaLibrary.php";
+	$_SESSION['s_UserName'] = $_REQUEST['s_UserName'];
+	$_SESSION['s_Password'] = $_REQUEST['t_Password'];
+	$username = $_REQUEST['s_UserName'];
+	$password = $_POST['t_Password'];
+	$salt = "GodRocks";	
+	if(isset($username) && isValid($username)=="true")
+	{
+		$user = $_REQUEST['s_UserName'];
+	}
+	else {
+		$user = "default";
+	}
+//	include "tools.php";
+	$stylesheet = getStyle($user);
+
+$header .= <<<EOT
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>P.F.W. Portal Homepage</title>
+EOT;
+$header .="<link rel=\"stylesheet\" type=\"text/css\" href=\"$stylesheet\" />";
+$header .= <<<EOT
+</head>
+
+<!--A WORKING VERSION OF THIS CODE CAN BE SEEN ONLINE AT VEGA.IT.RIT.EDU/~AJS2189/PFW/PROJECT2/INDEX.PHP-->
+<body>
+<div id="container">
+<div id="parchment"></div>
+<div id="bannerContainer">
+<div id="banner"><span style="display:none;">PFW Portal Homepage</span></div>
+</div>
+<div id="navContainer">
+</div>
+<a href="index.php?page=RSS" id="nav1"><span class="navText">News Feed</span></a>
+<a href="index.php?page=blog" id="nav2"><span class="navText">Blog</span></a>
+<a href="index.php?page=register" id="nav3"><span class="navText">Register</span></a>
+<a href="index.php?page=pastQuizzes" id="nav4"><span class="navText">Past Trivia Quizzes</span></a>
+<div id="content">
+EOT;
+$pageView = $_GET['page'];
+$register = $_POST['r_UserName'];
+
+
+$feed = getFeed($user);
+
+if(isset($register))
+{
+	if(isUnique($register)=="true")
+	{
+		$sqlStatement ="insert into users values('$register','".crypt($_POST['r_Password'],'GodRocks')."','".$_POST['r_Email']."','false','portal.css','christianNews.rss','');";
+		writeSQL($sqlStatement);
+		//$content = $sqlStatement;
+	}
+	else{
+		$content = "<p>That username is already taken. Please register again and choose an alternate username.</p>";
+		$content .= registerForm();
+	}
+}
+
+if($pageView == "admin" && isset($_SESSION['s_UserName']) || $pageView =="login" || $pageView =="admin")
+{
+	if($pageView=="login")
+	{
+		$content = "<p>You must log in to view the admin page. Please log in now.</p>";
+	}
+		$content.= callAuthentication("Administrative","admin","admin");
+}
+
+else if($pageView =="blogLogIn" || $pageView =="blog")
+{
+	$content  = "<h2 style=\"margin-bottom:0px;\">PFW Project 3 Blog</h2>";
+	$content  .= "<div style=\"position:relative; top:-20px; text-align:right;\"><a href=\"index.php?page=blogLogIn\">Log in to create an entry <br>or comment on one</a></div>";
+	if($pageView =="blogLogIn")
+	{
+			 $content .= callAuthentication("Blog","blogLogIn","blog");
+	}
+	$content .= displayBlog();
+}
+
+else if($pageView =="RSS" || $pageView =="RSSlogIn")
+{		
+	$content  .= "<div style=\"position:relative; top:00px; text-align:right;\"><a href=\"index.php?page=RSSlogIn\">Log in to customize this news feed.</a></div>";
+	if($pageView =="RSSlogIn")
+	{
+			//$content .= displayForm("News Feed Admin ","RSSlogIn");
+			$content .= callAuthentication("News Feed Admin ","RSSlogIn","blog");
+	}
+	$content .= parseRSS($feed);
+}
+
+else if($pageView == "register")
+{
+		$content = registerForm();
+}
+
+else {
+
+	$content .= displayWeather();
+	$content .="<hr>";
+	$content .= parseRSS($feed);
+//	$content .= phpinfo();
+ 
+}
+
+
+$mid ="</div><div id='pastQuizzes'><img src=\"images/trivia.png\" id=\"trivia\" alt=\"Trivia Questions\" />";
+$category = $_REQUEST['category'];	
+if($_GET['page'] == "pastQuizzes")
+{
+	//DISPLAYS PREVIOUS QUIZ QUESTIONS
+	if($category == "topic")
+	{
+		$chosenCategory = $_GET['chosen'];
+		if(isset($chosenCategory))
+		{
+			$trivia= displayTopics($chosenCategory,"results");
+		}
+	}
+	
+	else if($category =="question")
+	{
+		$trivia .= callQuestionFunc();
+	}
+	else if($category=="results")
+	{
+		$trivia .= callResultsFunct();
+	}
+	else 
+	{
+		$trivia .= displayCategories("Past Trivia Categories: ","closed");		//DISPLAYS TRIVIA CATEGORIES
+	}
+	$trivia .= displayBackLinks();
+}
+
+$mid2 ="</div><div id=\"quizContainer\"><img src=\"images/trivia.png\" id=\"trivia\" alt=\"Trivia Questions\" />";
+$category = $_REQUEST['category'];	
+if($category == "topic")
+{
+	$chosenCategory = $_GET['chosen'];		//GETS VALUE OF THE CATEGORY THAT THE USER CHOSE
+	if(isset($chosenCategory))
+	{
+		$trivia2 .= displayTopics($chosenCategory,"topic");	//DISPLAYS THE TOPICS FOR THAT CATEGORY
+	}
+}
+
+else if($category =="question")
+{
+	$trivia2 .= callQuestionFunc();
+}
+
+else if($category=="results")
+{
+	$trivia2 .= callResultsFunct();
+}
+//END OF DISPLAYING VOTES
+
+//SHOW TRIVIA CATEGORIES
+else 
+{
+	$trivia2 .= displayCategories("Current Quiz Category: ","active")."\n";		//DISPLAYS TRIVIA CATEGORIES
+}
+$trivia2 .= displayBackLinks();
+$footer .="</div>";
+
+if($_GET['page'] == "pastQuizzes")
+{
+	$jsScript = "<script type=\"text/javascript\" language=\"javascript\">\n";
+	$jsScript .= "document.getElementById(\"quizContainer\").style.display = \"none\";\n";
+	$jsScript .= "document.getElementById(\"pastQuizzes\").style.display = \"block\";\n";
+	$jsScript .= "</script>\n";
+	$footer .= $jsScript;
+}
+$footer .="</div></body></html>";
+echo $header.$content.$mid.$trivia.$mid2.$trivia2.$footer;
+?>
+
+/********END OF INDEX.PHP*******/

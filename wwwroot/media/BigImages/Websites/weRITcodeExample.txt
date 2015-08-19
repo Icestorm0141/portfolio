@@ -1,0 +1,355 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--<link href="styles.css" rel="stylesheet" type="text/css">-->
+<style type="text/css">
+td {		font-family:Arial, Helvetica, sans-serif;
+			font-size: 12px;
+			color: #003333;
+			}
+#ritLinks { background-image:url(images/colorBG.jpg);
+			width:664px;
+			background-color: #663366;
+			color: #ffffff;
+			text-decoration: none;
+			font-family: Arial, Helvetica, sans-serif;
+			font-size:12px;
+			}
+/*
+img a[href]:before{ content: border-bottom:none; }*/
+#ritLinks a:visited { 
+			color:#FFFF66; /*alt color: #6666FF;*/
+			text-decoration:none;
+			border-bottom-color:#FFFF66;
+			}
+#ritLinks a:link { 	
+			color:#CCCCFF;
+			border-bottom-color:#ccccff;
+			}
+#ritLogo td {	background-image:url(images/colorBG.jpg);
+			width:127px;
+			height:57px;
+			vertical-align:top;
+			text-align:left;
+			background-color:#663366;
+			float:left;
+			}
+
+#ritLogo { 	height:57px;
+			width:127px;
+			caption-side:left;
+			}
+a:link { 	font-family: Arial, Helvetica, sans-serif; 
+			font-size: 12px;
+			color:#000000;
+			text-decoration: none;
+			border-bottom: dotted black 1px;
+			padding: 0px;
+			}
+a:active {	
+			color: #003333;
+			}
+a:hover {	
+			text-decoration:none;
+			border-bottom: solid black 1px;
+			padding:0px;
+			/*background-color: #E9E9E9;*/
+		}
+a:visited { 
+			border-bottom: dotted black 1px;
+			color:#6666FF; /*alt color: #FFFF66;*/
+			}
+a:visited:hover {
+			border-bottom: solid black 1px;
+			color:#6666FF; /*alt color: #FFFF66;*/
+			}
+INPUT {		BACKGROUND-COLOR: #F2F2F2;
+			BORDER-BOTTOM: rgb(0,102,153) 1px outset; 
+			BORDER-LEFT: rgb(0,102,153) 1px outset; 
+			BORDER-RIGHT: rgb(0,102,153) 1px outset; 
+			BORDER-TOP: rgb(0,102,153) 1px outset; 
+			FONT-FAMILY: Arial, Helvetica, sans-serif; 
+			FONT-SIZE: 8pt
+			}
+SELECT {	BACKGROUND-COLOR: #F2F2F2; 
+			BORDER-BOTTOM: rgb(0,102,153) 1px outset;
+			BORDER-LEFT: rgb(0,102,153) 1px outset; 
+			BORDER-RIGHT: rgb(0,102,153) 1px outset; 
+			BORDER-TOP: rgb(0,102,153) 1px outset; 
+			FONT-FAMILY: Arial, Helvetica, sans-serif;; 
+			FONT-SIZE: 8pt
+			}
+TEXTAREA {	BACKGROUND-COLOR: #F2F2F2; 
+			BORDER-BOTTOM: rgb(0,102,153) 1px outset; 
+			BORDER-LEFT: rgb(0,102,153) 1px outset; 
+			BORDER-RIGHT: rgb(0,102,153) 1px outset; 
+			BORDER-TOP: rgb(0,102,153) 1px outset; 
+			FONT-FAMILY: tahoma, verdana, arial, helvetica; 
+			FONT-SIZE: 8pt
+			}
+h1 {		font-family:Arial, Helvetica, sans-serif;
+			font-size: 24px;
+			}
+.header {
+			color: #ffffff;
+			text-decoration: none;
+			font-family:Verdana, Arial, Helvetica, sans-serif;
+			font-size:12px;
+}
+.scholarships {	font-family:Arial, Helvetica, sans-serif; 
+				font-size: 14px;
+				}
+.weblinks {		font-family:Arial, Helvetica, sans-serif; 
+				font-size: 12px;
+				}
+.title {		font-size: 12px; 
+				font-family: Arial, Helvetica, sans-serif; 
+				font-weight:bold; 
+				text-decoration:underline;
+				}
+.description {	font-size: 12px; 
+				font-family: Arial, Helvetica, sans-serif;
+				}
+				
+.awardTitle {	font-size: 14px; 
+				font-family: Arial, Helvetica, sans-serif; 
+				font-weight:bold; 
+				text-decoration:underline;
+				text-align:left;
+				}
+				
+.awardText {	letter-spacing:.6px; 
+				font-family:Arial, Helvetica, sans-serif; 
+				font-size:12px; 
+				color:black; 
+				line-height:175%;
+				text-align:left;
+				}
+
+BODY 	{		margin: 0px 0px 0px 0px;
+				padding: 0px 0px 0px 0px;
+   				margin-left: auto;
+    			margin-right: auto;
+		}
+<!-- START OF CSS FOR THE DROP DOWN MENUS -->
+/*Controls the Button/Image/Category links of the menus*/
+a.MenuLabelLink	{ COLOR: #ffffff;	FONT-SIZE: 14px;
+FONT-FAMILY:"Myriad Condensed Web"; TEXT-DECORATION: None;
+margin: 0px; padding: 0px; font-weight: bold; border-bottom:none; }
+a.MenuLabelLink:link { COLOR: #ffffff;	FONT-FAMILY:"Myriad Condensed Web"; TEXT-DECORATION: None;  border-bottom:none; }
+a.MenuLabelLink:visited	{ COLOR: #e0e0e0; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: None;	border-bottom:none; }
+a.MenuLabelLink:hover{ FONT-FAMILY:"Myriad Condensed Web"; TEXT-DECORATION: None; border-bottom:none; }
+
+/*Controls the button/image/category links of the menus onMouseOver*/
+a.MenuLabelLinkOn { COLOR: #ffffff;	FONT-SIZE: 14px;
+FONT-FAMILY:"Myriad Condensed Web"; TEXT-DECORATION: None;
+margin: 0px; padding: 0px; font-weight: bold; border-bottom:none;}
+a.MenuLabelLinkOn:link { COLOR: #ffffff; FONT-FAMILY:"Myriad Condensed Web"; TEXT-DECORATION: None; border-bottom:none; }
+a.MenuLabelLinkOn:visited { COLOR: #ffffff; FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: None;  border-bottom:none; }
+a.MenuLabelLinkOn:hover { FONT-FAMILY:"Myriad Condensed Web"; TEXT-DECORATION: None;  border-bottom:none; }
+		
+/*Controls the text links of the drop down menus when not on mouseover*/
+a.MenuItemLink { FONT-SIZE: 12px;
+FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: None;
+margin: 0px; padding: 0px; font-weight: bold; border-bottom:none; color:#FFFFFF;}
+a.MenuItemLink:link {  FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: None; border-bottom:none;}
+a.MenuItemLink:visited {  FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: None;  border-bottom:none;}
+a.MenuItemLink:hover { FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: None; border-bottom:none; }
+		
+/*Controls the text links of the drop down menus onMouseOver*/
+a.MenuItemLinkOn {  FONT-SIZE: 12px;
+FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: None;
+margin: 0px; padding: 0px; font-weight: bold; background-color:none; border-bottom:none; }
+a.MenuItemLinkOn:link {  FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: None; border-bottom:none; }
+a.MenuItemLinkOn:visited { FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: None; color:#660066;}
+a.MenuItemLinkOn:hover {  FONT-FAMILY: Arial, Helvetica, sans-serif; TEXT-DECORATION: None; background-color:#cc99ff; border-bottom:none; }
+		
+.myMenu { position: absolute; visibility: hidden; z-index: 5; }		
+		
+.myMenuLabelleft { padding: 0px 0px 0px 0px; text-align: left; border-bottom:none;}		
+.myMenuLabelcenter { padding: 0px 0px 0px 0px; text-align: center; }		
+.myMenuLabelright { padding: 0px 0px 0px 0px; text-align: right; }		
+.myMenuItemleft { padding: 0px 0px 0px 0px; text-align: left; border-bottom:none;}		
+.myMenuItemcenter { padding: 0px 0px 0px 0px; text-align: center; }		
+.myMenuItemright { padding: 0px 0px 0px 0px; text-align: right; }		
+		
+#myTest { 
+width: 791px; /*menu width*/
+padding: 0px 0px 0px 0px;
+z-index: 1;
+}
+
+</style>
+
+<!-- THE FOLLOWING JAVASCRIPT WAS FOUND ONLINE AS A FREE-USE PIECE OF CODE. I DID NOT WRITE IT -->
+<script language="JavaScript1.2" src="api.js" type="text/javascript">
+<!-- 
+
+-->
+</script>
+<script language="JavaScript1.2" src="menucode.js" type="text/javascript">
+<!-- 
+
+-->
+</script>
+<script language="JavaScript1.2" type="text/javascript">
+<!--
+sniffBrowsers();
+
+menuItemBullet = new bulletPoint("bullets/one/menu_off.gif","bullets/one/menu_on.gif");
+labelBullet = new bulletPoint("bullets/one/header_off.gif","bullets/one/header_on.gif");
+subMenuBullet = new bulletPoint("bullets/one/sub_header_off.gif","bullets/one/sub_header_on.gif");
+
+myTest = new menuBar('myTest',791, 'horizontal', null, null);
+myTest.addLabel(null, '<img src="images/newWebDesign_09.jpg" width="54" height="33" alt="Home" border="0">', 9, 54, '#663366', '#cc99ff', 'index.php3?we=home', 'left');
+myTest.addLabel(null, '<img src="images/newWebDesign_10.jpg" width="70" height="33" alt="About Us" border="0">', 1, 33, '#663366', '#cc99ff', null, 'left');
+myTest.addLabel(null, '<img src="images/newWebDesign_11.jpg" width="92" height="33" alt="RIT Students" border="0">', 2, 92, '#663366', '#cc99ff', null, 'left')
+myTest.addLabel(null, '<img src="images/newWebDesign_12.jpg" width="147" height="33" alt="Prospective Students" border="0">', 3, 147, '#663366', '#cc99ff', null, 'left');
+myTest.addLabel(null, '<img src="images/newWebDesign_13.jpg" width="113" height="33" alt="K-12 Community" border="0">', 4, 113, '#663366', '#cc99ff', null, 'left');
+myTest.addLabel(null, '<img src="images/newWebDesign_14.jpg" width="78" height="33" alt="RIT Alumni" border="0">', 5, 78, '#663366', '#cc99ff', null, 'left');
+myTest.addLabel(null, '<img src="images/newWebDesign_15.jpg" width="64" height="33" alt="WEChat" border="0">', 7, 64, '#663366', '#cc99ff', '/weChat/index.php', 'left');
+myTest.addLabel(null, '<img src="images/newWebDesign_16.jpg" width="86" height="33" alt="Newsletter" border="0">', 6, 86, '#663366', '#cc99ff', null, 'left');
+myTest.addLabel(null, '<img src="images/newWebDesign_17.jpg" width="87" height="33" alt="Contact Us" border="0">', 8, 87, '#663366', '#cc99ff', 'index.php3?we=contactUs', 'left');
+myTest.height = 33;
+
+menus[1] = new menu(150, 'vertical', '#000000', '#000000');
+menus[1].height = 16;
+menus[1].addItem('menuItemBullet', 'About Us', null, 100, '#663366', '#cc99ff', 'index.php3?we=aboutus', 'left');
+menus[1].addItem('menuItemBullet', 'WE@RIT Events', null, 100, '#663366', '#cc99ff', 'index.php3?we=events', 'left');
+menus[1].addItem('menuItemBullet', 'WE@RIT Staff', null, 100, '#663366', '#cc99ff', 'index.php3?we=staff', 'left');
+menus[1].addItem('menuItemBullet', 'KGCOE Women Faculty', null, 100, '#663366', '#cc99ff', 'index.php3?we=faculty', 'left');
+menus[1].addItem('menuItemBullet', 'Sponsors', null, 100, '#663366', '#cc99ff', 'index.php3?we=sponsors', 'left');
+menus[1].addItem('menuItemBullet', 'Media Coverage', null, 100, '#663366', '#cc99ff', 'index.php3?we=media', 'left');
+menus[1].addItem('menuItemBullet', 'Press Releases', null, 100, '#663366', '#cc99ff', 'index.php3?we=press', 'left');
+//menus[1].addItem('menuItemBullet', 'Link text', menuNumber, dropDown menuWidth, 'mouseOver text color', 'mouseOut text color', 'link URL', 'alignment');
+menus[1].writeMenu();
+
+menus[2] = new menu(125, 'vertical', '#000000', '#000000');
+menus[2].height = 16;
+menus[2].addItem('menuItemBullet', 'WE@RIT Events', null, 150, '#663366', '#cc99ff', 'index.php3?we=events', 'left');
+menus[2].addItem('menuItemBullet', 'SWE', null, 150, '#663366', '#cc99ff', 'http://www.rit.edu/~sweeng/', 'left');
+menus[2].addItem('menuItemBullet', 'Scholarships', null, 150, '#663366', '#cc99ff', 'index.php3?we=scholarships', 'left');
+menus[2].writeMenu();
+
+menus[3] = new menu(150, 'vertical', '#000000', '#000000');
+menus[3].height = 16;
+menus[3].addItem('menuItemBullet', 'Why RIT?', null, 150, '#663366', '#cc99ff', 'index.php3?we=whyRIT', 'left');
+menus[3].addItem('menuItemBullet', 'RIT Undergraduate Admissions', null, 150, '#663366', '#cc99ff', 'http://www.rit.edu/~960www/', 'left');
+menus[3].addItem('menuItemBullet', 'RIT Financial Aid', null, 150, '#663366', '#cc99ff', 'http://www.rit.edu/emcs/financialaid/', 'left');
+menus[3].addItem('menuItemBullet', 'Women at RIT', null, 150, '#663366', '#cc99ff', 'http://www.rit.edu/%7E960www/women/womensMini.php3', 'left');
+menus[3].addItem('menuItemBullet', 'WE@RIT Events', null, 150, '#663366', '#cc99ff', 'index.php3?we=events', 'left');
+menus[3].addItem('menuItemBullet', 'Programs of Study', null, 150, '#663366', '#cc99ff', 'index.php3?we=ProgramsOfStudy', 'left');
+menus[3].addItem('menuItemBullet', 'Cooperative Education (Co-Op)', null, 150, '#663366', '#cc99ff', 'http://www.rit.edu/~964www/', 'left');
+menus[3].writeMenu();
+
+menus[4] = new menu(150, 'vertical', '#000000', '#000000');
+menus[4].height = 16;
+menus[4].addItem('menuItemBullet', 'WE@RIT Events', null, 150, '#663366', '#cc99ff', 'index.php3?we=events', 'left');
+menus[4].addItem('menuItemBullet', 'TEAK', null, 150, '#663366', '#cc99ff', 'http://www.rit.edu/~teak/', 'left');
+menus[4].addItem('menuItemBullet', '2007 K-12 Networking Reception', null, 150, '#663366', '#cc99ff', 'index.php3?we=k12Networking', 'left');
+menus[4].addItem('menuItemBullet', 'Teacher Award', null, 150, '#663366', '#cc99ff', 'index.php3?we=teacherAward', 'left');
+menus[4].addItem('menuItemBullet', 'ASEE Program Search', null, 150, '#663366', '#cc99ff', 'http://www.engineeringk12.org/outreach/Making_Engineers_Cool/search.cfm', 'left');
+menus[4].writeMenu();
+
+menus[5] = new menu(135, 'vertical', '#000000', '#000000');
+menus[5].height = 16;
+menus[5].addItem('menuItemBullet', 'Fall 2007 Newsletter', null, 135, '#663366', '#cc99ff', 'fall071NL.pdf', 'left');
+menus[5].addItem('menuItemBullet', 'WE@RIT Events', null, 135, '#663366', '#cc99ff', 'index.php3?we=events', 'left');
+menus[5].addItem('menuItemBullet', 'Giving Back', null, 135, '#663366', '#cc99ff', 'index.php3?we=givingBack', 'left');
+menus[5].writeMenu();
+
+menus[6] = new menu(135, 'vertical', '#000000', '#000000');
+menus[6].height = 16;
+//menus[6].addItem(null, '2007-2008 Academic Year', null, 175, '#663366', '#cc99ff', null, 'left');
+menus[6].addItem('menuItemBullet', 'Fall 2007', null, 175, '#663366', '#cc99ff', 'fall071NL.pdf', 'left');
+menus[6].addItem('menuItemBullet', 'Winter 2007', null, 175, '#663366', '#cc99ff', 'winter072NL.pdf', 'left');
+menus[6].writeMenu();
+
+
+menus[0] = new menu(100, 'vertical', '#000000', '#000000');
+menus[0].height=16;
+menus[0].writeMenu();
+
+menus[7] = new menu(100, 'vertical', '#000000', '#000000');
+menus[7].height=16;
+menus[7].writeMenu();
+
+menus[8] = new menu(100, 'vertical', '#000000', '#000000');
+menus[8].height=16;
+menus[8].writeMenu();
+
+
+/*
+menus[7] = new menu(125, 'vertical', '#000000', '#000000');
+menus[7].height = 16;
+menus[7].addItem('menuItemBullet', 'Widget Support', null, 125, '#663366', '#cc99ff', 'test1.asp', 'left');
+menus[7].addItem('menuItemBullet', 'Gadget Support', null, 125, '#663366', '#cc99ff', 'test2.asp', 'left');
+menus[7].addItem('menuItemBullet', 'Gizmo Support', null, 125, '#663366', '#cc99ff', 'test3.asp', 'left');
+menus[7].writeMenu();
+*/
+
+menus[1].align='left';
+menus[2].align='left';
+menus[3].align='left';
+menus[4].align='left';
+menus[5].align='left';
+menus[6].align='left';
+menus[7].align='left';
+menus[9].align='left';
+
+
+//-->
+</script>
+
+<!--END JAVASCRIPT -->
+</head>
+
+<body bgcolor="#FFFF66"><table border="0" cellspacing="0" cellpadding="0" style="text-align:center; height:700px; margin-left:auto; margin-right:auto;">
+<tr>
+<td rowspan="6" style="background-image:url(images/newWebDesign_05.jpg); width:10px;">&nbsp;</td></tr>
+
+<tr><td id="ritLogo"><img src="images/RIT_logo.jpg" alt="RIT logo"/></td>
+<td id="ritLinks"><a href="http://www.google.com/u/rit?__site_title=RIT+Google+Search&domains=rit.edu&sitesearch=rit.edu&actiontype=&q=&go.x=4&go.y=6">Search RIT</a> :: <a href="http://www.rit.edu/index/">RIT A-Z Index</a> :: <a href="http://inside.rit.edu/directories">RIT Directories</a> :: <a href="http://my.rit.edu/">MyRIT</a> :: <a href="http://www.rit.edu/">RIT Home</a> :: <a href="http://www.rit.edu/~630www/">KGCOE Home</a></td>
+<td rowspan="6" background="images/newWebDesign_05.jpg" width="10">&nbsp;</td></tr>
+<tr><td colspan="2" background="images/newWebDesign_07.jpg" width="791" height="10"></td></tr>
+
+<tr><td colspan="2" style="height:313px;"><img src="images/WElogo1.jpg" width="791" height="313" alt="Webdesign background"/></td>
+</tr>
+<tr><td colspan="2" style="height:33px;"><script language="JavaScript1.2" type="text/javascript">
+<!--
+myTest.writeMenuBar();
+//-->
+</script></td></tr>
+<tr><td colspan="2" style="background-color:#CCCCFF; border-top: solid 2px black; text-align: left; vertical-align:top; padding-left:15px; padding-right:15px; padding-top:15px;">
+
+Content included here with the following php includes script that I wrote myself:
+<!--< ?php
+$main = "home.php3";
+$site_error = "error.php3";
+$id = $HTTP_GET_VARS['we'];
+//$id = $_GET['we'];
+if(isset($id))
+{
+	$id = $id.".php3";
+	//$site_include = "".$_GET['we'].=".php3";
+	if(file_exists($id))
+	{
+		include $id;
+	}
+	else
+	{
+		include $site_error;
+	}
+}
+else
+{
+	include $main;
+}
+? >-->
+<br /><br />
+</td></tr>
+</table>
+</body>
+
+</html>

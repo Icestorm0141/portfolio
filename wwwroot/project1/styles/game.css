@@ -1,0 +1,205 @@
+@charset "utf-8";
+/* CSS Document */
+body
+{
+	background:#014900;
+	margin:0;
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-size:14px;
+}
+#container
+{
+	background-image:url(../images/wood1.png);
+	background-repeat:no-repeat;
+	width:1100px;
+	height:551px;
+	position:absolute;
+	left:50%;
+	margin-left:-550px;
+	top:10px;
+	
+}
+#gameStatus
+{
+	/*background:#9f6;
+	border:1px solid #6c0;*/
+	width:300px;
+	height:20px;
+	margin-top:10px;
+	padding-right:20px;
+	float:right;
+	text-align:right;
+	color:#300;
+	font-weight:bold;
+}
+
+#discard
+{
+	display:block;
+	position:absolute;
+	top:-17px;
+	left:90px;
+	list-style-type:none;
+	width:575px;
+	height:85px;
+}
+span.placeholder-card
+{
+	position:absolute;
+	top:0px;
+	left:80px;
+	height:80px;
+	display:block;
+}
+#playerCards
+{
+	position:absolute;
+	top:-120px;
+}
+#handContainer
+{
+	position:relative;
+	padding-left:0px;
+	margin-left:50px;
+}
+
+#handContainer text, #discard text, #table text
+{
+	font-size:36px;
+}
+#handContainer.ui-sortable
+{
+	position:relative !important;
+	top:150px!important;
+	padding-top:0!important;
+	line-height:0!important;
+	margin-top:0!important;
+}
+
+#handContainer li,#discard li, #table li
+{
+	display:inline-table;
+	margin-left:-50px;
+}
+.card
+{
+	width:55px;
+	height:75px;
+	font-size:36px;
+	padding-top:10px;
+	padding-left:5px;
+	margin-right:10px;
+	display:inline;
+}
+.placeholder-card
+{
+	top:0px;
+	position:relative;
+	margin-right:10px;
+	width:55px;
+	height:80px;
+	border:2px solid #333;
+}
+
+#table
+{
+	width:575px;
+	height:230px;
+	border:2px solid black;
+	padding-left:60px;
+}
+#table .placeholder-card
+{
+	margin-top:10px;
+}
+
+#table li
+{
+	margin-top:10px;
+}
+.red
+{
+	fill:red;
+	stroke:#F99;
+	stroke-width:2px;
+}
+.yellow
+{
+	fill: yellow;
+	stroke:#FFC;
+	stroke-width:2px;
+	
+}
+.green
+{
+	fill:green;
+	stroke:#9F6;
+	stroke-width:2px;
+}
+.blue
+{
+	fill:blue;
+	stroke:#9CC;
+	stroke-width:2px;
+}
+.backside
+{
+	fill:#39C;
+	stroke-width:2px;
+	stroke:#9CC;
+}
+#background
+{
+	fill:none;
+}
+.game
+{
+	position:absolute;
+}
+.game span
+{
+	display:inline-table;
+}
+#scoreCard
+{
+	width:130px;
+	height:155px;
+	position:absolute;
+	border:2px solid black;
+	background:white;
+	top:50px;
+	right:20px;
+	padding:10px;
+	padding-top:2px;
+}
+#scoreCard div
+{
+	height:25%;
+	border-top: 1px dashed black;
+}
+#gameWinner
+{
+	position:absolute;
+	width:240px;
+	top:100px;
+	margin-left:50%;
+	left:-140px;
+	background-color: #b1cab1;
+	border:2px solid #014901;
+	color:#000000;
+	text-align:center;
+	padding:0px 25px 15px 25px;
+	line-height:30px;
+}
+#disableDiv
+{
+	width:100%;
+	height:100%;
+	position:fixed;
+	background-color:#fff; 
+	filter:alpha(opacity=50);
+	-moz-opacity:.5;
+	opacity:.5;
+	left:0px;
+	top:0px;
+}

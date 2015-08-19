@@ -1,0 +1,448 @@
+<portfolio>
+	<menuButton upState="menu.png" downState="menu_over.png"></menuButton>
+	<category folder="media/images/Flash/" thumbfolder="media/thumbs/Flash/" bigFolder="media/BigImages/Flash/">
+		<image>
+			<filename>image_008.jpg</filename>
+			<imageTitle>Delos & Laurel - Intro Transition & Log in</imageTitle>
+			<languages>ActionScript 3.0</languages>
+			<date>April 2008</date>
+			<description>Based on the design provided by Delos & Laurel I developed a brief flash transition for their website as well as the front-end of the site log in. This intro plays before the visitor is brought to the log-in screen.</description>
+			<link location="delosnlaurel.html">View the SWF</link>
+		</image>
+		<image>
+			<filename>image_007.jpg</filename>
+			<imageTitle>Delos & Laurel - Invitation Card</imageTitle>
+			<languages>ActionScript 3.0</languages>
+			<date>April 2008</date>
+			<description>Based on a design provided by Delos & Laurel I created a flash invitation card that was later integrated with server-side script to invite companies to join the company. The first screen of this project displayed information about the invitation and allowed the user to click to continue. The second screen provided a form for the user to fill out and be contacted by the company.</description>
+			<link>View a Larger Image</link>
+		</image>
+		<image>
+			<filename>image_009.jpg</filename>
+			<imageTitle>iPhone for Ages 55+</imageTitle>
+			<languages>ActionScript 3.0</languages>
+			<date>April 2008</date>
+			<description>Final project for Design of Graphical User Interfaces. Process for this project included documentation, case studies, and user testing, after which I designed a new interface for the a touch-screen device that catered to the needs of people 55 and older. For a final project we transformed these designs were converted into a working flash SWF which utilitized multiple arrays in order to connect the transitions from screen to screen.</description>
+			<link location="iPhone.html">View the SWF</link>
+		</image>
+		<image>
+			<filename>image_005.jpg</filename>
+			<imageTitle>Aquarium Playground</imageTitle>
+			<languages>ActionScript 3.0</languages>
+			<date>November 2007</date>
+			<description>Final project for Programming II for New Media. Fish are objects for the user to play with, chosing which fish they wish to use. The user must gain as many points as possible by feeding the fish and rotating their controlled fish to eat the most food. A fish net appears on random time intervals to attempt to catch the fish and end the game.</description>
+			<link location="fishTank.html">View the SWF</link>
+			<code location="fishTank.txt">View a Sample of Code</code>
+		</image>
+		<image>
+			<filename>image_004.jpg</filename>
+			<imageTitle>Hamster and the Pea</imageTitle>
+			<languages>ActionScript 3.0</languages>
+			<date>October 2007</date>
+			<description>Second project for Programming for New Media. Using actionscript 3.0 classes to create and manipulate objects in the library. Recreation of the classic "snake" arcade game where the user chooses a color hamster to play with and then uses the keys to steer their hamster around and eat as many peas as they can. The more peas the hamster eats, the fatter and slower it gets, until the user steers it to the cage to deposit its food and increment the score.</description>
+			<link location="hamster.html">View the SWF</link>
+			<code location="hamster.txt">View a Sample of Code</code>
+		</image>
+		<image>
+			<filename>image_003.jpg</filename>
+			<imageTitle>Digital Toy</imageTitle>
+			<languages>ActionScript 2.0</languages>
+			<date>November 2006</date>
+			<description>Final project for Time-based Imaging. Created using Actionscript 2.0 in the timeline. Purpose is to allow the user to interact with the object by clicking on various aspects of the SWF and seeing the programmed animations.</description>
+			<link location="car.html">View the SWF</link>
+			<code location="car.txt">View a Sample of Code</code>
+		</image>
+		<image>
+			<filename>image_002.jpg</filename>
+			<imageTitle>Lyrics in Motion</imageTitle>
+			<languages>ActionScript 2.0</languages>
+			<date>October 2006</date>
+			<description>Second project for Time-based Imaging. Created using a few actionscript 2.0 commands and animations on the timeline. Project purpose was to make an animation of song lyrics. Song by Kelly Clarkson.</description>
+			<link location="lyrics.html">View the SWF</link>
+		</image>
+		<image>
+			<filename>image_001.jpg</filename>
+			<imageTitle>Disaster in Motion</imageTitle>
+			<languages>ActionScript 2.0</languages>
+			<date>September 2006</date>
+			<description>First project for Time-based Imaging. Created using a few actionscript 2.0 codes such as gotoAndPlay() in combination with the timeline to create a depiction of a tornado.</description>
+			<link location="tornado.html">View the SWF</link>
+		</image>
+		<image>
+			<filename>image_006.jpg</filename>
+			<imageTitle>National Honor Society Recruitment Video</imageTitle>
+			<languages>None</languages>
+			<date>December 2005</date>
+			<description>Recruitment video for the Dana O. Webber chapter of the National Honor Society at Gateway Regional High School. Created entirely on the timeline.</description>
+			<link location="nhs.html">View the SWF</link>
+		</image>
+	</category>
+	<category folder="media/images/Websites/" thumbfolder="media/thumbs/Websites/" bigFolder="media/BigImages/Websites/">
+		<image>
+			<filename>image_0012.jpg</filename>
+			<imageTitle>New York State Association of Health Care Providers</imageTitle>
+			<languages>C#, ASP.NET, JavaScript, J-Query, HTML, CSS, XSLT</languages>
+			<date>August 2008</date>
+			<description>Working with a team of developers at VanDamme Associates, I collaborated on this web project. Tasking included: cutting up the design into an ASP.NET website, integrating it with Ektron CMS400.NET (the company's content management system), and developing modules to provide log in functionality and customize the page where necessary.</description>
+			<link location="http://www.nyshcp.org">View the Working Website</link>
+		</image>
+		<image>
+			<filename>image_0011.jpg</filename>
+			<imageTitle>Microelectronic Engineering Redesign</imageTitle>
+			<languages>JavaScript, PHP, HTML, CSS</languages>
+			<date>May 2008</date>
+			<description>The microelectronic engineering department at RIT hired me to convert their current website design to that of the rest of the college. Using a combination of PHP, JavaScript, I created a dynamic menu system that displayed menus based on an XML file. I also used Photoshop to create images for the department that matched the rest of the college's.</description>
+			<link location="http://www-staging.rit.edu/kgcoe/ue/">View the Working Website</link>
+		</image>
+		<image>
+			<filename>image_0010.jpg</filename>
+			<imageTitle>Academic Website for Dr. Margaret Bailey</imageTitle>
+			<languages>PHP, HTML, CSS</languages>
+			<date>January 2008</date>
+			<description>I designed this website from concept to coding for Dr. Margaret Bailey, the Executive Director for WE@RIT. Using Photoshop CS3, I designed the layout and sliced it into individual images to convert it into HTML. I then coded it into a working website with CSS and PHP, using the Photoshop HTML file for reference.</description>
+			<link location="http://people.rit.edu/ajs2189/Bailey/">View the Working Website</link>
+		</image>
+		<image>
+			<filename>image_009.jpg</filename>
+			<imageTitle>WE@RIT Website</imageTitle>
+			<languages>PHP, HTML, CSS</languages>
+			<date>December 2007</date>
+			<description>Working from colors from the banner designed by illustrator Joe Dube, I designed the new layout for WE@RIT. Using PHP, Javascript, HTML and CSS I coded the new design and integrated a flash slideshow of pictures from their various events.</description>
+			<link location="http://we.rit.edu/">View the Working Website</link>
+		</image>
+		<image>
+			<filename>image_006.jpg</filename>
+			<imageTitle>Floral Filmstrip</imageTitle>
+			<languages>HTML</languages>
+			<date>December 2005</date>
+			<description>Created for a personal blog while exploring the features of Photoshop. Intended to be an over-the-top flashy/decorative design.</description>
+		</image>
+		<image>
+			<filename>image_007.jpg</filename>
+			<imageTitle>GWB History</imageTitle>
+			<languages>PHP, HTML</languages>
+			<date>November 2005</date>
+			<description>A simple and manageable design for an academic website for my high school history teacher.</description>
+			<link location="http://gwb.ajsteglinski.com">View the Working Website</link>
+		</image>
+		<image>
+			<filename>image_008.jpg</filename>
+			<imageTitle>National Honor Society - Dana O. Webber Chapter</imageTitle>
+			<languages>PHP, HTML</languages>
+			<date>June 2005</date>
+			<description>A high-effects design for my high schools chapter of the National Honor Society. Used PHP to reduce the redundancy of repeated code.</description>
+			<link location="http://ajsteglinski.com/nhs/index.php">View the Working Website</link>
+		</image>
+		<image>
+			<filename>image_004.jpg</filename>
+			<imageTitle>BNB Forums</imageTitle>
+			<languages>PHP, HTML</languages>
+			<date>January 2004</date>
+			<description>Accompanying version 3.0 of my personal Harry Potter website, I designed a new skin for the new PHPBB forum for Bludgers N Broomsticks (BNB).</description>
+		</image>
+		<image>
+			<filename>image_005.jpg</filename>
+			<imageTitle>BNB Feint Awards</imageTitle>
+			<languages>PHP, HTML</languages>
+			<date>December 2003</date>
+			<description>Also accompanying version 3.0 of my personal Harry Potter ewbsite, I had designed a layout for an awards section to allow visitors to nominate and vote on other outstanding Harry Potter websites.</description>
+			<link>View a Larger Image</link>
+		</image>
+		<image>
+			<filename>image_003.jpg</filename>
+			<imageTitle>Bludgers 'N Broomsticks (BNB), Version 3.0</imageTitle>
+			<languages>PHP, HTML</languages>
+			<date>November 2003</date>
+			<description>The final version of my personal website that I designed and coded before selling. The website was a fan site based off the Harry Potter books utilizing many free PHP scrips such as a news management system that allowed authorized users to post updated news for visitors to see.</description>
+		</image>
+		<image>
+			<filename>image_001.jpg</filename>
+			<imageTitle>Bludgers 'N Broomsticks (BNB), Version 2.0</imageTitle>
+			<languages>PHP, HTML</languages>
+			<date>December 2002</date>
+			<description>Harry Potter fan site designed, coded, and managed by myself. I oversaw the updating and management of all content, as well as the hiring of volunteer workers</description>
+		</image>
+	</category>
+	<category folder="media/images/Design/" thumbfolder="media/thumbs/Design/" bigFolder="media/BigImages/Design/">
+		<image>
+			<filename>image_0014.jpg</filename>
+			<imageTitle>Video Player Design</imageTitle>
+			<languages>None</languages>
+			<date>April 2008</date>
+			<description>Project for Design of Graphical User Interfaces. We designed from scratch, starting with a formal design document, a video player, integrating features from our favorite current video players and adding in any we desired. My player was themed for the New York Times.</description>
+			<link location="VideoPlayer_Comps.pdf">View a PDF of the Comps</link>
+		</image>
+		<image>
+			<filename>image_0013.jpg</filename>
+			<imageTitle>Gestault Principles Part 2</imageTitle>
+			<languages>None</languages>
+			<date>December 2007</date>
+			<description>Continuation of Gestault principles. Examples of similarity, continuity, closer, and isomorphic correspondence.</description>
+		</image>
+		<image>
+			<filename>image_0012.jpg</filename>
+			<imageTitle>Gestault Principles Part 1</imageTitle>
+			<languages>None</languages>
+			<date>December 2007</date>
+			<description>Demonstrating the Gestault principles of figure-ground, symmetry, and proximity.</description>
+		</image>
+		<image>
+			<filename>image_0011.jpg</filename>
+			<imageTitle>AJ Design logo - Black and White</imageTitle>
+			<languages>None</languages>
+			<date>December 2007</date>
+			<description>Black and white version of the logo for the fictional AJ Design company.</description>
+		</image>
+		<image>
+			<filename>image_0010.jpg</filename>
+			<imageTitle>AJ Design logo - Color</imageTitle>
+			<languages>None</languages>
+			<date>December 2007</date>
+			<description>Assignment for Elements of Graphic Design. Logo for a fictional design company by the name of AJ Design.</description>
+		</image>
+		<image>
+			<filename>image_009.jpg</filename>
+			<imageTitle>Scanned CDs</imageTitle>
+			<languages>None</languages>
+			<date>October 2007</date>
+			<description>Experimentation using the scanner to obtain images of these CDs.</description>
+		</image>
+		<image>
+			<filename>image_001.jpg</filename>
+			<imageTitle>Graphic Translation of a Hair-dryer</imageTitle>
+			<languages>None</languages>
+			<date>December 2007</date>
+			<description>Assignment for Elements of Graphic Design. Black and white shape/graphic translation of my hair dryer. Progression from hand-sketched images to marker sketches then taking the designs into Illustrator to create them digitally.</description>
+		</image>
+		<image>
+			<filename>image_003.jpg</filename>
+			<imageTitle>Contrast of life in death</imageTitle>
+			<languages>None</languages>
+			<date>October 2007</date>
+			<description>Assignment for Imaging for New Media. Combination of photography, and found images to depict life in a scene of obvious death to show that even through death there is life.</description>
+		</image>
+		<image>
+			<filename>image_006.jpg</filename>
+			<imageTitle>Spa thats Not Quite Right</imageTitle>
+			<languages>None</languages>
+			<date>October 2007</date>
+			<description>Assignment for Imaging for New Media. Utilizing a scanner to acquire images and display the tranquility of a spa. Edited in Photoshop to deliberately make objects appear un-realistic and make the viewer look twice at the image.</description>
+		</image>
+		<image>
+			<filename>image_007.jpg</filename>
+			<imageTitle>"When Dreams Come True" Book Cover</imageTitle>
+			<languages>None</languages>
+			<date>October 2007</date>
+			<description>Assignment for Imaging for New Media. Redesign for a book by Eric and Leslie Ludy using photography and digital editting.</description>
+		</image>
+		<image>
+			<filename>image_002.jpg</filename>
+			<imageTitle>Sketched Nature - Asymmetry</imageTitle>
+			<languages>None</languages>
+			<date>September 2006</date>
+			<description>Project for 2D Design. Ink drawn representations of objects from nature, which were scanned in and used to create an asymmetrical design.</description>
+		</image>
+		<image>
+			<filename>image_005.jpg</filename>
+			<imageTitle>Sketched Nature - Progression</imageTitle>
+			<languages>None</languages>
+			<date>September 2006</date>
+			<description>Project for 2D Design. Ink drawn representations of objects from nature, which were scanned in and used to create a progressive design.</description>
+		</image>
+		<image>
+			<filename>image_008.jpg</filename>
+			<imageTitle>Sketched Nature - Symmetry</imageTitle>
+			<languages>None</languages>
+			<date>September 2006</date>
+			<description>Project for 2D Design. Ink drawn representations of objects from nature, which were scanned in and used to create a symmetrical design.</description>
+		</image>
+		<image>
+			<filename>image_004.jpg</filename>
+			<imageTitle>Feint Awards Banner</imageTitle>
+			<languages>None</languages>
+			<date>February 2004</date>
+			<description>After selling Bludgers 'N Broomsticks, I designed a temporary banner for the new owner while the website was being renovated.</description>
+		</image>
+	</category>
+	<category folder="media/images/Photography/" thumbfolder="media/thumbs/Photography/" bigFolder="media/BigImages/Photography/">
+		<image>
+			<filename>image_001.jpg</filename>
+			<imageTitle>Kitty in Motion</imageTitle>
+			<languages>None</languages>
+			<date>September 2007</date>
+			<description>Using a slow shutter speed to capture the motion as this Siamese tries to pose for the camera.</description>
+		</image>
+		<image>
+			<filename>image_002.jpg</filename>
+			<imageTitle>Wildflowers</imageTitle>
+			<languages>None</languages>
+			<date>September 2007</date>
+			<description>Up close and personal to these wild flowers in a neighborhood garden demonstrates low depth of field.</description>
+		</image>
+		<image>
+			<filename>image_003.jpg</filename>
+			<imageTitle>Raindrops on Grass blades</imageTitle>
+			<languages>None</languages>
+			<date>September 2007</date>
+			<description>Bringing the world of the grass during a rain storm into view.</description>
+		</image>
+		<image>
+			<filename>image_006.jpg</filename>
+			<imageTitle>Raindrops in Time</imageTitle>
+			<languages>None</languages>
+			<date>September 2007</date>
+			<description>A high shutter speed can stop time long enough to catch a glimpse of a raindrop in motion.</description>
+		</image>
+		<image>
+			<filename>image_005.jpg</filename>
+			<imageTitle>Narnia-like Lamp Post</imageTitle>
+			<languages>None</languages>
+			<date>September 2007</date>
+			<description>A lamp post that could bear a striking resembalance to that from the C.S. Lewis novel.</description>
+		</image>
+		<image>
+			<filename>image_007.jpg</filename>
+			<imageTitle>Rose and a Fountain</imageTitle>
+			<languages>None</languages>
+			<date>September 2007</date>
+			<description>Capturing the beauty of a rose, even in the final stages of its life, with a fountain backdrop for enhanced beauty.</description>
+		</image>
+		<image>
+			<filename>image_008.jpg</filename>
+			<imageTitle>The Fountain</imageTitle>
+			<languages>None</languages>
+			<date>September 2007</date>
+			<description>Shot with an extremely slow shutter speed gives the appearance that the fountain has frozen in motion for the picture.</description>
+		</image>
+		<image>
+			<filename>image_0010.jpg</filename>
+			<imageTitle>Curled Abstraction</imageTitle>
+			<languages>None</languages>
+			<date>September 2007</date>
+			<description>A trip into abstraction as the camera focuses on the inner workings of a P.C.</description>
+		</image>
+		<image>
+			<filename>image_009.jpg</filename>
+			<imageTitle>Cheese Grater Up-close</imageTitle>
+			<languages>None</languages>
+			<date>September 2007</date>
+			<description>A unique view of a common household appliance: the cheese grater.</description>
+		</image>
+		<image>
+			<filename>image_0011.jpg</filename>
+			<imageTitle>Christmas Rain</imageTitle>
+			<languages>None</languages>
+			<date>October 2007</date>
+			<description>This soon-to-be Christmas tree receives a drink of water from the heavens.</description>
+		</image>
+		<image>
+			<filename>image_0012.jpg</filename>
+			<imageTitle>Bridge in the Water</imageTitle>
+			<languages>None</languages>
+			<date>October 2007</date>
+			<description>Puddles on a local bridge offer a prime opportunity for illusion through reflection.</description>
+		</image>
+		<image>
+			<filename>image_0013.jpg</filename>
+			<imageTitle>Distortion of a Weed</imageTitle>
+			<languages>None</languages>
+			<date>October 2007</date>
+			<description>This weed is actually less than a foot tall. I was able to use the angle of the camera to make it appear larger than it actually is.</description>
+		</image>
+		<image>
+			<filename>image_0014.jpg</filename>
+			<imageTitle>A Classic Rose</imageTitle>
+			<languages>None</languages>
+			<date>October 2007</date>
+			<description>Taken in a local garden, this close up on a rose yields a classic picture of a rose.</description>
+		</image>
+		<image>
+			<filename>image_0015.jpg</filename>
+			<imageTitle>Rain and a House</imageTitle>
+			<date>October 2007</date>
+			<description>Rain slowly starts to drench the side of this house while forming a puddle below.</description>
+		</image>
+		<image>
+			<filename>image_0016.jpg</filename>
+			<imageTitle>Sun Flair</imageTitle>
+			<languages>None</languages>
+			<date>October 2007</date>
+			<description>Extremely fast shutter allows you to point the camera directly at the sun and achieve this beautiful flare.</description>
+		</image>
+		<image>
+			<filename>image_0017.jpg</filename>
+			<imageTitle>Plates vs. Lights</imageTitle>
+			<languages>None</languages>
+			<date>October 2007</date>
+			<description>Project for Imaging for New Media. Close up of my lamp shade that makes it hard to determine if the image is of plates or lamps.</description>
+		</image>
+		<image>
+			<filename>image_0019.jpg</filename>
+			<imageTitle>White Gravestone</imageTitle>
+			<languages>None</languages>
+			<date>October 2007</date>
+			<description>The sun shining from behind the camera shows this unique grave stone illuminated in light.</description>
+		</image>
+		<image>
+			<filename>image_0020.jpg</filename>
+			<imageTitle>Gravestone in Shadow</imageTitle>
+			<languages>None</languages>
+			<date>October 2007</date>
+			<description>With the sun shining from in front of the camera the gravestone is hidden in shadow.</description>
+		</image>
+		<image>
+			<filename>image_0018.jpg</filename>
+			<imageTitle>Flagpole</imageTitle>
+			<languages>None</languages>
+			<date>October 2007</date>
+			<description>Flush up against the flagpole gives this us this unique view.</description>
+		</image>
+		<image>
+			<filename>image_0021.jpg</filename>
+			<imageTitle>Trilogy of Gravestones</imageTitle>
+			<languages>None</languages>
+			<date>October 2007</date>
+			<description>Three gravestones leaning together form a trilogy while the sun casts a beautiful shadow on them.</description>
+		</image>
+		<image>
+			<filename>image_0022.jpg</filename>
+			<imageTitle>Rays of a Sunset</imageTitle>
+			<languages>None</languages>
+			<date>October 2007</date>
+			<description>Perfect timing as the sun is setting below the horizon.</description>
+		</image>
+	</category>
+	<category folder="media/images/Programming/" thumbfolder="media/thumbs/Programming/" bigFolder="media/BigImages/Programming/">
+		<image>
+			<filename>image_003.jpg</filename>
+			<imageTitle>Client-Side Programming - Project 2</imageTitle>
+			<languages>SVG, JavaScript, CSS</languages>
+			<date>September 2008</date>
+			<description>This project is written using SVG and Javascript to create a basic portfolio of work. NOTE: The working example was developed for Opera and may not function in other browsers.</description>
+			<link location="http://www.ajsteglinski.com/SVG/project2.svg">View the Working Website</link>
+			<code location="javascript_project2.txt">View a Sample of Code</code>
+		</image>
+		<image>
+			<filename>image_002.jpg</filename>
+			<imageTitle>Client-Side Programming - Project 1</imageTitle>
+			<languages>JavaScript, CSS</languages>
+			<date>September 2008</date>
+			<description>Using JavaScript the program dynamically creates all elements on the page to allow the user to select and store a selection of fishes (stores using cookies). The project then integrates with a flash project through XML to allow the user to interact with the fish they chose.</description>
+			<link location="http://www.ajsteglinski.com/Javascript/">View the Working Website</link>
+			<code location="javascript_project1.txt">View a Sample of Code</code>
+		</image>
+		<image>
+			<filename>image_001.jpg</filename>
+			<imageTitle>Programming for the WWW - Final Project</imageTitle>
+			<languages>PHP, SQL, HTML, CSS</languages>
+			<date>May 2008</date>
+			<description>Final project for my PHP class. This project integrates with a mySQL database to store quizzes and user information. Users with proper permissions can add, modify, and delete quizzes. Registered users can select website skin along with selecting which news feed they wish to have appear on their news page.</description>
+			<link location="http://php.ajsteglinski.com">View the Working Website</link>
+			<code location="phpproject3.txt">View a Sample of Code</code>
+		</image>
+	</category>
+	<category folder="media/images/About Me/" thumbfolder="media/thumbs/About Me/" bigFolder="media/BigImages/About Me/">
+	</category>
+</portfolio>
+		
+			

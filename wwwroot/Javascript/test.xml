@@ -1,0 +1,206 @@
+﻿<portfolio>
+	<category folder="media/images/Photography/" thumbFolder="media/thumbs/Photography/">
+		<image>
+			<filename>image_001.jpg</filename>
+			<imageTitle>Kitty in Motion</imageTitle>
+			<date>September 2007</date>
+			<description>Using a slow shutter speed to capture the motion as this Siamese tries to pose for the camera.</description>
+		</image>
+		<image>
+			<filename>image_002.jpg</filename>
+			<imageTitle>Wildflowers</imageTitle>
+			<date>September 2007</date>
+			<description>Up close and personal to these wild flowers in a neighborhood garden demonstrates low depth of field.</description>
+		</image>
+		<image>
+			<filename>image_003.jpg</filename>
+			<imageTitle>Raindrops on Grass blades</imageTitle>
+			<date>September 2007</date>
+			<description>Bringing the world of the grass during a rain storm into view.</description>
+		</image>
+		<image>
+			<filename>image_005.jpg</filename>
+			<imageTitle>Narnia-like Lamp Post</imageTitle>
+			<date>September 2007</date>
+			<description>A lamp post that could bear a striking resembalance to that from the C.S. Lewis novel.</description>
+		</image>
+		<image>
+			<filename>image_006.jpg</filename>
+			<imageTitle>Raindrops in Time</imageTitle>
+			<date>September 2007</date>
+			<description>A high shutter speed can stop time long enough to catch a glimpse of a raindrop in motion.</description>
+		</image>
+		<image>
+			<filename>image_007.jpg</filename>
+			<imageTitle>Rose and a Fountain</imageTitle>
+			<date>September 2007</date>
+			<description>Capturing the beauty of a rose, even in the final stages of its life, with a fountain backdrop for enhanced beauty.</description>
+		</image>
+		<image>
+			<filename>image_008.jpg</filename>
+			<imageTitle>The Fountain</imageTitle>
+			<date>September 2007</date>
+			<description>Shot with an extremely slow shutter speed gives the appearance that the fountain has frozen in motion for the picture.</description>
+		</image>
+		<image>
+			<filename>image_0010.jpg</filename>
+			<imageTitle>Curled Abstraction</imageTitle>
+			<date>September 2007</date>
+			<description>A trip into abstraction as the camera focuses on the inner workings of a P.C.</description>
+		</image>
+		<image>
+			<filename>image_009.jpg</filename>
+			<imageTitle>Cheese Grater Up-close</imageTitle>
+			<date>September 2007</date>
+			<description>A unique view of a common household appliance: the cheese grater.</description>
+		</image>
+		<image>
+			<filename>image_0011.jpg</filename>
+			<imageTitle>Christmas Rain</imageTitle>
+			<date>October 2007</date>
+			<description>This soon-to-be Christmas tree receives a drink of water from the heavens.</description>
+		</image>
+		<image>
+			<filename>image_0012.jpg</filename>
+			<imageTitle>Bridge?</imageTitle>
+			<date>October 2007</date>
+			<description>Puddles on a local bridge offer a prime opportunity for illusion through reflection.</description>
+		</image>
+	</category>
+	<category folder="media/images/Websites/" thumbFolder="media/thumbs/Websites/">
+		<image>
+			<filename>image_001.jpg</filename>
+			<imageTitle>Bludgers 'N Broomsticks (BNB), Version 2.0</imageTitle>
+			<date>December 2002</date>
+			<description>Harry Potter fan site designed, coded, and managed by myself; second version.</description>
+		</image>
+		<image>
+			<filename>image_002.jpg</filename>
+			<imageTitle>Feint Awards Banner</imageTitle>
+			<date>February 2004</date>
+			<description>After selling Bludgers 'N Broomsticks, I donated a temporary banner while the website was renovated.</description>
+		</image>
+		<image>
+			<filename>image_003.jpg</filename>
+			<imageTitle>Bludgers "'"N Broomsticks (BNB), Version 3.0</imageTitle>
+			<date>November 2003</date>
+			<description>The final version that I designed and coded before selling the website.</description>
+		</image>
+		<image>
+			<filename>image_004.jpg</filename>
+			<imageTitle>BNB Forums</imageTitle>
+			<date>January 2004</date>
+			<description>Accompanying version 3.0, I designed a new skin for the new PHPBB forum for BNB.</description>
+		</image>
+		<image>
+			<filename>image_005.jpg</filename>
+			<imageTitle>BNB Feint Awards</imageTitle>
+			<date>December 2003</date>
+			<description>Also accompanying version 3.0, I had designed a layout for an award section for BNB.</description>
+		</image>
+		<image>
+			<filename>image_006.jpg</filename>
+			<imageTitle>Floral Filmstrip</imageTitle>
+			<date>December 2005</date>
+			<description>Created for a personal blog while exploring the features of Photoshop. Meant to be over-the-top flashy/decorative.</description>
+		</image>
+		<image>
+			<filename>image_007.jpg</filename>
+			<imageTitle>GWB History</imageTitle>
+			<date>November 2005</date>
+			<description>A simple and manageable design for and academic website for my high school history teacher.</description>
+		</image>
+		<image>
+			<filename>image_008.jpg</filename>
+			<imageTitle>National Honor Society - Dana O. Webber Chapter</imageTitle>
+			<date>June 2005</date>
+			<description>A high-effects design for my high schools chapter of the National Honor Society.</description>
+		</image>
+	</category>
+	<category folder="media/images/Graphic Design/" thumbFolder="media/thumbs/Graphic Design/">
+		<image>
+			<filename>image_001.jpg</filename>
+			<imageTitle>Graphic Translation of a Hair-dryer</imageTitle>
+			<date>December 2007</date>
+			<description>Assignment for Elements of Graphic Design. Black and white shape/graphic translation of my hair dryer. </description>
+		</image>
+		<image>
+			<filename>Steglinski_pg1.jpg</filename>
+			<imageTitle>Gestault Principles Part 1</imageTitle>
+			<date>December 2007</date>
+			<description>Demonstrating the Gestault principles of figure-ground, symmetry, and proximity.</description>
+		</image>
+		<image>
+			<filename>Steglinski_pg2.jpg</filename>
+			<imageTitle>Gestault Principles Part 2</imageTitle>
+			<date>December 2007</date>
+			<description>Continuation of Gestault principles. Examples of similarity, continuity, closer, and isomorphic correspondence.</description>
+		</image>
+		<image>
+			<filename>image_009.jpg</filename>
+			<imageTitle>AJ Design logo - Color</imageTitle>
+			<date>December 2007</date>
+			<description>Assignment for Elements of Graphic Design. Logo for a fictional design company by the name of AJ Design.</description>
+		</image>
+		<image>
+			<filename>image_0010.jpg</filename>
+			<imageTitle>AJ Design logo - Black and White</imageTitle>
+			<date>December 2007</date>
+			<description>Black and white version of the logo for the fictional AJ Design company.</description>
+		</image>
+	</category>
+	<category folder="media/images/Composite/" thumbFolder="media/thumbs/Composite/">
+		<image>
+			<filename>image_001.jpg</filename>
+			<imageTitle>Contrast of life in death</imageTitle>
+			<date>October 2007</date>
+			<description>Assignment for Imaging for New Media. Combination of photography, and found images to depict life in a scene of obvious death to show that even through death there is life.</description>
+		</image>
+		<image>
+			<filename>image_002.jpg</filename>
+			<imageTitle>Spa thats Not Quite Right</imageTitle>
+			<date>October 2007</date>
+			<description>Assignment for Imaging for New Media. Utilizing scanner to acquire images and display the tranquility of a spa. Edited in Photoshop so that some elements are not quite realistic.</description>
+		</image>
+		<image>
+			<filename>image_003.jpg</filename>
+			<imageTitle>AJ Design logo - Black and White</imageTitle>
+			<date>October 2007</date>
+			<description>Assignment for Imaging for New Media. Redesign for a book by Eric and Leslie Ludy using photography and digital editting.</description>
+		</image>
+	</category>
+	<category folder="media/images/Misc/" thumbFolder="media/thumbs/Misc/">
+		<image>
+			<filename>image_001.jpg</filename>
+			<imageTitle>Sketched Nature - Asymmetry</imageTitle>
+			<date>September 2006</date>
+			<description>Project for 2D Design. Ink drawn representations of objects from nature, which were scanned in and used to create an asymmetrical design.</description>
+		</image>
+		<image>
+			<filename>image_002.jpg</filename>
+			<imageTitle>Sketched Nature - Progression</imageTitle>
+			<date>September 2006</date>
+			<description>Project for 2D Design. Ink drawn representations of objects from nature, which were scanned in and used to create a progressive design.</description>
+		</image>
+		<image>
+			<filename>image_003.jpg</filename>
+			<imageTitle>Sketched Nature - Symmetry</imageTitle>
+			<date>September 2006</date>
+			<description>Project for 2D Design. Ink drawn representations of objects from nature, which were scanned in and used to create a symmetrical design.</description>
+		</image>
+		<image>
+			<filename>image_004.jpg</filename>
+			<imageTitle>Sketched Nature - Symmetry</imageTitle>
+			<date>September 2006</date>
+			<description>Project for 2D Design. Ink drawn representations of objects from nature, which were scanned in and used to create another symmetrical design.</description>
+		</image>
+		<image>
+			<filename>image_005.jpg</filename>
+			<imageTitle>Scanned CDs</imageTitle>
+			<date>October 2007</date>
+			<description>Experimentation using the scanner to obtain images of these CDs.</description>
+		</image>
+	</category>
+</portfolio>
+		
+			
