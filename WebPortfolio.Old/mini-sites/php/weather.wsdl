@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2008 (http://www.altova.com) by Pete Yorn (placid) -->
+<wsdl:definitions name="weatherStation" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://example.org/weatherService" targetNamespace="http://example.org/weatherService">
+	<wsdl:types>
+		<xs:schema targetNamespace="http://example.org/weatherService" elementFormDefault="qualified">
+			<xs:complexType name="ArrayType">
+				<xs:complexContent>
+					<xs:restriction base="soapenc:Array">
+						<xs:attribute ref="soapenc:arrayType" wsdl:arrayType="xs:string[]"/>
+					</xs:restriction>
+				</xs:complexContent>
+			</xs:complexType>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="stateResponse">
+		<wsdl:part name="parameter" type="tns:ArrayType"/>
+	</wsdl:message>
+	<wsdl:message name="cityResponse">
+		<wsdl:part name="parameter" type="tns:ArrayType"/>
+	</wsdl:message>
+	<wsdl:message name="strMess">
+		<wsdl:part name="parameter" type="xs:string"/>
+	</wsdl:message>
+	
+	<wsdl:portType name="NewPortType">
+		<wsdl:operation name="getStates">
+			<wsdl:output message="tns:stateResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getCities">
+			<wsdl:input message="tns:strMess"/>
+			<wsdl:output message="tns:stateResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="getStation">
+			<wsdl:input message="tns:strMess"/>
+			<wsdl:output message="tns:strMess"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	
+	<wsdl:binding name="NewBinding" type="tns:NewPortType">
+		<soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="getStates">
+			<soap:operation soapAction="urn:#getStates"/>
+			<wsdl:output>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:rit:soap"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getCities">
+			<soap:operation soapAction="urn:#getCities"/>
+			<wsdl:input>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:rit:soap"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:rit:soap"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="getStation">
+			<soap:operation soapAction="urn:#getStation"/>
+			<wsdl:input>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:rit:soap"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" namespace="urn:rit:soap"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	
+	<wsdl:service name="NewService">
+		<wsdl:port name="NewPort" binding="tns:NewBinding">
+			<soap:address location="http://vega.it.rit.edu/~gig/soap/weather/weatherServer.php"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

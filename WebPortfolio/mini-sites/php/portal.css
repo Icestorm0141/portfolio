@@ -1,0 +1,210 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+			font-family:Geneva, Arial, Helvetica, sans-serif;
+			font-size:12px;
+			background:#ddcd93;
+			background-repeat:no-repeat;
+			background-position:center;
+			}
+#weather img {
+			padding-right:25px;
+			}
+a {
+			color:#804000;
+			text-decoration:none;
+			border-bottom:1px dotted #804000;
+			}
+a:visited {	
+			color:#6F0235;
+			text-decoration:none;
+			border-bottom:1px dashed #6F0235;
+			}
+a:hover {	
+			background:white;
+			border-bottom:1px solid #804000;
+			}
+#container {
+			width:800px;
+			height:1021px;
+			position:absolute;
+			top:0px;
+			left:50%;
+			margin-left:-400px;
+			}
+#bannerContainer {
+			font-family:Geneva, Arial, Helvetica, sans-serif;
+			font-size:36px;
+			position:absolute;
+			margin-top:0px;
+			top:0px;
+			width:800px;
+			height:115px;
+			}
+ol li {	
+			list-style-type:lower-alpha;
+			border-bottom:1px dotted #000000;
+			line-height:8px;
+			bottom:-10px;
+			vertical-align:bottom;
+			margin-left:5px;
+			margin-bottom:10px;
+			}
+ul li {	
+			line-height:150%;
+			vertical-align:top;
+			margin-left:5px;
+			margin-bottom:10px;
+			color: #996600;
+			}
+#pastQuizzes {
+			display:none;
+			width:250px;
+			height:340px;
+			top:130px;
+			right:40px;
+			position:absolute;
+			padding-left:10px;
+			padding-right:10px;
+			padding-top:60px;
+			background:#eee0af;
+			border:3px solid #996600;
+			}
+#quizContainer {
+			width:250px;
+			height:340px;
+			top:130px;
+			right:40px;
+			position:absolute;
+			padding-left:10px;
+			padding-right:10px;
+			padding-top:60px;
+			background:#eee0af;
+			border:3px solid #996600;
+			}
+#content {
+			width:400px;
+			height:300px;
+			left:50px;
+			right:40px;
+			top:190px;
+			position:absolute;
+			padding-left:10px;
+			padding-right:10px;
+			padding-top:10px;
+			}
+#button {
+			background:#FEECC7;
+			font:family:Geneva, Arial, Helvetica, sans-serif;
+			font-size:12px;
+			border:2px outset #993300;
+			position:absolute;
+			left:40px;
+			}
+#choice {
+			border:1px solid white;
+			border-bottom:1px dotted black;
+			background:#ffFFFF;
+			}
+#backLink {
+			font-family:Geneva, Arial, Helvetica, sans-serif;
+			color:#CCCCCC;
+			position:absolute;
+			bottom:0px;
+			}
+#trivia {
+			font-family:Geneva, Arial, Helvetica, sans-serif;
+			top:15px;
+			left:0px;
+			width:125px;
+			height:44px;
+			position:absolute;
+			}
+#banner {
+			background-repeat:no-repeat;			
+			font-family:Geneva, Arial, Helvetica, sans-serif;
+			font-size:36px;
+			position:absolute;
+			margin-top:0px;
+			bottom:5px;
+			top:3px;
+			left:50%;
+			margin-left:-225px;
+			width:450px;
+			height:78px;
+			background:url("images/title1.png");
+			}
+#parchment {
+			top:-5px;
+			background:url("images/parchment.png");
+			background-repeat:no-repeat;
+			background-position:center;
+			position:absolute;
+			width:800px;
+			height:1021px;
+			}
+.valid {	
+			left:15px;
+			position:absolute;
+			vertical-align:middle;
+			margin-top:-5px;
+			}
+.votes {
+			z-index:999;
+			height:3px;
+			top:-12px;
+			position:relative;
+			text-align:right;
+			}
+.locking {	
+			left:15px;
+			position:absolute;
+			vertical-align:middle;
+			margin-top:-4px;
+			}
+.navText {
+			display:none;
+			}
+#nav1 {
+			position:absolute;
+			top: 167px; 
+			left: 40px;
+			width: 107px;
+			height:32px;
+			border:0px;
+			background:url("images/nav1.png");
+			background-repeat:no-repeat;
+			}
+#nav2 {
+			position:absolute;
+			top: 159px; 
+			left: 148px;
+			width:59px;
+			height:32px;
+			border:0px;
+			background:url("images/nav4.png");
+			background-repeat:no-repeat;
+			}
+#nav3 {
+			position:absolute;
+			top: 160px; 
+			left: 215px;
+			width:76px;
+			height:25px;
+			border:0px;
+			background:url("images/nav5.png");
+			background-repeat:no-repeat;
+			}
+#nav4 {
+			position:absolute;
+			top: 144px; 
+			left: 297px;
+			width:180px;
+			height:32px;
+			border:0px;
+			background:url("images/nav3.png");
+			background-repeat:no-repeat;
+			}
+			
+			

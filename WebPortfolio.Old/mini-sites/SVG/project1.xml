@@ -1,0 +1,15 @@
+<samplework>
+	<example>
+		<image>images/project1.jpg</image>
+		<description>
+			<part>First project for Client Side programming with the drop</part>
+			<part>down menus being created completely dynamically</part>
+			<part>where each menu is based on the previous one.</part>
+			<part>Options include the ability to select multiple fish,</part>
+			<part>reset at any time, saving your name and email for future</part>
+			<part>fish selections, and even play with your fish in a flash game.</part>
+			<part>All created using Javascript.</part>
+		</description>
+	</example>
+	
+</samplework>

@@ -1,0 +1,28 @@
+﻿@using Portfolio.Library;
+@model List<BlogPost>
+@{
+    Layout = "_Layout.cshtml";
+}
+<div class="col-xs-12 col-sm-4 pull-right">
+    <div class="well well-semi-transparent post-nav">
+        <h4>
+            Post History</h4>
+        <div class="posts">
+            @foreach (BlogPost item in ViewBag.Posts)
+            { 
+                <a href='@Url.Action("Post", "Home", new { id = item.PostId })'>@item.Title</a><br />
+            }
+        </div>
+    </div>
+</div>
+<div class="col-sm-8 pull-left">
+    @foreach (BlogPost item in Model)
+    { 
+        <div class="well well-semi-transparent">
+            <h4>@item.Title</h4>
+            <h6>
+                Posted @item.DatePublished.ToLongDateString() at @item.DatePublished.ToShortTimeString()</h6>
+            <div class="post">@Html.Raw(item.PostContent)</div>
+        </div>
+    }
+</div>

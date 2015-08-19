@@ -1,0 +1,107 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+			font-family:Geneva, Arial, Helvetica, sans-serif;
+			font-size:12px;
+			background:#ddcd93;
+			background-repeat:no-repeat;
+			background-position:center;
+			}
+.stylePreview {
+			width:200px;
+			padding:15px;
+			}
+#adminNav a {
+			color:#FFFFFF;
+			text-decoration:none;
+			border-bottom:1px dotted #ffffff;
+			}
+a:visited {	
+			color:#6F0235;
+			text-decoration:none;
+			border-bottom:1px dashed #6F0235;
+			}	
+#adminNav a:hover {	
+			color:#804000;
+			background:#eee0af;
+			border-bottom:1px solid #804000;
+			}		
+#adminNav {
+			width:800px;
+			height:20px;
+			padding-top:5px;
+			position:absolute;
+			top:78px;
+			left:0px;
+			font-size:12px;
+			text-align:center;
+			background:#996600;
+			color:#ffffff;
+			}
+#adminBanner {
+			font-family:Geneva, Arial, Helvetica, sans-serif;
+			font-size:36px;
+			position:absolute;
+			margin-top:0px;
+			top:0px;
+			width:800px;
+			height:78px;
+			/*border-top:2px solid #996600;
+			border-bottom:2px solid #996600;*/
+			}
+#container {
+			position:absolute;
+			left:50%;
+			width:800px;
+			height:700px;
+			top:0px;
+			margin-top:0px;
+			background:#c7e5a9;
+			margin-left:-375px;
+			border:2px solid #996600; 
+			background:#eee0af;
+			}
+.leftAdmin {
+			width:350px;
+			height:300px;
+			position:absolute;
+			left:35px;
+			top:110px;
+			padding-left:10px;
+			padding-right:10px;			
+			}
+.rightAdmin {
+			width:350px;
+			height:300px;
+			position:absolute;
+			left:400px;
+			top:110px;
+			padding-left:10px;
+			padding-right:10px;
+			}
+.bottomAdmin {
+			width:600px;
+			height:300px;
+			position:absolute;
+			left:35px;
+			top:350px;
+			padding-left:10px;
+			padding-right:10px;
+			}
+ol li {	
+			list-style-type:lower-alpha;
+			border-bottom:1px dotted #000000;
+			line-height:8px;
+			bottom:-10px;
+			vertical-align:bottom;
+			margin-left:5px;
+			margin-bottom:10px;
+			}
+ul li {	
+			line-height:150%;
+			vertical-align:top;
+			margin-left:5px;
+			margin-bottom:10px;
+			color: #996600;
+			}

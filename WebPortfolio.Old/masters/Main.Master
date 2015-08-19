@@ -1,0 +1,97 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="WebPortfolioOld.masters.Main" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head runat="server">
+    <title>:: Portfolio of Anna J. Steglinski ::</title>
+    <link href="/resources/default.css" type="text/css" rel="stylesheet" />      
+    <link rel="stylesheet" href="../resources/jquery_notification.css" />
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon" />
+    <script src="../resources/jquery_notification_v.1.js" type="text/javascript"></script>
+    <script src="http://code.jquery.com/jquery-1.8.3.js"></script>
+    <script src="/resources/library.js" type="text/javascript"></script>    
+ 
+<!--[if lt IE 7.]>
+<script defer type="text/javascript" src="/resources/pngfix.js"></script>
+<![endif]-->
+<script type="text/javascript">
+    $(function () {
+        showNotification({
+            type: "information",
+            message: "Please bear with me while I update my portfolio. A new version is coming soon, one that will be mobile-friendly!",
+            autoClose: true,
+            duration: 10
+        });
+    });
+</script>
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+	<!--[if lt IE 8.]>
+    <link href="/resources/IE.css" type="text/css" rel="stylesheet" />  
+	<![endif]-->
+</head>
+<body>
+    <form id="form1" runat="server">
+    <asp:LinkButton Visible='false' runat="server" ID="lb1" OnClientClick="return false;" />
+    <asp:ScriptManager ID="smScriptManager" runat="server" EnablePartialRendering="true" />
+    <div id="header">
+	<div id="hd">
+        <a href="/Default.aspx"><img src="/images/logo_2.png" alt="A.J. Steglinski" id="logo" /></a>
+        <ul id="menu">
+            <li><a href="Default.aspx?s=4"><img src="/images/about_me.png" class="swap" alt="About Me" /></a></li>
+            <li><a href="Section.aspx?s=2"><img src="/images/flash.png" class="swap" alt="Flash" /></a></li>
+            <li><a href="Section.aspx?s=1"><img src="/images/web_development.png" class="swap" alt="Web Development" /></a></li>
+            <li><a href="Section.aspx?s=3"><img src="/images/design.png" class="swap" alt="Design & Animation" /></a></li>
+            <li><a href="Default.aspx?s=5"><img src="/images/socialaser.png" class="swap" alt="Socialaser" /></a></li>
+            <li><a href="/documents/resume.pdf" target="_blank"><img src="/images/resume.png" class="swap" alt="Resume" /></a></li>
+        </ul>
+        <asp:TextBox CssClass="search" runat="server" ID="txtSearch" Text="search" onclick="focusSearch()" />
+        <div id="swirl"></div>
+	</div>
+</div>
+<div id="container">
+	<div id="content">
+                <asp:ContentPlaceHolder ID="ThumbPlaceholder" runat="server"></asp:ContentPlaceHolder>
+           
+		<div id="infoPanel">
+		<div id="debug"></div>
+			<asp:ContentPlaceHolder ID="ContentSectionPlaceHolder" runat="server"></asp:ContentPlaceHolder>
+        </div>
+		<div class="push"></div>
+        
+    </div>
+	<div id="warning" style="display:none;">
+        <h2>It appears that you are using Internet Explorer...</h2>
+        <br />
+        <p style="font-size:14px;line-height:14px;">While Internet Explorer might seem like a perfectly decent choice for a browser, it actually is not. Why? Microsoft's browser is notorious for not being <a href="http://www.w3.org/standards/" target="blank">standards compliant</a>. </p><p  style="font-size:14px;line-height:14px;">What does that mean? There are certain "rules" that browsers are supposed to adhere to inorder to ensure that the webpage you are viewing displays correctly. Microsoft does not like to adhere to these rules. The end result: the webpage you are viewing may appear awkwardly layed out, features may malfunction, and overall it may not work perfectly or even in the same ball park.</p>
+
+        <p style="font-size:14px;line-height:14px;">However, there is GOOD NEWS! You have alternatives to using Internet Explorer! My personal recommendation is either <a href="http://www.mozilla.com/en-US/firefox/upgrade.html">Firefox</a> or <a href="http://www.google.com/chrome">Google Chrome</a>. While the latest version of Internet Explorer 8 is universes better than Internet Explorer 6 and 7 it is definitely still not perfect. Most websites today no longer offer support for Internet Explorer 6 and are quickly dropping support for version 7 as well. </p>
+
+        <p style="font-size:14px;line-height:14px;">If you don't wish to upgrade, I will issue this warning: my website may not work perfectly for you. I have worked hard to ensure that it is as compatible with Internet Explorer as possible, but some things are still not perfect. I only support the following browsers:</p>
+		<ul>
+			<li style="font-size:14px;line-height:14px;"><a href="http://www.mozilla.com/en-US/firefox/upgrade.html">Firefox</a></li>
+			<li style="font-size:14px;line-height:14px;"><a href="http://www.google.com/chrome">Google Chrome</a>
+			<li style="font-size:14px;line-height:14px;">Internet Explorer 7 and 8 (with limitations)</li>
+			<li style="font-size:14px;line-height:14px;"><a href="http://www.apple.com/safari/">Safari</a></li>
+			<li style="font-size:14px;line-height:14px;"><a href="http://www.opera.com/">Opera</a></li>
+		</ul>
+		<p style="font-size:14px;line-height:14px;">Another reason to upgrade to a different browser? You will no longer receive this annoying pop up ;-)</p>
+   </div>
+
+    </div>
+    
+    <div id="footer"><p>&copy; Copyright Anna Steglinski 2010 | Design a collaboration by Anna Steglinski and Jamie Steglinski</p></div>
+    </form>
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try {
+var pageTracker = _gat._getTracker("UA-3596321-2");
+pageTracker._trackPageview();
+} catch(err) {}</script>
+</body>
+</html>

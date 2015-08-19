@@ -1,0 +1,83 @@
+﻿/*.ios-body { 
+z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right:0;
+  bottom:0;
+  overflow:scroll;
+  background-position:0 0;
+	background-image: url('/Content/images/background_1200.jpg'); 
+	background-repeat: no-repeat; 
+	background-attachment: fixed; 
+	background-size: 100%; }*/
+.ios-body { background-image: url('/Content/images/background_1200.jpg'); 
+	background-repeat: no-repeat; 
+	background-size: 100%; 
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:-1;
+	height:100%;
+	width:100%;
+}
+.navbar-default .navbar-nav > li > a { color: #fff; }
+.navbar-default .navbar-brand { color: #fff; background: url('/Content/images/logo_short2X.png') no-repeat; 
+                                background-size: 47px 30px;
+                                width: 47px; height: 30px; margin: 10px 15px; }
+
+.well.well-semi-transparent { background: rgba(255,255,255,.5); }
+.margin-top-7 { margin-top:7%; }
+.font-10 { font-size:10px; }
+
+.post-nav select { display: none; }
+
+.navbar-nav>li, .navbar-nav {
+float: left !important;
+}
+
+.navbar-nav.navbar-right:last-child {
+margin-right: -15px !important;
+}
+
+.navbar-right {
+float: right!important;
+}
+/****** landscape media queries *****/
+@media (max-width: 1200px) {
+	.ios-body { background-image: url('/Content/images/background_1200.jpg'); }
+}
+@media (max-width: 992px) {
+	.ios-body { background-image: url('/Content/images/background_992.jpg'); }
+}
+@media (max-width: 768px) {
+	.ios-body { background-image: url('/Content/images/background_768.jpg'); }
+	
+  .post-nav .posts     { display: none; }
+  .post-nav select { display: inline-block; }
+	.margin-top-7 { margin-top:12%; }
+}
+@media (max-width: 480px) and (max-height: 320px) {
+	.ios-body { background-image: url('/Content/images/background_480.jpg'); }
+}
+/****** portrait media queries  *****/
+@media (max-width: 640px) and (max-height: 960px) {
+	.ios-body { background-image: url('/Content/images/background_640x960.jpg'); width:100%; height:100%; }
+	
+}
+@media (max-width: 320px) {
+	.ios-body { background-image: url('/Content/images/background_320.jpg'); }
+	img { width:250px !important; }
+	.margin-top-7 { margin-top:22%; }
+}
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error { color: #f00; }
+
+.field-validation-valid { display: none; }
+
+.input-validation-error { border: 1px solid #f00; background-color: #fee; }
+
+.validation-summary-errors { font-weight: bold; color: #f00; }
+
+.validation-summary-valid { display: none; }

@@ -1,0 +1,29 @@
+@charset "utf-8";
+/*IE7 CSS Document */
+.search
+{
+	height:17px;
+	padding-top:0px;
+}
+#swirl
+{
+	left:390px;
+	top:-95px;
+}
+.itemPreview
+{
+	margin-top:50px;
+}
+.imageDiv
+{
+	max-width:325px;
+	min-width:180px;
+}
+.detailsDiv
+{
+	margin-top:45px;
+}
+#header ul
+{
+	margin-left:-10px;
+}

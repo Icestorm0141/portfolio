@@ -1,0 +1,100 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Main.master.cs" Inherits="WebPortfolio.Masters.Main" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+	<title>:: Portfolio of Anna J. Steglinski ::</title>
+	<link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon" />
+	<link href="../resources/default.css" type="text/css" rel="stylesheet" />
+	<link rel="stylesheet" href="../resources/jquery_notification.css" />
+	<link rel="Stylesheet" href="http://code.jquery.com/ui/1.9.2/themes/eggplant/jquery-ui.css" />
+
+	<script src="resources/jquery_notification_v.1.js" type="text/javascript"></script>
+
+	<script src="http://code.jquery.com/jquery.min.js" type="text/javascript"></script>
+	<script src="http://code.jquery.com/ui/1.9.2/jquery-ui.min.js" type="text/javascript"></script>
+
+	<script src="resources/library.js" type="text/javascript"></script>
+
+	<!--[if lt IE 7.]>
+<script defer type="text/javascript" src="/resources/pngfix.js"></script>
+<![endif]-->
+
+	<script type="text/javascript">
+		$(function () {
+			showNotification({
+				type: "information",
+				message: "Please bear with me while I update my portfolio. A new version is coming soon, one that will be mobile-friendly!",
+				autoClose: true,
+				duration: 10
+			});
+		});
+	</script>
+
+	<asp:ContentPlaceHolder ID="head" runat="server">
+	</asp:ContentPlaceHolder>
+	<!--[if lt IE 8.]>
+	<link href="/resources/IE.css" type="text/css" rel="stylesheet" />  
+	<![endif]-->
+</head>
+<body>
+	<form id="form1" runat="server">
+	<asp:ScriptManager ID="smScriptManager" runat="server">
+		<Services>
+			<asp:ServiceReference Path="~/resources/Portfolio.asmx" />
+		</Services>
+	</asp:ScriptManager>
+	<div id="header">
+		<div id="hd">
+			<a href="/Default.aspx">
+				<img src="images/logo_2.png" alt="A.J. Steglinski" id="logo" /></a>
+			<ul id="menu">
+				<li><a href="Default.aspx?s=4">
+					<img src="images/about_me.png" class="swap" alt="About Me" /></a></li>
+				<li><a href="Section.aspx?s=2">
+					<img src="images/flash.png" class="swap" alt="Flash" /></a></li>
+				<li><a href="Section.aspx?s=1">
+					<img src="images/web_development.png" class="swap" alt="Web Development" /></a></li>
+				<li><a href="Section.aspx?s=3">
+					<img src="images/design.png" class="swap" alt="Design & Animation" /></a></li>
+				<li><a href="/documents/steglinski_resume2013.pdf" target="_blank">
+					<img src="images/resume.png" class="swap" alt="Resume" /></a></li>
+			</ul>
+			<div id="swirl">
+			</div>
+		</div>
+	</div>
+	<div id="container">
+		<div id="content">
+			<asp:ContentPlaceHolder ID="ThumbPlaceholder" runat="server">
+			</asp:ContentPlaceHolder>
+			<div id="infoPanel">
+				<div id="debug">
+				</div>
+				<asp:ContentPlaceHolder ID="ContentSectionPlaceHolder" runat="server">
+				</asp:ContentPlaceHolder>
+			</div>
+			<div class="push">
+			</div>
+		</div>
+	</div>
+	<div id="footer">
+		<p>
+			&copy; Copyright Anna Steglinski <%=DateTime.Now.Year.ToString() %> | Design a collaboration by Anna Steglinski
+			and Jamie Steglinski</p>
+	</div>
+	</form>
+
+	<script type="text/javascript">
+		var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+		document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+	</script>
+
+	<script type="text/javascript">
+		try {
+			var pageTracker = _gat._getTracker("UA-3596321-2");
+			pageTracker._trackPageview();
+		} catch (err) { }</script>
+
+</body>
+</html>

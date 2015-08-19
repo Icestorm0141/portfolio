@@ -1,0 +1,79 @@
+﻿@using MFBlog.Helpers;
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
+    <meta property="og:image" content="http://medifast.ajsteglinski.com/@Url.Content("Content/images/facebook_graphic2.jpg")" />    
+    <meta property="og:url" content="http://medifast.ajsteglinski.com/" />  
+    <meta property="og:title" content="My Medifast Blog > @ViewBag.PostTitle" />
+	<link rel="shortcut icon" href="~/Content/images/favicon.ico" type="image/x-icon" />
+    <title>My Medifast Blog > @ViewBag.Title</title>
+    @Styles.Render("~/bundles/css/bootstrap")
+    @Styles.Render("~/bundles/css/bootstrap-theme")
+    @Styles.Render("~/bundles/css")
+</head>
+<body>
+<div class="ios-body">
+</div>
+    <header>
+        <nav class="navbar navbar-inverse navbar-default navbar-fixed-top" role="navigation">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#"></a>
+                    <ul class="navbar-nav nav">
+                        @Html.MenuItem("My Journey", "Index", "Home")
+                        @Html.MenuItem("My Story", "MyStory", "Home")
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container margin-top-7">
+        <div class="row"> 
+        @RenderBody()
+        </div>   
+    </div>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/js/bootstrap")
+    @RenderSection("scripts", required: false)
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+  m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-45254109-1', 'ajsteglinski.com');
+        ga('send', 'pageview');
+
+</script>
+
+<script type="text/javascript">
+    $(function () {
+        $("<select class='form-control' />").appendTo(".post-nav");
+
+        // Create default option "Go to..."
+        $("<option />", {
+            "selected": "selected",
+            "value": "",
+            "text": "Go to..."
+        }).appendTo(".post-nav select");
+
+        // Populate dropdown with menu items
+        $(".post-nav .posts a").each(function () {
+            var el = $(this);
+            $("<option />", {
+                "value": el.attr("href"),
+                "text": el.text()
+            }).appendTo(".post-nav select");
+        });
+        $(".post-nav select").change(function () {
+            window.location = $(this).find("option:selected").val();
+        });
+    });
+</script>
+</body>
+</html>

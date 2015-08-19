@@ -1,0 +1,4 @@
+40 4,15 * 5 * ~ajs2189/Sites/pfw/project3/RSS/getcuNews.php >~ajs2189/Sites/pfw/project3/RSS/christianNews.rss
+40 4,15 * 5 * ~ajs2189/Sites/pfw/project3/RSS/getnews.php >~ajs2189/Sites/pfw/project3/RSS/christianPostEnt.rss
+40 4,15 * 5 * ~ajs2189/Sites/pfw/project3/RSS/getsc.php >~ajs2189/Sites/pfw/project3/RSS/skepChristian.rss
+40 4,15 * 5 * ~ajs2189/Sites/pfw/project3/RSS/getsociety.php >~ajs2189/Sites/pfw/project3/RSS/christianSociety.rss

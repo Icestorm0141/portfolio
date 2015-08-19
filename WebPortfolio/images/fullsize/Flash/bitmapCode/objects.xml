@@ -1,0 +1,23 @@
+﻿<project2>
+	<BaseLayer>
+		<PointSprite x="0" y="0" name="Grass" type="MovieClip" />
+	</BaseLayer>
+	<FlowerLayer>
+		<TripleFlower>
+			<Flower x="100" y="50" name="tripleFlower" type="Bitmap" />
+			<Flower x="500" y="50" name="tripleFlower" type="Bitmap" />
+		</TripleFlower>
+		<CenterFlower>
+			<Flower x="300" y="300" name="centerFlower" type="Bitmap" />
+		</CenterFlower>
+		<SingleFlower>
+			<Flower count="3" x="null" y="null" name="singleFlower" type="Bitmap" />
+		</SingleFlower>
+	</FlowerLayer>
+	<PredatorLayer number="1">
+		<Bird x="75" y="75" speed="2" rotation="60" name="bird" type="Bitmap" />
+	</PredatorLayer>
+	<ButterflyLayer number="8">
+		<Butterfly rotation="-50" name="butterfly08,butterfly09,butterfly10,butterfly11,butterfly12,butterfly13,butterfly12,butterfly11,butterfly10,butterfly09,butterfly08" type="MovieClip" />
+	</ButterflyLayer>
+</project2>

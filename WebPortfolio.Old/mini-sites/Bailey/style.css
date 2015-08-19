@@ -1,0 +1,142 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {		background:#336699;
+			margin:0px;
+			font-family: 'Times New Roman', Times, serif;
+			font-size: 14px;
+			}
+.bullet {
+			padding-left:50px;
+			padding-right:20px;
+			}
+.addContent {
+			vertical-align:top; 
+			padding-left:10px;
+			padding-top: 5px;
+			font-family:"Times New Roman", Times, serif;
+			font-size:11pt;
+			padding-left:10px;
+			padding-right:10px;
+			z-index:200;
+			position:absolute;
+			top:350px;
+			width:140px;
+			}
+.leftNav1 {	font-family:"Times New Roman", Times, serif;
+			font-size:11pt;
+			text-decoration: underline;
+			font-weight: bold;
+			}
+.leftNavLI {
+			list-style:none; 
+			margin-left:-30px;
+			margin-bottom:20px;
+			}
+.leftNav2 {	font-family:"Times New Roman", Times, serif;
+			font-size:11pt;
+			}
+.headline {	font-family: 'Times New Roman', Times, serif;
+			font-size: 18pt; 
+			text-decoration:underline;
+			font-weight:bold;
+			padding-left:20px;
+			}
+.content, p {
+			font-family: 'Times New Roman', Times, serif;
+			font-size: 14px; 
+			text-decoration:none;
+			padding-left:50px;
+			padding-right:20px;
+			}
+.contentTable {
+			font-family:'Times New Roman',Times, serif;
+			font-size:14px;
+			padding-left:5px;
+			padding-right:5px;
+			text-align:center;
+			vertical-align:top;
+
+}
+.smallHeadline	{ font-family: 'Times New Roman', Times, serif;
+			font-size: 14pt; 
+			text-decoration:underline;
+			font-weight:bold;
+			font-style:italic;
+			}
+ul	{ 		font-family: 'Times New Roman', Times, serif;
+			font-size: 14px; 
+			text-decoration:none;
+			line-height:140%;
+			
+			}
+ol {		margin-left:50px;
+}	
+.style1 {	font-size: 14px;
+			text-align:center;
+			padding-left:10px;
+		}
+#container {
+			width:827px;
+			position:absolute;
+			height:auto;
+			padding-bottom:20px;
+			}
+#vBar {		
+			background:url("images/layoutBG_14.jpg");
+			background-repeat:repeat-y;
+			position:fixed;
+			left:800px;
+			width:27px;
+			height:5000px;
+			min-height:500px;
+			
+			}
+#header {	width:800px;
+			z-index:2;
+			position:absolute;
+			padding-bottom:0px;
+			margin-bottom:0px;
+			}
+#nav {		width:800px;
+			position:absolute;
+			}
+#middleBanner {
+			width:800px;
+			vertical-align:top;
+			position:relative;
+			margin-right:27px;
+			top:191px;
+			z-index:2;
+			
+			}
+#leftNav {	
+			width:149px;
+			height:3000px;
+			position:fixed;
+			background:#99cccc;
+			z-index:0;
+			top:0px;
+			
+			}
+#middlevBar {
+			width:29px;
+			left:149px;
+			height:3000px;
+			position:fixed;
+			background:url("images/layoutFinal_13.jpg");
+			z-index:0;
+			top:0px;
+			}
+#content {	background:url("images/bgColor.jpg");
+			position:relative;
+			width:582px;
+			height:auto;
+			left:178px;
+			z-index:2;
+			top:105px;
+			min-height:500px;
+			padding-bottom:20px;
+			padding-left:20px;
+			padding-right:20px;
+			}

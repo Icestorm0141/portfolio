@@ -1,0 +1,414 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{F9E900A0-0F8E-4F0B-A414-79DA80430BB1}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebPortfolioOld</RootNamespace>
+    <AssemblyName>WebPortfolioOld</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkProfile />
+    <UseIISExpress>false</UseIISExpress>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Default.aspx" />
+    <Content Include="default.html" />
+    <Content Include="images\about_me.png" />
+    <Content Include="images\arrow_down.png" />
+    <Content Include="images\arrow_up.png" />
+    <Content Include="images\background.png" />
+    <Content Include="images\container_bg.png" />
+    <Content Include="images\design.png" />
+    <Content Include="images\error_bg.png" />
+    <Content Include="images\error_close.png" />
+    <Content Include="images\flash.png" />
+    <Content Include="images\footer.png" />
+    <Content Include="images\header_bg.png" />
+    <Content Include="images\info_bg.png" />
+    <Content Include="images\info_close.png" />
+    <Content Include="images\logo.png" />
+    <Content Include="images\photography.png" />
+    <Content Include="images\preview\backgroundRework.jpg" />
+    <Content Include="images\preview\Design\image_001.jpg" />
+    <Content Include="images\preview\Design\image_0010.jpg" />
+    <Content Include="images\preview\Design\image_0011.jpg" />
+    <Content Include="images\preview\Design\image_0012.jpg" />
+    <Content Include="images\preview\Design\image_0013.jpg" />
+    <Content Include="images\preview\Design\image_0014.jpg" />
+    <Content Include="images\preview\Design\image_002.jpg" />
+    <Content Include="images\preview\Design\image_003.jpg" />
+    <Content Include="images\preview\Design\image_004.jpg" />
+    <Content Include="images\preview\Design\image_005.jpg" />
+    <Content Include="images\preview\Design\image_006.jpg" />
+    <Content Include="images\preview\Design\image_007.jpg" />
+    <Content Include="images\preview\Design\image_008.jpg" />
+    <Content Include="images\preview\Design\image_009.jpg" />
+    <Content Include="images\preview\Flash\image_001.jpg" />
+    <Content Include="images\preview\Flash\image_002.jpg" />
+    <Content Include="images\preview\Flash\image_003.jpg" />
+    <Content Include="images\preview\Flash\image_004.jpg" />
+    <Content Include="images\preview\Flash\image_005.jpg" />
+    <Content Include="images\preview\Flash\image_006.jpg" />
+    <Content Include="images\preview\Flash\image_007.jpg" />
+    <Content Include="images\preview\Flash\image_008.jpg" />
+    <Content Include="images\preview\Flash\image_009.jpg" />
+    <Content Include="images\preview\Photography\image_001.jpg" />
+    <Content Include="images\preview\Photography\image_0010.jpg" />
+    <Content Include="images\preview\Photography\image_0011.jpg" />
+    <Content Include="images\preview\Photography\image_0012.jpg" />
+    <Content Include="images\preview\Photography\image_0013.jpg" />
+    <Content Include="images\preview\Photography\image_0014.jpg" />
+    <Content Include="images\preview\Photography\image_0015.jpg" />
+    <Content Include="images\preview\Photography\image_0016.jpg" />
+    <Content Include="images\preview\Photography\image_0017.jpg" />
+    <Content Include="images\preview\Photography\image_0018.jpg" />
+    <Content Include="images\preview\Photography\image_0019.jpg" />
+    <Content Include="images\preview\Photography\image_002.jpg" />
+    <Content Include="images\preview\Photography\image_0020.jpg" />
+    <Content Include="images\preview\Photography\image_0021.jpg" />
+    <Content Include="images\preview\Photography\image_0022.jpg" />
+    <Content Include="images\preview\Photography\image_003.jpg" />
+    <Content Include="images\preview\Photography\image_004.jpg" />
+    <Content Include="images\preview\Photography\image_005.jpg" />
+    <Content Include="images\preview\Photography\image_006.jpg" />
+    <Content Include="images\preview\Photography\image_007.jpg" />
+    <Content Include="images\preview\Photography\image_008.jpg" />
+    <Content Include="images\preview\Photography\image_009.jpg" />
+    <Content Include="images\preview\Programming\image_001.jpg" />
+    <Content Include="images\preview\Programming\image_002.jpg" />
+    <Content Include="images\preview\Programming\image_003.jpg" />
+    <Content Include="images\preview\Websites\image_001.jpg" />
+    <Content Include="images\preview\Websites\image_0010.jpg" />
+    <Content Include="images\preview\Websites\image_0011.jpg" />
+    <Content Include="images\preview\Websites\image_0012.jpg" />
+    <Content Include="images\preview\Websites\image_003.jpg" />
+    <Content Include="images\preview\Websites\image_004.jpg" />
+    <Content Include="images\preview\Websites\image_005.jpg" />
+    <Content Include="images\preview\Websites\image_006.jpg" />
+    <Content Include="images\preview\Websites\image_007.jpg" />
+    <Content Include="images\preview\Websites\image_008.jpg" />
+    <Content Include="images\preview\Websites\image_009.jpg" />
+    <Content Include="images\succ_bg.png" />
+    <Content Include="images\succ_close.png" />
+    <Content Include="images\swirl.png" />
+    <Content Include="images\thumbs\About Me\menu.jpg" />
+    <Content Include="images\thumbs\About Me\menu.png" />
+    <Content Include="images\thumbs\About Me\menuDown.jpg" />
+    <Content Include="images\thumbs\About Me\menu_over.png" />
+    <Content Include="images\thumbs\Design\image_001.jpg" />
+    <Content Include="images\thumbs\Design\image_0010.jpg" />
+    <Content Include="images\thumbs\Design\image_0011.jpg" />
+    <Content Include="images\thumbs\Design\image_0012.jpg" />
+    <Content Include="images\thumbs\Design\image_0013.jpg" />
+    <Content Include="images\thumbs\Design\image_0014.JPG" />
+    <Content Include="images\thumbs\Design\image_002.jpg" />
+    <Content Include="images\thumbs\Design\image_003.jpg" />
+    <Content Include="images\thumbs\Design\image_004.jpg" />
+    <Content Include="images\thumbs\Design\image_005.jpg" />
+    <Content Include="images\thumbs\Design\image_006.jpg" />
+    <Content Include="images\thumbs\Design\image_007.jpg" />
+    <Content Include="images\thumbs\Design\image_008.jpg" />
+    <Content Include="images\thumbs\Design\image_009.jpg" />
+    <Content Include="images\thumbs\Design\menu.jpg" />
+    <Content Include="images\thumbs\Design\menu.png" />
+    <Content Include="images\thumbs\Design\menuDown.jpg" />
+    <Content Include="images\thumbs\Design\menu_over.png" />
+    <Content Include="images\thumbs\Flash\image_001.jpg" />
+    <Content Include="images\thumbs\Flash\image_002.jpg" />
+    <Content Include="images\thumbs\Flash\image_003.jpg" />
+    <Content Include="images\thumbs\Flash\image_004.jpg" />
+    <Content Include="images\thumbs\Flash\image_005.jpg" />
+    <Content Include="images\thumbs\Flash\image_006.jpg" />
+    <Content Include="images\thumbs\Flash\image_007.jpg" />
+    <Content Include="images\thumbs\Flash\image_008.jpg" />
+    <Content Include="images\thumbs\Flash\image_009.jpg" />
+    <Content Include="images\thumbs\Flash\menu.jpg" />
+    <Content Include="images\thumbs\Flash\menu.png" />
+    <Content Include="images\thumbs\Flash\menuDown.jpg" />
+    <Content Include="images\thumbs\Flash\menu_over.png" />
+    <Content Include="images\thumbs\Photography\image_001.jpg" />
+    <Content Include="images\thumbs\Photography\image_0010.jpg" />
+    <Content Include="images\thumbs\Photography\image_0011.jpg" />
+    <Content Include="images\thumbs\Photography\image_0012.jpg" />
+    <Content Include="images\thumbs\Photography\image_0013.jpg" />
+    <Content Include="images\thumbs\Photography\image_0014.jpg" />
+    <Content Include="images\thumbs\Photography\image_0015.jpg" />
+    <Content Include="images\thumbs\Photography\image_0016.jpg" />
+    <Content Include="images\thumbs\Photography\image_0017.jpg" />
+    <Content Include="images\thumbs\Photography\image_0018.jpg" />
+    <Content Include="images\thumbs\Photography\image_0019.jpg" />
+    <Content Include="images\thumbs\Photography\image_002.jpg" />
+    <Content Include="images\thumbs\Photography\image_0020.jpg" />
+    <Content Include="images\thumbs\Photography\image_0021.jpg" />
+    <Content Include="images\thumbs\Photography\image_0022.jpg" />
+    <Content Include="images\thumbs\Photography\image_003.jpg" />
+    <Content Include="images\thumbs\Photography\image_004.jpg" />
+    <Content Include="images\thumbs\Photography\image_005.jpg" />
+    <Content Include="images\thumbs\Photography\image_006.jpg" />
+    <Content Include="images\thumbs\Photography\image_007.jpg" />
+    <Content Include="images\thumbs\Photography\image_008.jpg" />
+    <Content Include="images\thumbs\Photography\image_009.jpg" />
+    <Content Include="images\thumbs\Photography\menu.jpg" />
+    <Content Include="images\thumbs\Photography\menu.png" />
+    <Content Include="images\thumbs\Photography\menuDown.jpg" />
+    <Content Include="images\thumbs\Photography\menu_over.png" />
+    <Content Include="images\thumbs\Programming\image_001.jpg" />
+    <Content Include="images\thumbs\Programming\image_002.jpg" />
+    <Content Include="images\thumbs\Programming\image_003.jpg" />
+    <Content Include="images\thumbs\Programming\menu.png" />
+    <Content Include="images\thumbs\Programming\menu_over.png" />
+    <Content Include="images\thumbs\Websites\image_001.jpg" />
+    <Content Include="images\thumbs\Websites\image_0010.jpg" />
+    <Content Include="images\thumbs\Websites\image_0011.jpg" />
+    <Content Include="images\thumbs\Websites\image_0012.jpg" />
+    <Content Include="images\thumbs\Websites\image_003.jpg" />
+    <Content Include="images\thumbs\Websites\image_004.jpg" />
+    <Content Include="images\thumbs\Websites\image_005.jpg" />
+    <Content Include="images\thumbs\Websites\image_006.jpg" />
+    <Content Include="images\thumbs\Websites\image_007.jpg" />
+    <Content Include="images\thumbs\Websites\image_008.jpg" />
+    <Content Include="images\thumbs\Websites\image_009.jpg" />
+    <Content Include="images\thumbs\Websites\menu.jpg" />
+    <Content Include="images\thumbs\Websites\menu.png" />
+    <Content Include="images\thumbs\Websites\menuDown.jpg" />
+    <Content Include="images\thumbs\Websites\menu_over.png" />
+    <Content Include="images\warn_bg.png" />
+    <Content Include="images\warn_close.png" />
+    <Content Include="images\web_development.png" />
+    <Content Include="images\whats_new.png" />
+    <Content Include="resources\default.css" />
+    <Content Include="resources\jquery-1.3.2.min.js" />
+    <Content Include="resources\jquery.appendDom.js" />
+    <Content Include="resources\jquery.canvasSwap.js" />
+    <Content Include="resources\jquery_notification.css" />
+    <Content Include="resources\jquery_notification_v.1.js" />
+    <Content Include="resources\library.js" />
+    <Content Include="RocEvents.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Code\dataaccess\DataRetriever.cs" />
+    <Compile Include="RocEvents.aspx.cs">
+      <DependentUpon>RocEvents.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RocEvents.aspx.designer.cs">
+      <DependentUpon>RocEvents.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchResults.aspx.cs">
+      <DependentUpon>SearchResults.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SearchResults.aspx.designer.cs">
+      <DependentUpon>SearchResults.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Section.aspx.cs">
+      <DependentUpon>Section.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Section.aspx.designer.cs">
+      <DependentUpon>Section.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="masters\Main.Master.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="masters\Main.Master.designer.cs">
+      <DependentUpon>Main.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="documents\resume.pdf" />
+    <None Include="images\fullsize\Design\VideoPlayer_Comps.pdf" />
+    <None Include="images\thumbs\Programming\image_002" />
+    <Content Include="resources\jquery.cookie.js" />
+    <Content Include="SearchResults.aspx" />
+    <Content Include="images\favicon.ico" />
+    <Content Include="images\fullsize\Design\image_001.jpg" />
+    <Content Include="images\fullsize\Design\image_0010.jpg" />
+    <Content Include="images\fullsize\Design\image_0011.jpg" />
+    <Content Include="images\fullsize\Design\image_0012.jpg" />
+    <Content Include="images\fullsize\Design\image_0013.jpg" />
+    <Content Include="images\fullsize\Design\image_002.jpg" />
+    <Content Include="images\fullsize\Design\image_003.jpg" />
+    <Content Include="images\fullsize\Design\image_004.jpg" />
+    <Content Include="images\fullsize\Design\image_005.jpg" />
+    <Content Include="images\fullsize\Design\image_006.jpg" />
+    <Content Include="images\fullsize\Design\image_007.jpg" />
+    <Content Include="images\fullsize\Design\image_008.jpg" />
+    <Content Include="images\fullsize\Design\image_009.jpg" />
+    <Content Include="images\fullsize\Flash\car.html" />
+    <Content Include="images\fullsize\Flash\car.swf" />
+    <Content Include="images\fullsize\Flash\car.txt" />
+    <Content Include="images\fullsize\Flash\deloslaurel.swf" />
+    <Content Include="images\fullsize\Flash\delosnlaurel.html" />
+    <Content Include="images\fullsize\Flash\fishTank.html" />
+    <Content Include="images\fullsize\Flash\fishTank.swf" />
+    <Content Include="images\fullsize\Flash\fishTank.txt" />
+    <Content Include="images\fullsize\Flash\hamster.html" />
+    <Content Include="images\fullsize\Flash\hamster.swf" />
+    <Content Include="images\fullsize\Flash\hamster.txt" />
+    <Content Include="images\fullsize\Flash\image_001.jpg" />
+    <Content Include="images\fullsize\Flash\image_002.jpg" />
+    <Content Include="images\fullsize\Flash\image_003.jpg" />
+    <Content Include="images\fullsize\Flash\image_004.jpg" />
+    <Content Include="images\fullsize\Flash\image_005.jpg" />
+    <Content Include="images\fullsize\Flash\image_006.jpg" />
+    <Content Include="images\fullsize\Flash\iPhone.html" />
+    <Content Include="images\fullsize\Flash\iPhone.swf" />
+    <Content Include="images\fullsize\Flash\lyrics.html" />
+    <Content Include="images\fullsize\Flash\lyrics.swf" />
+    <Content Include="images\fullsize\Flash\nhs.html" />
+    <Content Include="images\fullsize\Flash\nhs.swf" />
+    <Content Include="images\fullsize\Flash\tornado.html" />
+    <Content Include="images\fullsize\Flash\tornado.swf" />
+    <Content Include="images\fullsize\Photography\image_001.jpg" />
+    <Content Include="images\fullsize\Photography\image_0010.jpg" />
+    <Content Include="images\fullsize\Photography\image_0011.jpg" />
+    <Content Include="images\fullsize\Photography\image_0012.jpg" />
+    <Content Include="images\fullsize\Photography\image_0013.jpg" />
+    <Content Include="images\fullsize\Photography\image_0014.jpg" />
+    <Content Include="images\fullsize\Photography\image_0015.jpg" />
+    <Content Include="images\fullsize\Photography\image_0016.jpg" />
+    <Content Include="images\fullsize\Photography\image_0017.jpg" />
+    <Content Include="images\fullsize\Photography\image_0018.jpg" />
+    <Content Include="images\fullsize\Photography\image_0019.jpg" />
+    <Content Include="images\fullsize\Photography\image_002.jpg" />
+    <Content Include="images\fullsize\Photography\image_0020.jpg" />
+    <Content Include="images\fullsize\Photography\image_0021.jpg" />
+    <Content Include="images\fullsize\Photography\image_0022.jpg" />
+    <Content Include="images\fullsize\Photography\image_003.jpg" />
+    <Content Include="images\fullsize\Photography\image_004.jpg" />
+    <Content Include="images\fullsize\Photography\image_005.jpg" />
+    <Content Include="images\fullsize\Photography\image_006.jpg" />
+    <Content Include="images\fullsize\Photography\image_007.jpg" />
+    <Content Include="images\fullsize\Photography\image_008.jpg" />
+    <Content Include="images\fullsize\Photography\image_009.jpg" />
+    <Content Include="images\fullsize\Programming\javascript_project1.txt" />
+    <Content Include="images\fullsize\Programming\javascript_project2.txt" />
+    <Content Include="images\fullsize\Programming\phpproject3.txt" />
+    <Content Include="images\fullsize\Websites\409codeExample.html" />
+    <Content Include="images\fullsize\Websites\409codeExample.txt" />
+    <Content Include="images\fullsize\Websites\image_001.jpg" />
+    <Content Include="images\fullsize\Websites\image_0010.jpg" />
+    <Content Include="images\fullsize\Websites\image_002.jpg" />
+    <Content Include="images\fullsize\Websites\image_003.jpg" />
+    <Content Include="images\fullsize\Websites\image_004.jpg" />
+    <Content Include="images\fullsize\Websites\image_005.jpg" />
+    <Content Include="images\fullsize\Websites\image_006.jpg" />
+    <Content Include="images\fullsize\Websites\image_007.jpg" />
+    <Content Include="images\fullsize\Websites\image_008.jpg" />
+    <Content Include="images\fullsize\Websites\image_009.jpg" />
+    <Content Include="images\fullsize\Websites\weRITcodeExample.html" />
+    <Content Include="images\fullsize\Websites\weRITcodeExample.txt" />
+    <Content Include="images\logo_2.png" />
+    <Content Include="images\resume.png" />
+    <Content Include="images\search_bg.png" />
+    <Content Include="images\section_pages\flickr.png" />
+    <Content Include="images\section_pages\header.png" />
+    <Content Include="images\section_pages\IMG_4380_a.jpg" />
+    <Content Include="images\section_pages\twittericon.png" />
+    <Content Include="images\section_pages\vimeo.png" />
+    <Content Include="images\socialaser.png" />
+    <Content Include="images\socialaser_section.png" />
+    <Content Include="images\welcome.png" />
+    <Content Include="resources\jquery.bxSlider.js" />
+    <Content Include="Section.aspx" />
+    <Content Include="images\about_me_section.png" />
+    <Content Include="images\contact_me_section.png" />
+    <Content Include="images\design_section.png" />
+    <Content Include="images\flash_section.png" />
+    <Content Include="images\web_development_section.png" />
+    <Content Include="masters\Main.Master" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>False</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>59870</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>
+          </IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,282 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="/css/rss20.xsl" type="text/xsl"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:media="http://search.yahoo.com/mrss/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:nyt="http://www.nytimes.com/namespaces/rss/2.0" version="2.0" xmlns:pheedo="http://www.pheedo.com/namespace/pheedo">
+	<channel>
+		<title>NYT &gt; Home Page</title>
+		<link>http://www.nytimes.com/pages/index.html?partner=rss</link>
+		<atom:link rel="self" type="application/rss+xml" href="http://www.nytimes.com/services/xml/rss/nyt/HomePage.xml"/>
+		<description/>
+		<language>en-us</language>
+		<copyright>Copyright 2010
+ The New York Times Company</copyright>
+		<lastBuildDate>Mon, 15 Mar 2010 14:07:58 GMT
+</lastBuildDate>
+		<image>
+			<title>NYT &gt; Home Page</title>
+			<url>http://graphics.nytimes.com/images/section/NytSectionHeader.gif</url>
+			<link>http://www.nytimes.com/pages/index.html?partner=rss</link>
+		</image>
+		<item>
+			<title>Contractors Tied to Effort to Track and Kill Militants</title>
+			<link>http://feeds.nytimes.com/click.phdo?i=1413e7eaefebd6cd6d3cf236b528f947</link>
+			<pheedo:origLink>http://www.nytimes.com/2010/03/15/world/asia/15contractors.html?partner=rss&amp;amp;emc=rss</pheedo:origLink>
+			<guid isPermaLink="false">http://www.nytimes.com/2010/03/15/world/asia/15contractors.html</guid>
+			<media:content url="http://graphics8.nytimes.com/images/2010/03/15/world/15contractors_CA1/15contractors_CA1-thumbStandard.jpg" medium="image" height="75" width="75"/>
+			<media:description>From left: Michael D. Furlong, the official who was said to have hired private contractors to track militants in Afghanistan and Pakistan; Robert Young Pelton, a contractor; Duane Clarridge, a former C.I.A. official; and Eason Jordan, a former television news executive.</media:description>
+			<media:credit>From Left: United States Air Force; Robert Young Pelton; Mike Wintroath/Associated Press; Adam Berry/Bloomberg News</media:credit>
+			<description>A Defense Department official set up a private network of spies in Pakistan and Afghanistan to gather intelligence on insurgents, according to officials.&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+&lt;a href=&quot;http://ads.pheedo.com/click.phdo?s=1413e7eaefebd6cd6d3cf236b528f947&amp;p=1&quot;&gt;&lt;img alt=&quot;&quot; style=&quot;border: 0;&quot; border=&quot;0&quot; src=&quot;http://ads.pheedo.com/img.phdo?s=1413e7eaefebd6cd6d3cf236b528f947&amp;p=1&quot;/&gt;&lt;/a&gt;
+&lt;!-- foo --&gt;</description>
+			<dc:creator>By DEXTER FILKINS and MARK MAZZETTI</dc:creator>
+			<pubDate>Mon, 15 Mar 2010 12:08:40 GMT</pubDate>
+			<category domain="http://www.nytimes.com/namespaces/des">Afghanistan War (2001- )</category>
+			<category domain="http://www.nytimes.com/namespaces/des">Private Military Contractors</category>
+			<category domain="http://www.nytimes.com/namespaces/nyt_org_all">Defense Department</category>
+			<category domain="http://www.nytimes.com/namespaces/mdes">Espionage</category>
+			<category domain="http://www.nytimes.com/namespaces/nyt_geo">Afghanistan</category>
+			<category domain="http://www.nytimes.com/namespaces/nyt_geo">Pakistan</category>
+			<category domain="http://www.nytimes.com/namespaces/nyt_per">Furlong, Michael D.</category>
+			<category domain="http://www.nytimes.com/namespaces/nyt_per">Jordan, Eason</category>
+			<category domain="http://www.nytimes.com/namespaces/nyt_per">Pelton, Robert Young</category>
+			<category domain="http://www.nytimes.com/namespaces/nyt_per">Clarridge, Duane</category>
+		</item>
+		<item>
+			<title>Credit Agency Warns U.S. and Others of Risk to Top Rating</title>
+			<link>http://feeds.nytimes.com/click.phdo?i=603792c1e200a71f0d83abc68a92b73a</link>
+			<pheedo:origLink>http://www.nytimes.com/2010/03/16/business/global/16rating.html?partner=rss&amp;amp;emc=rss</pheedo:origLink>
+			<guid isPermaLink="false">http://www.nytimes.com/2010/03/16/business/global/16rating.html</guid>
+			<description>The U.S., Germany and other major economies are &#x201C;substantially&#x201D; closer to a downgrade, a report by Moody&#x2019;s warned.&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+&lt;a href=&quot;http://ads.pheedo.com/click.phdo?s=603792c1e200a71f0d83abc68a92b73a&amp;p=1&quot;&gt;&lt;img alt=&quot;&quot; style=&quot;border: 0;&quot; border=&quot;0&quot; src=&quot;http://ads.pheedo.com/img.phdo?s=603792c1e200a71f0d83abc68a92b73a&amp;p=1&quot;/&gt;&lt;/a&gt;
+&lt;!-- foo --&gt;</description>
+			<dc:creator>By DAVID JOLLY</dc:creator>
+			<pubDate>Mon, 15 Mar 2010 11:47:36 GMT</pubDate>
+			<category domain="http://www.nytimes.com/namespaces/nyt_org_all">Moody''s Investors Service Inc</category>
+			<category domain="http://www.nytimes.com/namespaces/des">Credit</category>
+			<category domain="http://www.nytimes.com/namespaces/des">Ratings and Rating Systems</category>
+			<category domain="http://www.nytimes.com/namespaces/des">National Debt (US)</category>
+			<category domain="http://www.nytimes.com/namespaces/des">Government Bonds</category>
+		</item>
+		<item>
+			<title>Toxic Waters: Saving U.S. Water and Sewer Systems Would Be Costly</title>
+			<link>http://feeds.nytimes.com/click.phdo?i=4ac3e1ff1179edf43a58470ce6e260e5</link>
+			<pheedo:origLink>http://www.nytimes.com/2010/03/15/us/15water.html?partner=rss&amp;amp;emc=rss</pheedo:origLink>
+			<guid isPermaLink="false">http://www.nytimes.com/2010/03/15/us/15water.html</guid>
+			<media:content url="http://graphics8.nytimes.com/images/2010/03/15/business/15water_CA0/15water_CA0-thumbStandard.jpg" medium="image" height="75" width="75"/>
+			<media:description>As head of Washington's water department, George Hawkins, left, is on the scene every time a major sewer or water line breaks.</media:description>
+			<media:credit>Nicole Bengiveno/The New York Times</media:credit>
+			<description>Ruptures in aging water systems cause pollutants to seep into water supplies, but in many cities residents have protested rate increases to fix pipes.&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+&lt;a href=&quot;http://ads.pheedo.com/click.phdo?s=4ac3e1ff1179edf43a58470ce6e260e5&amp;p=1&quot;&gt;&lt;img alt=&quot;&quot; style=&quot;border: 0;&quot; border=&quot;0&quot; src=&quot;http://ads.pheedo.com/img.phdo?s=4ac3e1ff1179edf43a58470ce6e260e5&amp;p=1&quot;/&gt;&lt;/a&gt;
+&lt;!-- foo --&gt; </description>
+			<dc:creator>By CHARLES DUHIGG</dc:creator>
+			<pubDate>Mon, 15 Mar 2010 05:36:59 GMT</pubDate>
+			<category domain="http://www.nytimes.com/namespaces/mdes">Water Pollution</category>
+			<category domain="http://www.nytimes.com/namespaces/des">Water</category>
+			<category domain="http://www.nytimes.com/namespaces/mdes">United States Politics and Government</category>
+			<category domain="http://www.nytimes.com/namespaces/nyt_geo">Washington (DC)</category>
+			<category domain="http://www.nytimes.com/namespaces/des">Sewers</category>
+			<category domain="http://www.nytimes.com/namespaces/des">Waste Materials and Disposal</category>
+			<category domain="http://www.nytimes.com/namespaces/mdes">Budgets and Budgeting</category>
+			<category domain="http://www.nytimes.com/namespaces/des">Environment</category>
+			<category domain="http://www.nytimes.com/namespaces/nyt_org_all">Environmental Protection Agency</category>
+		</item>
+		<item>
+			<title>Millions Spent to Sway Democrats on Health Care</title>
+			<link>http://feeds.nytimes.com/click.phdo?i=ca7352f55be175b616cf3a2dd6ac8a73</link>
+			<pheedo:origLink>http://www.nytimes.com/2010/03/15/health/policy/15health.html?partner=rss&amp;amp;emc=rss</pheedo:origLink>
+			<guid isPermaLink="false">http://www.nytimes.com/2010/03/15/health/policy/15health.html</guid>
+			<description>Advertising that rivals the ferocity of a presidential campaign is taking aim at about 40 House Democrats.&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+&lt;a href=&quot;http://ads.pheedo.com/click.phdo?s=ca7352f55be175b616cf3a2dd6ac8a73&amp;p=1&quot;&gt;&lt;img alt=&quot;&quot; style=&quot;border: 0;&quot; border=&quot;0&quot; src=&quot;http://ads.pheedo.com/img.phdo?s=ca7352f55be175b616cf3a2dd6ac8a73&amp;p=1&quot;/&gt;&lt;/a&gt;
+&lt;!-- foo --&gt;</description>
+			<dc:creator>By JEFF ZELENY</dc:creator>
+			<pubDate>Mon, 15 Mar 2010 11:37:15 GMT</pubDate>
+			<category domain="http://www.nytimes.com/namespaces/mdes">Political Advertising</category>
+			<category domain="http://www.nytimes.com/namespaces/des">Health Insurance and Managed Care</category>
+			<category domain="http://www.nytimes.com/namespaces/des">Reform and Reorganization</category>
+			<category domain="http://www.nytimes.com/namespaces/mdes">Elections</category>
+			<category domain="http://www.nytimes.com/namespaces/nyt_org_all">Democratic Party</category>
+			<category domain="http://www.nytimes.com/namespaces/nyt_org_all">House of Representatives</category>
+			<category domain="http://www.nytimes.com/namespaces/nyt_org_all">United States Chamber of Commerce</category>
+			<category domain="http://www.nytimes.com/namespaces/des">United States Politics and Government</category>
+			<category domain="http://www.nytimes.com/namespaces/nyt_org_all">Organizing for America</category>
+		</item>
+		<item>
+			<title>Bees in the City? New York May Make Hives Legal</title>
+			<link>http://feeds.nytimes.com/click.phdo?i=7b45540e5f788dc21293ef14e842ea62</link>
+			<pheedo:origLink>http://www.nytimes.com/2010/03/15/science/earth/15bees.html?partner=rss&amp;amp;emc=rss</pheedo:origLink>
+			<guid isPermaLink="false">http://www.nytimes.com/2010/03/15/science/earth/15bees.html</guid>
+			<media:content url="http://graphics8.nytimes.com/images/2010/03/15/nyregion/15bees01_span/15bees01-thumbStandard.jpg" medium="image" height="75" width="75"/>
+			<media:description>&#x201C;The real danger is the skewed public perception of the danger of honeybees,&#x201D; said Andrew Cot&#xE9;, of the New York City Beekeepers Association.</media:description>
+			<media:credit>Michelle V. Agins/The New York Times</media:credit>
+			<description>The honeybee&#x2019;s bad rap &#x2014; and the days of urban beekeepers facing $2,000 fines &#x2014; may be over this week.&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+&lt;a href=&quot;http://ads.pheedo.com/click.phdo?s=7b45540e5f788dc21293ef14e842ea62&amp;p=1&quot;&gt;&lt;img alt=&quot;&quot; style=&quot;border: 0;&quot; border=&quot;0&quot; src=&quot;http://ads.pheedo.com/img.phdo?s=7b45540e5f788dc21293ef14e842ea62&amp;p=1&quot;/&gt;&lt;/a&gt;
+&lt;!-- foo --&gt;</description>
+			<dc:creator>By MIREYA NAVARRO</dc:creator>
+			<pubDate>Mon, 15 Mar 2010 04:58:54 GMT</pubDate>
+			<category domain="http://www.nytimes.com/namespaces/des">Bees</category>
+			<category domain="http://www.nytimes.com/namespaces/nyt_geo">New York City</category>
+			<category domain="http://www.nytimes.com/namespaces/nyt_org_all">Health and Mental Hygiene Department (NYC)</category>
+			<category domain="http://www.nytimes.com/namespaces/nyt_geo">New York State</category>
+			<category domain="http://www.nytimes.com/namespaces/des">Hives</category>
+			<category domain="http://www.nytimes.com/namespaces/mdes">Honey</category>
+		</item>
+		<item>
+			<title>China Uses Global Trade Rules to Its Advantage</title>
+			<link>http://feeds.nytimes.com/click.phdo?i=ab281d579630ade3b760807974b3b86e</link>
+			<pheedo:origLink>http://www.nytimes.com/2010/03/15/business/global/15yuan.html?partner=rss&amp;amp;emc=rss</pheedo:origLink>
+			<guid isPermaLink="false">http://www.nytimes.com/2010/03/15/business/global/15yuan.html</guid>
+			<media:content url="http://graphics8.nytimes.com/images/2010/03/15/business/15yuan01/15yuan01-thumbStandard.jpg" medium="image" height="75" width="75"/>
+			<media:description>China defends its economic policies, like holding down the value of its currency, the renminbi.</media:description>
+			<media:credit>Reuters</media:credit>
+			<description>Beijing uses inconsistencies in international trade rules to spur its own economy at the expense of others.&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+&lt;a href=&quot;http://ads.pheedo.com/click.phdo?s=ab281d579630ade3b760807974b3b86e&amp;p=1&quot;&gt;&lt;img alt=&quot;&quot; style=&quot;border: 0;&quot; border=&quot;0&quot; src=&quot;http://ads.pheedo.com/img.phdo?s=ab281d579630ade3b760807974b3b86e&amp;p=1&quot;/&gt;&lt;/a&gt;
+&lt;!-- foo --&gt;</description>
+			<dc:creator>By KEITH BRADSHER</dc:creator>
+			<pubDate>Mon, 15 Mar 2010 05:15:28 GMT</pubDate>
+			<category domain="http://www.nytimes.com/namespaces/des">International Trade and World Market</category>
+			<category domain="http://www.nytimes.com/namespaces/nyt_geo">China</category>
+			<category domain="http://www.nytimes.com/namespaces/mdes">Yuan (Currency)</category>
+			<category domain="http://www.nytimes.com/namespaces/des">Economic Conditions and Trends</category>
+			<category domain="http://www.nytimes.com/namespaces/mdes">Protectionism (Trade)</category>
+			<category domain="http://www.nytimes.com/namespaces/mdes">Currency</category>
+			<category domain="http://www.nytimes.com/namespaces/nyt_org_all">World Trade Organization</category>
+			<category domain="http://www.nytimes.com/namespaces/nyt_org_all">International Monetary Fund</category>
+		</item>
+		<item>
+			<title>Katie Spotz Completes Solo Trip by Rowboat Across Atlantic</title>
+			<link>http://feeds.nytimes.com/click.phdo?i=1fa76be634b9dd458a76d510baadc522</link>
+			<pheedo:origLink>http://www.nytimes.com/2010/03/15/sports/15row.html?partner=rss&amp;amp;emc=rss</pheedo:origLink>
+			<guid isPermaLink="false">http://www.nytimes.com/2010/03/15/sports/15row.html</guid>
+			<media:content url="http://graphics8.nytimes.com/images/2010/03/15/sports/15row_CA0/15row_CA0-thumbStandard.jpg" medium="image" height="75" width="75"/>
+			<media:description>Katie Spotz and her father, Dan, on Sunday in Guyana after she finished her trans-Atlantic trip.</media:description>
+			<media:credit>Bert Wilkinson for The New York Times</media:credit>
+			<description>Katie Spotz, a 22 year-old woman from Ohio, completed her solo trip across the Atlantic, becoming the youngest person to cross an ocean by rowboat.&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+&lt;a href=&quot;http://ads.pheedo.com/click.phdo?s=1fa76be634b9dd458a76d510baadc522&amp;p=1&quot;&gt;&lt;img alt=&quot;&quot; style=&quot;border: 0;&quot; border=&quot;0&quot; src=&quot;http://ads.pheedo.com/img.phdo?s=1fa76be634b9dd458a76d510baadc522&amp;p=1&quot;/&gt;&lt;/a&gt;
+&lt;!-- foo --&gt;</description>
+			<dc:creator>By CHRISTOPHER MAAG</dc:creator>
+			<pubDate>Mon, 15 Mar 2010 05:24:27 GMT</pubDate>
+			<category domain="http://www.nytimes.com/namespaces/nyt_per">Spotz, Katie</category>
+			<category domain="http://www.nytimes.com/namespaces/des">Boats and Boating</category>
+			<category domain="http://www.nytimes.com/namespaces/mdes">Navigation</category>
+			<category domain="http://www.nytimes.com/namespaces/des">Water</category>
+			<category domain="http://www.nytimes.com/namespaces/mdes">Oceans</category>
+			<category domain="http://www.nytimes.com/namespaces/nyt_org_all">Blue Planet Run Foundation</category>
+		</item>
+		<item>
+			<title>Thai Protesters Shut Down Parts of Bangkok</title>
+			<link>http://feeds.nytimes.com/click.phdo?i=3f3524ea77eb543e3a966e57291aa606</link>
+			<pheedo:origLink>http://www.nytimes.com/2010/03/16/world/asia/16thai.html?partner=rss&amp;amp;emc=rss</pheedo:origLink>
+			<guid isPermaLink="false">http://www.nytimes.com/2010/03/16/world/asia/16thai.html</guid>
+			<media:content url="http://graphics8.nytimes.com/images/2010/03/16/world/16thai_2/16thai_2-thumbStandard.jpg" medium="image" height="75" width="75"/>
+			<media:description>Protesters outside a military barracks in Bangkok on Monday.</media:description>
+			<media:credit>Pornchai Kittiwongsakul/Agence France-Presse &#x2014; Getty Images</media:credit>
+			<description>Prime Minister Abhisit Vejjajiva rejected calls from the protesters to dissolve the government.&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+&lt;a href=&quot;http://ads.pheedo.com/click.phdo?s=3f3524ea77eb543e3a966e57291aa606&amp;p=1&quot;&gt;&lt;img alt=&quot;&quot; style=&quot;border: 0;&quot; border=&quot;0&quot; src=&quot;http://ads.pheedo.com/img.phdo?s=3f3524ea77eb543e3a966e57291aa606&amp;p=1&quot;/&gt;&lt;/a&gt;
+&lt;!-- foo --&gt;</description>
+			<dc:creator>By THOMAS FULLER</dc:creator>
+			<pubDate>Mon, 15 Mar 2010 13:20:38 GMT</pubDate>
+			<category domain="http://www.nytimes.com/namespaces/des">Politics and Government</category>
+			<category domain="http://www.nytimes.com/namespaces/nyt_geo">Thailand</category>
+			<category domain="http://www.nytimes.com/namespaces/des">Demonstrations and Riots</category>
+		</item>
+		<item>
+			<title>More Parity Found Atop the N.C.A.A. Tournament Bracket</title>
+			<link>http://feeds.nytimes.com/click.phdo?i=96ac697016bd8a1a30e1364436899576</link>
+			<pheedo:origLink>http://www.nytimes.com/2010/03/15/sports/ncaabasketball/15ncaa.html?partner=rss&amp;amp;emc=rss</pheedo:origLink>
+			<guid isPermaLink="false">http://www.nytimes.com/2010/03/15/sports/ncaabasketball/15ncaa.html</guid>
+			<media:content url="http://graphics8.nytimes.com/images/2010/03/15/sports/15ncaa02/15ncaa02-thumbStandard.jpg" medium="image" height="75" width="75"/>
+			<media:description>Clockwise from top left, the top seeds for the N.C.A.A. men&#x2019;s tournament are Kansas, Kentucky, Syracuse and Duke.</media:description>
+			<media:credit>Clockwise from top left: Ed Zurga/AP; Dave Martin/AP; Suzy Allman for NYT; Chuck Burton/AP</media:credit>
+			<description>As the N.C.A.A. is discussing the possibility of expanding its tournament, the assembling of this year&#x2019;s field was defined by the undistinguished nature of the teams on the bubble.&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+&lt;a href=&quot;http://ads.pheedo.com/click.phdo?s=96ac697016bd8a1a30e1364436899576&amp;p=1&quot;&gt;&lt;img alt=&quot;&quot; style=&quot;border: 0;&quot; border=&quot;0&quot; src=&quot;http://ads.pheedo.com/img.phdo?s=96ac697016bd8a1a30e1364436899576&amp;p=1&quot;/&gt;&lt;/a&gt;
+&lt;!-- foo --&gt;</description>
+			<dc:creator>By PETE THAMEL</dc:creator>
+			<pubDate>Mon, 15 Mar 2010 07:14:58 GMT</pubDate>
+			<category domain="http://www.nytimes.com/namespaces/des">NCAA Basketball Tournament (Men)</category>
+			<category domain="http://www.nytimes.com/namespaces/des">College Athletics</category>
+			<category domain="http://www.nytimes.com/namespaces/des">Basketball</category>
+			<category domain="http://www.nytimes.com/namespaces/nyt_org_all">National Collegiate Athletic Assn</category>
+			<category domain="http://www.nytimes.com/namespaces/nyt_org_all">University of Kansas</category>
+			<category domain="http://www.nytimes.com/namespaces/nyt_org_all">University of Kentucky</category>
+			<category domain="http://www.nytimes.com/namespaces/nyt_org_all">Duke University</category>
+			<category domain="http://www.nytimes.com/namespaces/nyt_org_all">Syracuse University</category>
+		</item>
+		<item>
+			<title>4 Killed in Car Bombing in Iraq</title>
+			<link>http://feeds.nytimes.com/click.phdo?i=2ec30830974a6276733181d49dbb2a3f</link>
+			<pheedo:origLink>http://www.nytimes.com/2010/03/16/world/asia/16iraq.html?partner=rss&amp;amp;emc=rss</pheedo:origLink>
+			<guid isPermaLink="false">http://www.nytimes.com/2010/03/16/world/asia/16iraq.html</guid>
+			<media:content url="http://graphics8.nytimes.com/images/2010/03/16/world/middleeast/16iraq_2/16iraq_2-thumbStandard.jpg" medium="image" height="75" width="75"/>
+			<media:description>The site of a suicide bombing that killed four people in Fallujah on Monday. </media:description>
+			<media:credit>Yasser Faisal/Reuters</media:credit>
+			<description>Explosives packed in a parked car detonated Monday on a busy street in Fallujah, a town in a once dangerous and still unsettled region of western Iraq.&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+&lt;a href=&quot;http://ads.pheedo.com/click.phdo?s=2ec30830974a6276733181d49dbb2a3f&amp;p=1&quot;&gt;&lt;img alt=&quot;&quot; style=&quot;border: 0;&quot; border=&quot;0&quot; src=&quot;http://ads.pheedo.com/img.phdo?s=2ec30830974a6276733181d49dbb2a3f&amp;p=1&quot;/&gt;&lt;/a&gt;
+&lt;!-- foo --&gt;</description>
+			<dc:creator>By ANTHONY SHADID</dc:creator>
+			<pubDate>Mon, 15 Mar 2010 12:08:40 GMT</pubDate>
+			<category domain="http://www.nytimes.com/namespaces/des">Iraq War (2003- )</category>
+			<category domain="http://www.nytimes.com/namespaces/des">Terrorism</category>
+			<category domain="http://www.nytimes.com/namespaces/nyt_geo">Iraq</category>
+		</item>
+		<item>
+			<title>Prius Incident Stumps Investigators</title>
+			<link>http://feeds.nytimes.com/click.phdo?i=505ee497db83f687d33aa632da40598c</link>
+			<pheedo:origLink>http://www.nytimes.com/reuters/2010/03/15/business/business-us-toyota-prius-investigation.html?partner=rss&amp;amp;emc=rss</pheedo:origLink>
+			<guid isPermaLink="false">http://www.nytimes.com/reuters/2010/03/15/business/business-us-toyota-prius-investigation.html</guid>
+			<description>WASHINGTON (Reuters) - Safety investigators have found no evidence so far to support or disprove a California motorist's claim his Toyota Motor Corp Prius sped out of control on its own, and cautioned the case may never be explained, U.S. regulators said on Monday.&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+&lt;a href=&quot;http://ads.pheedo.com/click.phdo?s=505ee497db83f687d33aa632da40598c&amp;p=1&quot;&gt;&lt;img alt=&quot;&quot; style=&quot;border: 0;&quot; border=&quot;0&quot; src=&quot;http://ads.pheedo.com/img.phdo?s=505ee497db83f687d33aa632da40598c&amp;p=1&quot;/&gt;&lt;/a&gt;
+&lt;!-- foo --&gt;</description>
+			<dc:creator>By REUTERS</dc:creator>
+			<pubDate>Mon, 15 Mar 2010 11:24:14 GMT</pubDate>
+		</item>
+		<item>
+			<title>Rain and Wind Created a Deadly Storm</title>
+			<link>http://feeds.nytimes.com/click.phdo?i=10387e6de13984bdd1fdbab55dd35404</link>
+			<pheedo:origLink>http://www.nytimes.com/2010/03/15/nyregion/15storm.html?partner=rss&amp;amp;emc=rss</pheedo:origLink>
+			<guid isPermaLink="false">http://www.nytimes.com/2010/03/15/nyregion/15storm.html</guid>
+			<media:content url="http://graphics8.nytimes.com/images/2010/03/15/nyregion/15storm4_337-span/15storm4_337-span-thumbStandard.jpg" medium="image" height="75" width="75"/>
+			<media:description>Con Edison workers planned how to turn gas off on a street in Scarsdale, N.Y., on Sunday.</media:description>
+			<media:credit>James Estrin/The New York Times</media:credit>
+			<description>After a weekend storm in the New York area, the lingering effects became clearer.&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+&lt;a href=&quot;http://ads.pheedo.com/click.phdo?s=10387e6de13984bdd1fdbab55dd35404&amp;p=1&quot;&gt;&lt;img alt=&quot;&quot; style=&quot;border: 0;&quot; border=&quot;0&quot; src=&quot;http://ads.pheedo.com/img.phdo?s=10387e6de13984bdd1fdbab55dd35404&amp;p=1&quot;/&gt;&lt;/a&gt;
+&lt;!-- foo --&gt;</description>
+			<dc:creator>By RUSS BUETTNER</dc:creator>
+			<pubDate>Mon, 15 Mar 2010 10:39:25 GMT</pubDate>
+			<category domain="http://www.nytimes.com/namespaces/des">Blackouts and Brownouts (Electrical)</category>
+			<category domain="http://www.nytimes.com/namespaces/nyt_geo">New York City</category>
+			<category domain="http://www.nytimes.com/namespaces/des">Rain</category>
+		</item>
+		<item>
+			<title>Blessing and Curse of Structured Recess: No Goofing Off</title>
+			<link>http://feeds.nytimes.com/click.phdo?i=adffc031f00838896b459ce56abe1fd9</link>
+			<pheedo:origLink>http://www.nytimes.com/2010/03/15/education/15recess.html?partner=rss&amp;amp;emc=rss</pheedo:origLink>
+			<guid isPermaLink="false">http://www.nytimes.com/2010/03/15/education/15recess.html</guid>
+			<media:content url="http://graphics8.nytimes.com/images/2010/03/15/nyregion/15recess_337-span/15recess_337-395-thumbStandard.jpg" medium="image" height="75" width="75"/>
+			<media:description>Children at the Broadway Elementary School in Newark played one of Coach Brandi Parker&#x2019;s games during recess.</media:description>
+			<media:credit>Richard Perry/The New York Times</media:credit>
+			<description>A growing number of schools use a recess coach to curb behavior problems.&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+&lt;br clear=&quot;both&quot; style=&quot;clear: both;&quot;/&gt;
+&lt;a href=&quot;http://ads.pheedo.com/click.phdo?s=adffc031f00838896b459ce56abe1fd9&amp;p=1&quot;&gt;&lt;img alt=&quot;&quot; style=&quot;border: 0;&quot; border=&quot;0&quot; src=&quot;http://ads.pheedo.com/img.phdo?s=adffc031f00838896b459ce56abe1fd9&amp;p=1&quot;/&gt;&lt;/a&gt;
+&lt;!-- foo --&gt; </description>
+			<dc:creator>By WINNIE HU</dc:creator>
+			<pubDate>Mon, 15 Mar 2010 08:00:20 GMT</pubDate>
+			<category domain="http://www.nytimes.com/namespaces/des">Education and Schools</category>
+			<category domain="http://www.nytimes.com/namespaces/des">Children and Youth</category>
+			<category domain="http://www.nytimes.com/namespaces/des">Games</category>
+			<category domain="http://www.nytimes.com/namespaces/nyt_geo">Newark (NJ)</category>
+			<category domain="http://www.nytimes.com/namespaces/des">Obesity</category>
+			<category domain="http://www.nytimes.com/namespaces/des">Bullies</category>
+		</item>
+	</channel>
+</rss>

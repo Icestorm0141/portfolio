@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="LINQLibrary">
+  <DataContextMoniker Name="/LINQLibraryDataContext" />
+  <nestedChildShapes>
+    <classShape Id="3e67ce5d-befd-4a31-bbf1-ab778b444b35" absoluteBounds="0.5, 2.125, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/LINQLibraryDataContext/tblExpandText" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9ffeeb85-ecf8-4b84-89aa-7056076031a0" absoluteBounds="0.515, 2.585, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="03e17bc3-7adf-4f69-b1f3-ab1e56a47289" absoluteBounds="0.5, 4.625, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/LINQLibraryDataContext/tblSection" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9748cacd-de9f-47ad-9344-f537ae4cb1b3" absoluteBounds="0.515, 5.085, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0bd2c7be-b4be-4f72-8b2c-4bb70b34f1cd" absoluteBounds="3.25, 4.5, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/LINQLibraryDataContext/tblFeaturedItem" />
+      <nestedChildShapes>
+        <elementListCompartment Id="63f5b7d0-2e1d-4223-8eff-30a5f7adbd54" absoluteBounds="3.265, 4.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="eeefc3d9-fc1a-468b-a49f-46edc66e1a9b" absoluteBounds="3.25, 0.625, 2, 3.1170068359375005">
+      <DataClassMoniker Name="/LINQLibraryDataContext/tblPortfolio" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c158eaf4-a0b8-4673-8533-e6079d065c93" absoluteBounds="3.265, 1.085, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 5.25564697265625); (3.25 : 5.25564697265625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LINQLibraryDataContext/tblSection/tblSection_tblFeaturedItem" />
+      <nodes>
+        <classShapeMoniker Id="03e17bc3-7adf-4f69-b1f3-ab1e56a47289" />
+        <classShapeMoniker Id="0bd2c7be-b4be-4f72-8b2c-4bb70b34f1cd" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.25 : 3.7420068359375); (4.25 : 4.5)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LINQLibraryDataContext/tblPortfolio/tblPortfolio_tblFeaturedItem" />
+      <nodes>
+        <classShapeMoniker Id="eeefc3d9-fc1a-468b-a49f-46edc66e1a9b" />
+        <classShapeMoniker Id="0bd2c7be-b4be-4f72-8b2c-4bb70b34f1cd" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.5 : 2.72199625651042); (2.79166666666667 : 2.72199625651042 : JumpStart); (2.95833333333333 : 2.72199625651042 : JumpEnd); (3.25 : 2.72199625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LINQLibraryDataContext/tblExpandText/tblExpandText_tblPortfolio" />
+      <nodes>
+        <classShapeMoniker Id="3e67ce5d-befd-4a31-bbf1-ab778b444b35" />
+        <classShapeMoniker Id="eeefc3d9-fc1a-468b-a49f-46edc66e1a9b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.5 : 4.62621330413662); (2.875 : 4.25121330413662); (2.875 : 1.64224612825521); (3.25 : 1.64224612825521)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/LINQLibraryDataContext/tblSection/tblSection_tblPortfolio" />
+      <nodes>
+        <classShapeMoniker Id="03e17bc3-7adf-4f69-b1f3-ab1e56a47289" />
+        <classShapeMoniker Id="eeefc3d9-fc1a-468b-a49f-46edc66e1a9b" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

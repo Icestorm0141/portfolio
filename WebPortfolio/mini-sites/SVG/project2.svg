@@ -1,0 +1,327 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+	 xmlns:xlink="http://www.w3.org/1999/xlink"
+	 version="1.1" baseProfile="full" onload="loadSample('welcome',-1,evt)" title="Client Side Scripting - SVG Project">
+	 <!-- PLEASE VIEW THIS IN OPERA -->
+ <script type="text/javascript">
+ <![CDATA[
+ 		var indexArray = new Array();
+		/*THIS IS A FUNCTION TO REMOVE ANY ELEMENTS THAT MAY EXIST ON THE STAGE ALREADY */
+		function removeElement(what)
+		{
+			if(document.getElementById(what) != null)
+			{
+				document.getElementById(what).parentNode.removeChild(document.getElementById(what));
+			}
+		}
+		/*MAIN CONTENT LOADING FUNCTION. IT TAKES IN A STRING TO TELL IT WHICH XML FILE TO LOAD, AN INDEX
+		FOR THE SPECIFIC IMAGE TO LOAD IF YOU ARE INSIDE THE SAMPLE WORK TAB AND CLICKED AN IMAGE, AND THE EVENT*/
+		function loadSample(whichTab,index,evt)
+		{
+			removeElement('descriptionText');
+			removeElement('elementImage');
+			removeElement('resumeText');
+			
+			var svgns="http://www.w3.org/2000/svg";
+			var xlinkns="http://www.w3.org/1999/xlink";
+			var xmlDoc;
+			var whichDocument = whichTab + ".xml";
+			xmlDoc=document.implementation.createDocument("","",null);
+			xmlDoc.async=false;
+			xmlDoc.load(whichDocument);
+			
+			if(window.svgDocument == null){
+				svgDocument = evt.target.ownerDocument;
+			}
+			
+			/*REMOVING FILM STRIP IF IT EXISTS ALREADY */
+			if(index < 0 ) { svgDocument.getElementById('imageStrip').style.display="none";}
+			
+			for(var i = 0; svgDocument.getElementById('filmImage'+i) !=null; i++)
+			{
+				removeElement('filmImage'+i);
+			}
+			/*WHEN YOU CLICK ON A TAB, INDEX = -1 SO IT RANDOMLY CHOOSES WHAT TO SHOW YOU BASED ON HOW MANY
+			EXAMPLE TAGS ARE IN THE SPECIFIED XML FILE
+			
+			IF YOU HAVE CLICKED ON AN IMAGE FROM THE FILM STRIP, IT WILL LOAD THAT IMAGE */
+			var rand;
+			if(index < 0) 
+			{ 
+				rand=Math.floor(Math.random()*xmlDoc.getElementsByTagName('example').length);
+			} 
+			else {
+			rand = index; 
+			}
+			
+			/* LOADING THE IMAGES AND THEIR DESCRIPTIONS INTO THE CONTENT WINDOW*/
+			var descripArray = new Array();
+			for(var i = 0; i<xmlDoc.getElementsByTagName('example')[rand].childNodes[3].childNodes.length; i++)
+			{
+					descripArray[i] = xmlDoc.getElementsByTagName('example')[rand].childNodes[3].childNodes[i].textContent;
+			}
+			if(xmlDoc.getElementsByTagName('example')[rand].childNodes[1].textContent != null)
+			{
+				var imgSrc = xmlDoc.getElementsByTagName('example')[rand].childNodes[1].textContent;
+				var imageTag = svgDocument.createElementNS(svgns,'image');
+				imageTag.setAttributeNS(xlinkns,'xlink:href',imgSrc);
+				imageTag.setAttributeNS(null,'width','200px');
+				imageTag.setAttributeNS(null,'height','134px');
+				imageTag.setAttributeNS(null,'x','425px');
+				imageTag.setAttributeNS(null,'y','175px');
+				imageTag.setAttributeNS(null,'id','elementImage');
+			}
+			var descripTag = svgDocument.createElementNS(svgns,'text');
+			descripTag.setAttributeNS(null,'x','200px');
+			if(whichTab != "aboutme" && whichTab != "welcome")
+			{ descripTag.setAttributeNS(null,'y','325px'); }
+			else { descripTag.setAttributeNS(null,'y','150px'); }
+			descripTag.setAttributeNS(null,'width','200px');
+			descripTag.setAttributeNS(null,'id','descriptionText');
+			
+			for(var i = 0; i<descripArray.length; i++)
+			{
+				if(i%2) //BECAUSE GEIKO BROWSERS HAVE THAT EMPTY TEXT NODE THAT WAS THE BANE OF MY EXISTANCE FOR A WHILE BECAUSE I FORGOT ABOUT IT
+				{
+					var textSpan = svgDocument.createElementNS(svgns,'tspan');
+					textSpan.setAttributeNS(null,'x','425px');
+					textSpan.setAttributeNS(null,'dy','1.5em');
+					textSpan.appendChild(svgDocument.createTextNode(descripArray[i]));
+					descripTag.appendChild(textSpan);
+				}
+			}
+						
+			svgDocument.documentElement.appendChild(descripTag);
+			svgDocument.documentElement.appendChild(imageTag);
+			
+			if(whichTab == "aboutme") //ADDING A RESUME LINK FOR YOU TO VIEW MY RESUME
+			{
+				var resumeLink = svgDocument.createElementNS(svgns,'a');
+				resumeLink.setAttributeNS(xlinkns,'xlink:href','resume.pdf');
+				resumeLink.appendChild(svgDocument.createTextNode('View my Resume'));
+				
+				var resumeText = svgDocument.createElementNS(svgns,'text');
+				resumeText.setAttributeNS(null,'x','425px');
+				resumeText.setAttributeNS(null,'y','465px');
+				resumeText.setAttributeNS(null,'id','resumeText');
+				resumeText.appendChild(resumeLink);
+				svgDocument.documentElement.appendChild(resumeText);
+			}
+			
+			if(whichTab == "samplework") //ADDING IN SAMPLE IMAGES
+			{
+				var xvalue = 400;
+				for(var j = 0; j<xmlDoc.getElementsByTagName('example').length; j++)
+				{
+					var imgSrc = xmlDoc.getElementsByTagName('example')[j].childNodes[1].textContent;
+					
+					var listTag = svgDocument.createElementNS(svgns,'image');
+					listTag.setAttributeNS(xlinkns,'xlink:href',imgSrc);
+					listTag.setAttributeNS(null,'width','100px');
+					listTag.setAttributeNS(null,'height','67px');
+					listTag.setAttributeNS(null,'x', xvalue +'px');
+					listTag.setAttributeNS(null,'y','520px');
+					listTag.setAttributeNS(null,'class','filmImage');
+					listTag.setAttributeNS(null,'id','filmImage'+j);
+					listTag.addEventListener('click',function() { loadSample('samplework',indexArray[this.id],evt); },false);
+					
+					xvalue +=110;
+					
+					svgDocument.documentElement.appendChild(listTag);
+					indexArray['filmImage'+j] = j;
+				}				
+				
+					svgDocument.getElementById('imageStrip').style.display="block";
+			}
+		}
+ ]]>
+ </script>
+	 <style type="text/css">
+		#someText
+		{
+			font-size:14px;
+			letter-spacing:1;
+			pointer-events:none;
+		}
+		#contentBackground
+		{
+			stroke: #A1A1A1;
+			stroke-width:2px;
+			fill-opacity:.85;
+		}
+		#contentItem, #imageStrip
+		{
+			fill:#F6D5D5;
+			stroke: #A55B74;
+			stroke-width:1px;
+			fill-opacity:0.15;
+		}
+		.menuItem
+		{
+			fill:#b9305a;
+			fill-opacity:1;
+			width: 300px;
+			height:100px;
+		}
+		tspan
+		{
+			font-family:'Times';
+			font-size:14px;
+		}
+	 </style>
+<defs>
+<path id="background" fill="#F6D5D5" stroke="#C67F94" d="M1.611,1.674C-9.377-1.073,65.709-1.563,26.214,30.162
+	C2.937,48.86,14.236,17.213,19.416,22.069C24.595,26.925,36.574,10.415,1.611,1.674z"/>	
+<path id="contentBox" d="M426.5,1.5h-13h-337c-41.1,0-75,33.75-75,75v350
+	c0,1.006,0.037,2.003,0.077,3H1.5v72h75h350h75v-72h-0.076c0.039-0.997,0.076-1.994,0.076-3v-348v-2v-75H426.5z"/>
+
+<linearGradient id="fill_gray" x1="0%" y1="0%" x2="0%" y2="100%">
+<stop offset="0%" style="stop-color:rgb(150,150,150);stop-opacity:1"/>
+<stop offset="100%" style="stop-color:rgb(255,255,255);stop-opacity:1"/>
+</linearGradient>
+
+<linearGradient id="stroke_gray" x1="0%" y1="0%" x2="0%" y2="100%">
+	<stop offset="0%" style="stop-color:rgb(125,125,125);stop-opacity:1"/>
+	<stop offset="100%" style="stop-color:rgb(150,150,150);stop-opacity:1"/>
+</linearGradient>
+
+<filter id="dropShadow" x="0%" y="-10%" height="140%">
+	<feGaussianBlur in="SourceAlpha" stdDeviation="3"/>
+	<feOffset dx="7px" dy="7px" result="offsetBlur"/>
+	<feMerge>
+		<feMergeNode in="offsetBlur"/>
+		<feMergeNode in="SourceGraphic"/>
+	</feMerge>
+</filter>
+
+		<g id="cluster">
+			<use xlink:href="#background" transform="rotate(120)"/>
+			<use xlink:href="#background" transform="rotate(0)"/>
+			<use xlink:href="#background" transform="rotate(240)"/>
+		</g>
+		<g id="supercluster">
+			<use xlink:href="#cluster"
+			 transform="rotate(60) translate(79.674,0) rotate(60) scale(-1,1)"/>
+			<use xlink:href="#cluster"
+				 transform="rotate(0) translate(79.674,0)"/>
+			<use xlink:href="#cluster"
+				 transform="translate(79.674,0) scale(1,-1)"/>
+		</g>
+		<pattern id="tile" height="155" width="239.023"
+				 patternUnits="userSpaceOnUse">
+			<use xlink:href="#supercluster"
+				 transform="translate(0,50)"/>
+			<use xlink:href="#supercluster"
+				 transform="translate(239.023,50) scale(-1,1)"/>
+		</pattern>
+		
+		<mask id="contentMask">
+				<use xlink:href="#contentBackground" />
+		</mask>
+		<rect id="aMenu" width="200px" height="100px" class="menuItem" ry="10px" rx="10px">
+				
+					<animate dur="0.1s" begin="mouseover" fill="freeze" to="#965E5E" attributeName="fill"/>
+					<animate dur="0.1s" begin="mouseout" fill="freeze" to="#591A2F" attributeName="fill"/>
+		</rect>
+			
+
+</defs>
+	
+ <!-- BACKGROUND COLOR -->
+		<rect x="0px" y="0px" width="100%" height="100%" fill="#999" />
+
+<!--BACKGROUND PATTERN -->
+		<rect x="0px" y="0px" width="100%" height="100%" fill="url(#tile)" />
+
+<!--PAGE BACKGROUND -->
+		<g id="contentBackground" transform="translate(350,50) scale(1.15,1.1)">
+			<use xlink:href="#contentBox"  fill="url(#fill_gray)" stroke="url(#stroke_gray)" />
+		</g>
+
+		
+<!--NAVIGATION RECTANGLES -->
+		<!--ABOUT ME MENU -->
+		<a xlink:href="#">
+			<g id="menuItem1">
+					<rect id="myMenu1" x="900px" y="100px" width="200px" height="100px" class="menuItem" ry="10px" rx="10px" onclick="loadSample('aboutme',-1,evt)">
+							<animate dur="0.1s" begin="mouseover" fill="freeze" to="#d86e8f" attributeName="fill" restart="whenNotActive"/>
+							<animate dur="0.1s" begin="mouseout" fill="freeze" to="#b9305a" attributeName="fill" restart="whenNotActive"/>
+					</rect>
+					
+					<!--ITEM LABEL -->
+					<text id="someText" transform="rotate(-90, 10, 20)" fill="white" x="-160" y="930" font-family="Times">
+							About Me
+					</text>
+					
+					<!--ANIMATION -->
+					<animateTransform dur="0.1s" begin="mouseover" fill="freeze" type="translate" attributeType="XML"  to="-50" attributeName="transform" restart="whenNotActive" />
+					<animateTransform dur="0.1s" begin="mouseout" fill="freeze" type="translate" attributeType="XML"  to="0" attributeName="transform" restart="whenNotActive" />
+			</g>
+		</a>
+		
+		<!--PROJECT 1 MENU -->
+		<a xlink:href="#">
+			<g id="menuItem2">
+					<rect id="myMenu1" x="900px" y="225px" width="200px" height="100px" class="menuItem" ry="10px" rx="10px" onclick="loadSample('project1',-1,evt)">
+							<animate dur="0.1s" begin="mouseover" fill="freeze" to="#d86e8f" attributeName="fill" restart="whenNotActive"/>
+							<animate dur="0.1s" begin="mouseout" fill="freeze" to="#b9305a" attributeName="fill" restart="whenNotActive"/>
+					</rect>
+					
+					<!--ITEM LABEL -->
+					<text id="someText" transform="rotate(-90, 10, 20)" fill="white" x="-285" y="930" font-family="Times">
+							Project 1
+					</text>
+					
+					<!--ANIMATION -->
+					<animateTransform dur="0.1s" begin="mouseover" fill="freeze" type="translate" attributeType="XML"  to="-50" attributeName="transform" restart="whenNotActive" />
+					<animateTransform dur="0.1s" begin="mouseout" fill="freeze" type="translate" attributeType="XML"  to="0" attributeName="transform" restart="whenNotActive" />
+			</g>
+		</a>
+		
+		<!--SAMPLE WORK MENU -->
+		<a xlink:href="#">
+			<g id="menuItem3">
+					<rect id="myMenu1" x="900px" y="350px" width="200px" height="100px" class="menuItem" ry="10px" rx="10px" onclick="loadSample('samplework', -1,evt)">
+							<animate dur="0.1s" begin="mouseover" fill="freeze" to="#d86e8f" attributeName="fill" restart="whenNotActive"/>
+							<animate dur="0.1s" begin="mouseout" fill="freeze" to="#b9305a" attributeName="fill" restart="whenNotActive"/>
+					</rect>
+					
+					<!--ITEM LABEL -->
+					<text id="someText" transform="rotate(-90, 10, 20)" fill="white" x="-410" y="930" font-family="Times">
+							Sample Work
+					</text>
+					
+					<!--ANIMATION -->
+					<animateTransform dur="0.1s" begin="mouseover" fill="freeze" type="translate" attributeType="XML"  to="-50" attributeName="transform" restart="whenNotActive" />
+					<animateTransform dur="0.1s" begin="mouseout" fill="freeze" type="translate" attributeType="XML"  to="0" attributeName="transform" restart="whenNotActive" />
+			</g>
+		</a>
+		
+		
+<!-- CONTENT BACKGROUND -->
+		<g id="contentItem" transform="translate(400,100) scale(.75,.75)">
+			<use xlink:href="#contentBox" />
+		</g>
+		
+<!--SITE LOGO -->
+		<image x="360px" y="65px" width="224px" height="94px" xlink:href="images/SiteLogo.png" />		
+		
+		<!--<text y="100px" x="100px" id="someText" rotate="-90" direction="rtl" letter-spacing=".01px" unicode-bidi="bidi-override" writing-mode="tb">About Me</text>-->
+		
+<!--THE IMAGES STRIP-->
+ <rect id="imageStrip" ry="50px" x="375px" y="500px" width="600px" height="200px" display="none" mask="url(#contentMask)">
+ </rect>
+	
+ <!-- BACKGROUND COLOR -->
+		<rect x="928px" y="0px" width="100%" height="100%" fill="#999" />
+
+<!--BACKGROUND PATTERN -->
+		<rect x="928px" y="0px" width="100%" height="100%" fill="url(#tile)" />
+		
+		
+ <!-- BORDER FOR THE PAGE WITH THE DROP SHADOW -->
+ <g id="contentBackground" transform="translate(350,50) scale(1.15,1.1)">
+			<use xlink:href="#contentBox" filter="url(#dropShadow)" stroke="rgb(125,125,125)" fill="white" fill-opacity="0" pointer-events="none"/>
+</g>
+
+</svg>

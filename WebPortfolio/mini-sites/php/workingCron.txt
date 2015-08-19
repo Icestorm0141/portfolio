@@ -1,0 +1,2 @@
+35 3,15 * 5 * ~ajs2189/Sites/pfw/project3/geturl.php >~ajs2189/Sites/pfw/project3/RSS/christianNews.rss
+35 3,15 * 5 * ~ajs2189/Sites/pfw/project3/getdevo.php >~ajs2189/Sites/pfw/project3/RSS/christianDevo.rss

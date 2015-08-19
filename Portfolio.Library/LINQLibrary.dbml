@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="ajsteglinski" Class="LINQLibraryDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Table Name="dbo.tblExpandText" Member="tblExpandTexts">
+    <Type Name="tblExpandText">
+      <Column Name="ExpandId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ExpandText" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="tblExpandText_tblPortfolio" Member="tblPortfolios" ThisKey="ExpandId" OtherKey="ItemExpandId" Type="tblPortfolio" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblSections" Member="tblSections">
+    <Type Name="tblSection">
+      <Column Name="SectionId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="SectionName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="SectionImageName" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="SectionFolderName" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Association Name="tblSection_tblFeaturedItem" Member="tblFeaturedItems" ThisKey="SectionId" OtherKey="sectionId" Type="tblFeaturedItem" />
+      <Association Name="tblSection_tblPortfolio" Member="tblPortfolios" ThisKey="SectionId" OtherKey="ItemSectionId" Type="tblPortfolio" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblFeaturedItems" Member="tblFeaturedItems">
+    <Type Name="tblFeaturedItem">
+      <Column Name="featuredId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="sectionId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="itemId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblSection_tblFeaturedItem" Member="tblSection" ThisKey="sectionId" OtherKey="SectionId" Type="tblSection" IsForeignKey="true" />
+      <Association Name="tblPortfolio_tblFeaturedItem" Member="tblPortfolio" ThisKey="itemId" OtherKey="ItemId" Type="tblPortfolio" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.tblPortfolio" Member="tblPortfolios">
+    <Type Name="tblPortfolio">
+      <Column Name="ItemId" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="ItemTitle" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ItemDate" Type="System.DateTime" DbType="SmallDateTime" CanBeNull="true" />
+      <Column Name="ItemLanguage" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ItemSoftware" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ItemDescription" Type="System.String" DbType="NText" CanBeNull="true" UpdateCheck="Never" />
+      <Column Name="ItemSectionId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemImageName" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ItemWebUrl" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ItemExpandId" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ItemCodeUrl" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="ItemRating" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="tblPortfolio_tblFeaturedItem" Member="tblFeaturedItems" ThisKey="ItemId" OtherKey="itemId" Type="tblFeaturedItem" />
+      <Association Name="tblExpandText_tblPortfolio" Member="tblExpandText" ThisKey="ItemExpandId" OtherKey="ExpandId" Type="tblExpandText" IsForeignKey="true" />
+      <Association Name="tblSection_tblPortfolio" Member="tblSection" ThisKey="ItemSectionId" OtherKey="SectionId" Type="tblSection" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

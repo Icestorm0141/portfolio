@@ -1,0 +1,80 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebPortfolio.Old", "WebPortfolio.Old\WebPortfolio.Old.csproj", "{F9E900A0-0F8E-4F0B-A414-79DA80430BB1}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "WebPortfolio", "WebPortfolio\", "{7CB13BC1-C480-4314-BEEA-7521A330EFCE}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		ProjectReferences = "{07D1A15A-01F9-4F09-9153-B245ABEDCEAF}|Portfolio.WebServices.dll;{969D789D-AD50-4B47-995E-A03CA87DAF21}|Portfolio.Library.dll;"
+		Debug.AspNetCompiler.VirtualPath = "/WebPortfolio"
+		Debug.AspNetCompiler.PhysicalPath = "WebPortfolio\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\WebPortfolio\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/WebPortfolio"
+		Release.AspNetCompiler.PhysicalPath = "WebPortfolio\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\WebPortfolio\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "6829"
+		DefaultWebSiteLanguage = "Visual C#"
+		StartServerOnDebug = "false"
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio.Library", "Portfolio.Library\Portfolio.Library.csproj", "{969D789D-AD50-4B47-995E-A03CA87DAF21}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio.WebServices", "Portfolio.WebServices\Portfolio.WebServices.csproj", "{07D1A15A-01F9-4F09-9153-B245ABEDCEAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MFBlog", "MFBlog\MFBlog.csproj", "{0B32C78C-E4BA-47B2-B688-429FEC67D7F0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BootstrapPlayground", "BootstrapPlayground\BootstrapPlayground.csproj", "{370DC4BA-A19D-47A2-9C6C-17BD42E3E6CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio.MVC", "Portfolio.MVC\Portfolio.MVC.csproj", "{2EB118F4-863D-4DD6-92A6-551929B3BF5C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F9E900A0-0F8E-4F0B-A414-79DA80430BB1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9E900A0-0F8E-4F0B-A414-79DA80430BB1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9E900A0-0F8E-4F0B-A414-79DA80430BB1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9E900A0-0F8E-4F0B-A414-79DA80430BB1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7CB13BC1-C480-4314-BEEA-7521A330EFCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CB13BC1-C480-4314-BEEA-7521A330EFCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7CB13BC1-C480-4314-BEEA-7521A330EFCE}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{7CB13BC1-C480-4314-BEEA-7521A330EFCE}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{969D789D-AD50-4B47-995E-A03CA87DAF21}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{969D789D-AD50-4B47-995E-A03CA87DAF21}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{969D789D-AD50-4B47-995E-A03CA87DAF21}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{969D789D-AD50-4B47-995E-A03CA87DAF21}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07D1A15A-01F9-4F09-9153-B245ABEDCEAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07D1A15A-01F9-4F09-9153-B245ABEDCEAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07D1A15A-01F9-4F09-9153-B245ABEDCEAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07D1A15A-01F9-4F09-9153-B245ABEDCEAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0B32C78C-E4BA-47B2-B688-429FEC67D7F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0B32C78C-E4BA-47B2-B688-429FEC67D7F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0B32C78C-E4BA-47B2-B688-429FEC67D7F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0B32C78C-E4BA-47B2-B688-429FEC67D7F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{370DC4BA-A19D-47A2-9C6C-17BD42E3E6CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{370DC4BA-A19D-47A2-9C6C-17BD42E3E6CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{370DC4BA-A19D-47A2-9C6C-17BD42E3E6CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{370DC4BA-A19D-47A2-9C6C-17BD42E3E6CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EB118F4-863D-4DD6-92A6-551929B3BF5C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EB118F4-863D-4DD6-92A6-551929B3BF5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EB118F4-863D-4DD6-92A6-551929B3BF5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EB118F4-863D-4DD6-92A6-551929B3BF5C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.2\lib\NET35
+	EndGlobalSection
+EndGlobal

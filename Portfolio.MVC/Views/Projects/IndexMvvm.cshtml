@@ -1,0 +1,34 @@
+﻿@using Portfolio.Library
+    @{
+        ViewBag.Title = "Work Samples";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+    <div class="well clearfix">
+        <div class="col-md-12">
+            <h2 class="page-header">
+                Development Samples
+            </h2>
+            <h4>
+                Over the years I've had the priviledge of working for numerous companies.
+            </h4>
+            <h5>I've worked on varying types of .NET projects. From SaaS applications, to internal web applications, to public facing websites. </h5>
+            <h5>Here are a few personal projects along with some from my professional career.</h5>
+
+            <h5><small>Note: due to the nature of some projects, I'm unable to show examples of some of my most recent positions.</small></h5>
+            <h5 class="pull-right"><small>@Html.ActionLink("See this page bound with MVC","Index", "Projects")</small></h5>
+        </div>
+    </div>
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="row">
+                <div class="col-xs-6 col-md-3">
+                    <div class="thumbnail">
+                        <a href="#"><img src="/Content/projects/@project.CategoryId/thumbs/@project.ImageName" /></a>
+                        <div class="caption">
+                            <h4>@project.Date.ToShortDateString()<small>@project.Languages</small></h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
