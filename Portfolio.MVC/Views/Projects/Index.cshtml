@@ -1,38 +1,25 @@
 ﻿@using Portfolio.Library
-    @{
-        ViewBag.Title = "Work Samples";
-        Layout = "~/Views/Shared/_Layout.cshtml";
-    }
-    @model List<Project>
-    <div class="well clearfix">
-        <div class="col-md-12">
-            <h2 class="page-header">
-                Development Samples
-            </h2>
-            <h4>
-                Over the years I've had the priviledge of working for numerous companies.
-            </h4>
-            <h5>I've worked on varying types of .NET projects. From SaaS applications, to internal web applications, to public facing websites. </h5>
-            <h5>Here are a few personal projects along with some from my professional career.</h5>
+@{
+    ViewBag.Title = "Work Samples";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model List<Project>
+<div class="well clearfix">
+    <div class="col-md-12">
+        <h2 class="page-header">
+            Development Samples
+        </h2>
+        <h4>
+            Over the years I've had the priviledge of working for numerous companies.
+        </h4>
+        <h5>I've worked on varying types of .NET projects. From SaaS applications, to internal web applications, to public facing websites. </h5>
+        <h5>Here are a few personal projects along with some from my professional career.</h5>
 
-            <h5><small>Note: due to the nature of some projects, I'm unable to show examples of some of my most recent positions.</small></h5>
-            <h5 class="pull-right">@Html.ActionLink("See this page bound with MVVM","IndexMvvm", "Projects")</h5>
-        </div>
+        <h5><small>Note: due to the nature of some projects, I'm unable to show examples of some of my most recent positions.</small></h5>
+        <h5 class="pull-right">@Html.ActionLink("See this page bound with MVVM", "IndexMvvm", "Projects")</h5>
     </div>
-    <div class="panel panel-default">
-        <div class="panel-body">
-            <div class="row">
-                @foreach (var project in Model)
-                {
-                    <div class="col-xs-6 col-md-3">
-                        <div class="thumbnail">
-                            <div class="img-thumb"><a href="#"><img src="/Content/projects/@project.CategoryId/thumbs/@project.ImageName" /></a></div>
-                            <div class="caption">
-                                <h4>@project.Date.ToShortDateString()<small>@project.Languages</small></h4>
-                            </div>
-                        </div>
-                    </div>
-                }
-            </div>
-        </div>
-    </div>
+</div>
+
+<div id="projectDetails">
+</div>
+@Html.Partial("_ProjectMVCPanel", Model)

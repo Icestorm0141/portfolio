@@ -35,7 +35,7 @@
           <Property Name="SoftwareUsed" Type="varchar(max)" Nullable="false" />
           <Property Name="Languages" Type="varchar(max)" />
           <Property Name="ImageName" Type="varchar" MaxLength="50" />
-          <Property Name="WebUrl" Type="varchar" MaxLength="255" />
+          <Property Name="Url" Type="varchar" MaxLength="255" />
           <Property Name="CategoryId" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_Projects_Categories">
@@ -94,9 +94,9 @@
           <Property Name="SoftwareUsed" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Languages" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <Property Name="ImageName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="WebUrl" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
           <Property Name="CategoryId" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Category" Relationship="Self.FK_Projects_Categories" FromRole="Projects" ToRole="Categories" />
+          <Property Name="Url" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
         </EntityType>
         <Association Name="FK_Projects_Categories">
           <End Role="Categories" Type="Self.Category" Multiplicity="1" />
@@ -149,6 +149,7 @@
           <EntitySetMapping Name="Projects">
             <EntityTypeMapping TypeName="DBLibrary.Project">
               <MappingFragment StoreEntitySet="Projects">
+                <ScalarProperty Name="Url" ColumnName="Url" />
                 <ScalarProperty Name="ProjectId" ColumnName="ProjectId" />
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
@@ -156,7 +157,6 @@
                 <ScalarProperty Name="SoftwareUsed" ColumnName="SoftwareUsed" />
                 <ScalarProperty Name="Languages" ColumnName="Languages" />
                 <ScalarProperty Name="ImageName" ColumnName="ImageName" />
-                <ScalarProperty Name="WebUrl" ColumnName="WebUrl" />
                 <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
               </MappingFragment>
             </EntityTypeMapping>

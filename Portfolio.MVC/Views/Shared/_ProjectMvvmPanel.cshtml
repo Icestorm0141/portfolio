@@ -1,0 +1,18 @@
+﻿
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="row">
+            @foreach (var project in Model)
+            {
+                <div class="col-xs-6 col-md-3">
+                    <div class="thumbnail">
+                        <div class="img-thumb"><a href="#"><img src="/Content/projects/@project.CategoryId/thumbs/@project.ImageName" /></a></div>
+                        <div class="caption">
+                            <h4>@project.Date.ToShortDateString()<small>@project.Languages</small></h4>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>

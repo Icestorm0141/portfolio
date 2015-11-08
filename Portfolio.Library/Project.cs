@@ -21,8 +21,8 @@ namespace Portfolio.Library
         public string SoftwareUsed { get; set; }
         public string Languages { get; set; }
         public string ImageName { get; set; }
-        public string WebUrl { get; set; }
         public int CategoryId { get; set; }
+        public string Url { get; set; }
     
         public virtual Category Category { get; set; }
     }

@@ -33,7 +33,19 @@
 		@RenderBody()
 		</div>   
 	</div>
-	@Scripts.Render("~/bundles/jquery")
+	@Scripts.Render("~/bundles/baseScripts")
 	@RenderSection("scripts", required: false)
+
+    <script type="text/javascript">
+        function GetProjectDetails(id) {
+            var url = '@Url.Action("GetProjectDetails" , "Projects")/' + id;
+
+            $.get(url, function (data) {
+                $('#projectDetails').html(data);
+
+                $('.modal').modal('show');
+            });
+        }
+    </script>
 </body>
 </html>

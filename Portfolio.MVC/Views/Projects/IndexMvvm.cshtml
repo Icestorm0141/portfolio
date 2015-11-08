@@ -1,4 +1,4 @@
-﻿@using Portfolio.Library
+﻿
     @{
         ViewBag.Title = "Work Samples";
         Layout = "~/Views/Shared/_Layout.cshtml";
@@ -15,20 +15,7 @@
             <h5>Here are a few personal projects along with some from my professional career.</h5>
 
             <h5><small>Note: due to the nature of some projects, I'm unable to show examples of some of my most recent positions.</small></h5>
-            <h5 class="pull-right"><small>@Html.ActionLink("See this page bound with MVC","Index", "Projects")</small></h5>
+            <h5 class="pull-right"><small>@Html.ActionLink("See this page bound with MVC","Index", "Projects",new { id = ViewBag.CategoryId },new {})</small></h5>
         </div>
     </div>
-    <div class="panel panel-default">
-        <div class="panel-body">
-            <div class="row">
-                <div class="col-xs-6 col-md-3">
-                    <div class="thumbnail">
-                        <a href="#"><img src="/Content/projects/@project.CategoryId/thumbs/@project.ImageName" /></a>
-                        <div class="caption">
-                            <h4>@project.Date.ToShortDateString()<small>@project.Languages</small></h4>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    @Html.Partial("_ProjectMvvmPanel")

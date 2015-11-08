@@ -18,10 +18,11 @@ namespace Portfolio.MVC.Controllers
         public ViewResult Index(int id)
         {
             var projects = _manager.GetProjectsByCategory(id);
+            ViewBag.CategoryId = id;
             return View(projects);
         }
-
-        public ViewResult IndexMvvm(int id)
+        
+        public ViewResult IndexMvvm()
         {
             return View();
         }
@@ -29,6 +30,12 @@ namespace Portfolio.MVC.Controllers
         {
             var projects = _manager.GetProjectsByCategory(id);
             return View(projects);
+        }
+
+        public PartialViewResult GetProjectDetails(int id)
+        {
+            var model = _manager.GetProjectById(id);
+            return PartialView("_ProjectMVCDetail", model);
         }
     }
 }
