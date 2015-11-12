@@ -11,7 +11,11 @@
             <div class="modal-body">
                 <div class="row">
                     <div class="col-md-11 col-md-offset-1">
-                        @if (MimeMapping.GetMimeMapping(@Model.Url).Contains("flash"))
+                        @if (string.IsNullOrEmpty(Model.Url))
+                        {
+                            <img src="/Content/projects/@Model.CategoryId/large/@Model.ImageName" class="expanded-image"/>
+                        }
+                        else if (MimeMapping.GetMimeMapping(Model.Url).Contains("flash"))
                         {
                             <object data="/Content/projects/@Model.CategoryId/large/@Model.Url" width="800" height="550">Sorry, there was something wrong with the file you were trying to load.</object>
                         }
@@ -21,16 +25,9 @@
                         }
                         else
                         {
-                            if (!string.IsNullOrEmpty(Model.Url))
-                            {
-                                <a href="@Model.Url" target="_blank"><img src="/Content/projects/@Model.CategoryId/large/@Model.ImageName" class="expanded-image"/></a>
-                                <br/>
-                                <h4><small><a href="@Model.Url" target="_blank">Visit Website</a></small></h4>
-                            }
-                            else
-                            {
-                                <img src="/Content/projects/@Model.CategoryId/large/@Model.ImageName" class="expanded-image"/>
-                            }
+                            <a href="@Model.Url" target="_blank"><img src="/Content/projects/@Model.CategoryId/large/@Model.ImageName" class="expanded-image"/></a>
+                            <br/>
+                            <h4><small><a href="@Model.Url" target="_blank">Visit Website</a></small></h4>
                         }
                     </div>
                 </div>

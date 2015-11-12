@@ -54,7 +54,19 @@ namespace Portfolio.WebServices
 
         public List<Project> GetProjectsByCategory(int categoryId)
         {
-            var projects = _ent.Projects.Where(p => p.CategoryId == categoryId).ToList();
+            var projects = _ent.Projects.Where(p => p.CategoryId == categoryId).ToList()
+                .Select(p => new Project()
+                {
+                    CategoryId = p.CategoryId,
+                    Date = p.Date,
+                    Description = p.Description,
+                    ImageName = p.ImageName,
+                    Languages = p.Languages,
+                    ProjectId = p.ProjectId,
+                    SoftwareUsed = p.SoftwareUsed,
+                    Title = p.Title,
+                    Url = p.Url
+                });
             
             //var projects = new List<Project>
             //{

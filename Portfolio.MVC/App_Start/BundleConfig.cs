@@ -11,6 +11,10 @@ namespace Portfolio.MVC
                         "~/Scripts/jquery-{version}.js",
                         "~/Scripts/bootstrap.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/knockout").Include(
+                        "~/Scripts/knockout-{version}.js",
+                        "~/Scripts/knockout.mapping-latest.js",
+                        "~/Scripts/projectViewModel.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
 

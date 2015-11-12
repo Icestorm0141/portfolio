@@ -1,21 +1,20 @@
-﻿
-    @{
-        ViewBag.Title = "Work Samples";
-        Layout = "~/Views/Shared/_Layout.cshtml";
-    }
-    <div class="well clearfix">
-        <div class="col-md-12">
-            <h2 class="page-header">
-                Development Samples
-            </h2>
-            <h4>
-                Over the years I've had the priviledge of working for numerous companies.
-            </h4>
-            <h5>I've worked on varying types of .NET projects. From SaaS applications, to internal web applications, to public facing websites. </h5>
-            <h5>Here are a few personal projects along with some from my professional career.</h5>
-
-            <h5><small>Note: due to the nature of some projects, I'm unable to show examples of some of my most recent positions.</small></h5>
-            <h5 class="pull-right"><small>@Html.ActionLink("See this page bound with MVC","Index", "Projects",new { id = ViewBag.CategoryId },new {})</small></h5>
-        </div>
-    </div>
-    @Html.Partial("_ProjectMvvmPanel")
+﻿@{
+    ViewBag.Title = "Work Samples";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Portfolio.MVC.Models.ProjectModel
+@Html.Partial("_Project", Model)
+@Html.Partial("_ProjectMvvmPanel")
+@section scripts
+{
+    @Scripts.Render("~/bundles/knockout")
+    <script type="text/javascript">
+        var modelData = {
+            ActionUrls: {
+                GetProjects: "@Url.Action("GetProjectsByCategory", "Projects")"
+            },
+            CategoryId: @Model.CategoryId
+        };
+        ko.applyBindings(new ProjectViewModel(modelData), $("#projectContainer")[0]);
+    </script>
+}
