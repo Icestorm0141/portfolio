@@ -1,0 +1,26 @@
+﻿@using Portfolio.Library
+@model List<Project>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <div class="row">
+            @foreach (var project in Model)
+            {
+                <div class="col-xs-6 col-md-3">
+                    <div class="thumbnail">
+                        <div class="img-thumb"><a href="javascript:void(0)" onclick="GetProjectDetails(@project.ProjectId)"><img src="/Content/projects/@project.CategoryId/thumbs/@project.ImageName"/></a>
+                        </div>
+                        <div class="caption">
+                            <h4><a href="javascript:void(0)" onclick="GetProjectDetails(@project.ProjectId)">@project.Title</a></h4>
+                            <h5>
+                                @project.Date.ToShortDateString() <br /><small>
+                                    @(!string.IsNullOrEmpty(@project.Languages) ? project.Languages : project.SoftwareUsed)
+                                </small>
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+

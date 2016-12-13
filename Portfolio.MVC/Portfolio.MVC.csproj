@@ -185,6 +185,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="app\js\controllers.js" />
+    <Content Include="app\partials\resume.html" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -231,15 +233,21 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\campbell_anna_resume.pdf" />
     <None Include="Properties\PublishProfiles\SmarterASP.NET.pubxml" />
+    <Content Include="Scripts\angular.js" />
+    <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\angular.min.js.map" />
     <None Include="Scripts\jquery-2.1.4.intellisense.js" />
+    <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-2.1.4.js" />
     <Content Include="Scripts\jquery-2.1.4.min.js" />
+    <Content Include="app\js\app.js" />
     <Content Include="Scripts\knockout-3.3.0.debug.js" />
     <Content Include="Scripts\knockout-3.3.0.js" />
     <Content Include="Scripts\knockout.mapping-latest.debug.js" />
     <Content Include="Scripts\knockout.mapping-latest.js" />
+    <Content Include="Scripts\projectModel.js" />
     <Content Include="Scripts\projectViewModel.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Unity.Mvc4.README.txt" />
@@ -259,6 +267,7 @@
     <Content Include="Views\Shared\_ProjectMVCDetail.cshtml" />
     <Content Include="Views\Shared\_Project.cshtml" />
     <Content Include="Views\Shared\_ProjectMvvmDetail.cshtml" />
+    <Content Include="Views\Shared\_AngularHome.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

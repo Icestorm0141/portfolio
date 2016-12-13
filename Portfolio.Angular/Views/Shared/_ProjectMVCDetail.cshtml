@@ -1,0 +1,44 @@
+﻿@using Portfolio.Library
+@model Project
+
+<div class="modal fade" role="dialog">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="gridSystemModalLabel">@Model.Title</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-11 col-md-offset-1">
+                        @if (string.IsNullOrEmpty(Model.Url))
+                        {
+                            <img src="/Content/projects/@Model.CategoryId/large/@Model.ImageName" class="expanded-image"/>
+                        }
+                        else if (MimeMapping.GetMimeMapping(Model.Url).Contains("flash"))
+                        {
+                            <object data="/Content/projects/@Model.CategoryId/large/@Model.Url" width="800" height="550">Sorry, there was something wrong with the file you were trying to load.</object>
+                        }
+                        else if (Model.Url.Contains("vimeo"))
+                        {
+                            <iframe src="@Model.Url" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                        }
+                        else
+                        {
+                            <a href="@Model.Url" target="_blank"><img src="/Content/projects/@Model.CategoryId/large/@Model.ImageName" class="expanded-image"/></a>
+                            <br/>
+                            <h4><small><a href="@Model.Url" target="_blank">Visit Website</a></small></h4>
+                        }
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-offset-1 col-md-10">
+                        <h4>@Model.Date.ToShortDateString() <br /><small>@Model.Languages</small></h4>
+                        <h5><em>@Model.SoftwareUsed</em></h5>
+                        <p>@Html.Raw(@Model.Description)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

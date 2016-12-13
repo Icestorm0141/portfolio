@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Work Samples";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Portfolio.MVC.Models.ProjectModel
+@Html.Partial("_Project", Model)
+@Html.Partial("_ProjectMvvmPanel")
+@section scripts
+{
+    @Scripts.Render("~/bundles/knockout")
+    <script type="text/javascript">
+        var modelData = {
+            ActionUrls: {
+                GetProjects: "@Url.Action("GetProjectsByCategory", "Projects")"
+            },
+            CategoryId: @Model.CategoryId
+        };
+        ko.applyBindings(new ProjectViewModel(modelData), $("#projectContainer")[0]);
+    </script>
+}

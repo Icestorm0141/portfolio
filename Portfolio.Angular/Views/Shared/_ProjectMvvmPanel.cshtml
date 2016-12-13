@@ -1,0 +1,22 @@
+﻿<div id="projectContainer">
+    @Html.Partial("_ProjectMvvmDetail")
+    <div class="panel panel-default">
+        <div class="panel-body">
+            <div class="row">
+                <!-- ko foreach: projects -->
+                <div class="col-xs-6 col-md-3">
+                    <div class="thumbnail">
+                        <div class="img-thumb">
+                            <a href="javascript:void(0)" data-bind="click: $parent.setActiveProject"><img data-bind=" attr:{ src: thumbSrc }" /></a>
+                        </div>
+                        <div class="caption">
+                            <h4><a href="javascript:void(0)" data-bind="click: $parent.setActiveProject, text: title"></a></h4>
+                            <h5><span data-bind="text:projectDate"></span><br /><small data-bind="text:displayText"></small></h5>
+                        </div>
+                    </div>
+                </div>
+                <!-- /ko -->
+            </div>
+        </div>
+    </div>
+</div>

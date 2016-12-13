@@ -1,0 +1,18 @@
+﻿@model Portfolio.MVC.Models.ProjectModel
+<div class="well clearfix">
+    <div class="col-md-12">
+        <h2 class="page-header">
+            @Model.PageTitle
+        </h2>
+        <h4>
+            @Model.SubTitle
+        </h4>
+        <h5>@Model.Description</h5>
+        <h5>@Model.SubDescription</h5>
+
+        <h5><small>@Model.Note</small></h5>
+        <h5 class="pull-right">
+                @Html.ActionLink(Model.LinkLabel, Model.Method, "Projects", new {id = Model.CategoryId}, new {})
+        </h5>
+    </div>
+</div>

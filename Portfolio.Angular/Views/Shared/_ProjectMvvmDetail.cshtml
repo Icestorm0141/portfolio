@@ -1,0 +1,37 @@
+﻿<div class="modal fade" role="dialog" data-bind="showModal: activeProject, with:activeProject">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="gridSystemModalLabel" data-bind="text:title"></h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-11 col-md-offset-1">
+                        <div data-bind="if: isFlashFile">
+                            <object data-bind="attr: { data: largeSrc }" width="800" height="550" style="max-width: 800px;">Sorry, there was something wrong with the file you were trying to load.</object>
+                        </div>
+
+                        <div data-bind="if: isVimeoFile">
+                            <iframe width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen data-bind="attr: { src: URL }"></iframe>
+                        </div>
+                        <div data-bind="if: (!isFlashFile && !isVimeoFile && URL != null)">
+                            <a target="_blank" data-bind="attr: { href: URL }"><img data-bind="attr: { src: largeSrc }" class="expanded-image"/></a>
+                            <br/>
+                            <h4><small><a data-bind="attr: { href: URL }" target="_blank">Visit Website</a></small></h4>
+                        </div>
+                        <div data-bind="if: (!isFlashFile && !isVimeoFile && URL == null)">
+                            <img class="expanded-image" data-bind="attr: { src: largeSrc }"/>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-offset-1 col-md-10">
+                        <h4><span data-bind="text:projectDate"></span><br /><small data-bind="text:displayText"></small></h4>
+                        <p data-bind="html:description"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,9 @@
+﻿@{
+    ViewBag.Title = "Work Samples";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Portfolio.MVC.Models.ProjectModel
+@Html.Partial("_Project", Model)
+<div id="projectDetails">
+</div>
+@Html.Partial("_ProjectMVCPanel", Model.Projects)

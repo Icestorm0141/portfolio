@@ -38,6 +38,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BootstrapPlayground", "Boot
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio.MVC", "Portfolio.MVC\Portfolio.MVC.csproj", "{2EB118F4-863D-4DD6-92A6-551929B3BF5C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio.Angular", "Portfolio.Angular\Portfolio.Angular.csproj", "{02D2347B-8672-4A6F-9D21-45536A9B7E85}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -72,6 +74,10 @@ Global
 		{2EB118F4-863D-4DD6-92A6-551929B3BF5C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2EB118F4-863D-4DD6-92A6-551929B3BF5C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2EB118F4-863D-4DD6-92A6-551929B3BF5C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02D2347B-8672-4A6F-9D21-45536A9B7E85}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02D2347B-8672-4A6F-9D21-45536A9B7E85}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02D2347B-8672-4A6F-9D21-45536A9B7E85}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02D2347B-8672-4A6F-9D21-45536A9B7E85}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
